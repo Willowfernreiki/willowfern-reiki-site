@@ -1,16 +1,15 @@
 body {
   margin: 0;
   font-family: 'Lora', serif;
-  background: #f4f8f3;
-  color: #2c3a33;
+  background: #EAEDE9;
+  color: #2F3A33;
   line-height: 1.8;
 }
 
-/* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: rgba(244,248,243,0.85);
+  background: rgba(234,237,233,0.85);
   backdrop-filter: blur(10px);
   padding: 18px;
   text-align: center;
@@ -20,35 +19,25 @@ nav {
 nav a {
   margin: 0 18px;
   text-decoration: none;
-  color: #2c3a33;
+  color: #2F3A33;
   font-size: 15px;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
 }
 
-nav a:hover {
-  opacity: 0.6;
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 26px;
+  background: #AEBFA9;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
 }
 
-/* HERO */
-.hero {
-  height: 420px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+.button:hover {
+  background: #9FB19A;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(244,248,243,0.4),
-    rgba(244,248,243,0.9)
-  );
-}
-
-/* CONTAINER */
 .container {
   max-width: 780px;
   margin: -80px auto 60px auto;
@@ -59,61 +48,9 @@ nav a:hover {
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-/* TYPOGRAPHY */
-h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-h2 {
-  font-size: 26px;
-  margin-top: 40px;
-  font-weight: 500;
-}
-
-p {
-  font-size: 16.5px;
-  color: #3c4a43;
-}
-
-/* IMAGES */
-img {
-  width: 100%;
-  border-radius: 14px;
-  margin: 20px 0;
-}
-
-/* BUTTON */
-.button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 26px;
-  background: #9bbfa3;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: 0.3s ease;
-}
-
-.button:hover {
-  background: #88ab90;
-  transform: translateY(-2px);
-}
-
-/* LIST */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  font-size: 14px;
-  opacity: 0.6;
+.hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.9) contrast(1.05);
 }

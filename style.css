@@ -1,63 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background: #f3f7f1;
+  color: #2b3a33;
+  line-height: 1.8;
+}
 
-  <title>Willow Fern Reiki</title>
+/* NAVBAR */
+nav {
+  background: #e6efe6;
+  padding: 15px;
+  text-align: center;
+}
 
-  <meta name="description" content="Willow Fern Reiki offers gentle Reiki healing sessions to restore balance, calm, and wellbeing in the UK.">
-  <meta name="keywords" content="Reiki, Reiki healing UK, energy healing, spiritual healing, wellness, holistic therapy">
-  <meta name="author" content="Willow Fern Reiki">
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #2b3a33;
+  font-weight: 500;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+/* HERO IMAGE */
+.hero {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
+/* CONTENT */
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-<body>
+/* HEADINGS */
+h1, h2 {
+  font-weight: 500;
+}
 
-<header>
-  <h1>Willow Fern Reiki</h1>
-  <p>Gentle energy healing to restore balance, calm, and clarity</p>
-  <a href="#about" class="button">Begin Your Healing Journey</a>
-</header>
+/* BUTTON */
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #8fae93;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+}
 
-<section id="about">
-  <h2>About Reiki</h2>
-  <p>
-    Reiki is a gentle, non-invasive energy healing practice that helps release stress,
-    restore balance, and support emotional and physical wellbeing.
-  </p>
-</section>
-
-<section id="story">
-  <h2>My Approach</h2>
-  <p>
-    My work is intuitive, calm, and grounded. Each session is guided by your energy
-    and what your system needs most in that moment.
-  </p>
-</section>
-
-<section id="services">
-  <h2>Sessions</h2>
-  <ul>
-    <li>1:1 Reiki Healing Session (In Person)</li>
-    <li>Distance Reiki Healing</li>
-    <li>Energy Balancing & Emotional Release</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Connect</h2>
-  <p>Email: hello@willowfernreiki.co.uk</p>
-</section>
-
-<footer>
-  <p>© 2026 Willow Fern Reiki • Healing energy for mind, body & spirit</p>
-</footer>
-
-</body>
-</html>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
   opacity: 0.7;
 }

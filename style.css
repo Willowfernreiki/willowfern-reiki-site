@@ -1,11 +1,12 @@
 body {
   margin: 0;
   font-family: 'Lora', serif;
-  background: #EAEDE9;
+
+  /* soft sage-green base */
+  background: #E6EEE8;
   color: #2F3A33;
   line-height: 1.8;
 
-  /* subtle page fade-in */
   animation: fadeIn 0.6s ease;
 }
 
@@ -16,11 +17,15 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background: rgba(234,237,233,0.85);
+
+  /* soft translucent sage */
+  background: rgba(230, 238, 232, 0.92);
+
   backdrop-filter: blur(10px);
   padding: 18px;
   text-align: center;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+
+  border-bottom: 1px solid rgba(47, 58, 51, 0.08);
 }
 
 nav a {
@@ -29,11 +34,9 @@ nav a {
   color: #2F3A33;
   font-size: 15px;
 
-  /* smooth hover transition */
   transition: all 0.25s ease;
 }
 
-/* subtle hover lift */
 nav a:hover {
   opacity: 0.7;
   transform: translateY(-1px);
@@ -47,56 +50,62 @@ nav a:hover {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 26px;
-  background: #AEBFA9;
+
+  /* muted sage green */
+  background: #9FB8A6;
   color: white;
+
   text-decoration: none;
   border-radius: 30px;
 
   transition: all 0.25s ease;
 }
 
-/* soft lift + tone shift */
 .button:hover {
-  background: #9FB19A;
+  background: #8FAE95;
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 /* =========================
-   CONTAINER (CARDS / SECTIONS)
+   CONTAINER / CARDS
 ========================= */
 
 .container {
   max-width: 780px;
   margin: -80px auto 60px auto;
   padding: 50px 30px;
-  background: rgba(255,255,255,0.75);
+
+  /* soft off-white with green warmth */
+  background: rgba(255,255,255,0.78);
+
   border-radius: 20px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 
-  /* subtle entry animation */
+  /* subtle green-tinted shadow */
+  box-shadow: 0 20px 40px rgba(60, 90, 70, 0.06);
+
   animation: fadeUp 0.7s ease;
   transition: all 0.3s ease;
 }
 
-/* gentle hover lift for sections */
 .container:hover {
   transform: translateY(-2px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+  box-shadow: 0 25px 50px rgba(60, 90, 70, 0.08);
 }
 
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 
 .hero {
   height: 70vh;
   background-size: cover;
   background-position: center;
-  filter: saturate(0.9) contrast(1.05);
 
-  /* soft fade in */
+  /* slightly softened natural tones */
+  filter: saturate(0.85) contrast(1.03);
+
   animation: fadeIn 1s ease;
 }
 

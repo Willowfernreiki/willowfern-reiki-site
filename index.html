@@ -14,10 +14,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- MOBILE + IMAGE FIX -->
+  <!-- IMAGE + MOBILE FIX -->
   <style>
 
-    /* NAV MOBILE FIX */
+    /* NAV FIX (mobile friendly) */
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -30,22 +30,6 @@
       text-decoration: none;
       color: #2F3A33;
       font-size: 15px;
-    }
-
-    /* GLOBAL IMAGE STYLE */
-    img {
-      width: 100%;
-      max-width: 520px;
-      height: auto;
-      border-radius: 14px;
-      margin: 18px auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* MAKE FERN IMAGE SMALLER (50% VISUAL IMPACT) */
-    .small-img {
-      max-width: 260px;
     }
 
     /* HERO */
@@ -63,6 +47,29 @@
       position: absolute;
       inset: 0;
       background: rgba(221, 233, 225, 0.12);
+    }
+
+    /* IMAGE ROW */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .image-block {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-block img {
+      max-width: 260px; /* SAME SIZE FOR BOTH */
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      object-fit: cover;
     }
 
   </style>
@@ -99,20 +106,29 @@
 
   <h2>Healing in Harmony with Nature</h2>
 
-  <!-- WILLOW IMAGE -->
-  <img src="https://images.unsplash.com/photo-1648503653373-ee748b4858b9?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-       alt="Weeping willow reflecting calm healing energy">
+  <!-- SIDE BY SIDE IMAGES -->
+  <div class="image-row">
 
+    <!-- WILLOW -->
+    <div class="image-block">
+      <img src="https://images.unsplash.com/photo-1648503653373-ee748b4858b9?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8YWdlfHx8fGVufDB8fHx8fA%3D%3D"
+           alt="Weeping willow reflecting calm healing energy">
+    </div>
+
+    <!-- FERN -->
+    <div class="image-block">
+      <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
+           alt="Close-up fern with morning dew">
+    </div>
+
+  </div>
+
+  <!-- WILLOW TEXT FIRST -->
   <p>
-    The weeping willow reflects grace, deep emotional healing, and flexible resilience —
-    bending without breaking in the storms of life.
+    The weeping willow reflects grace, deep emotional healing, and flexible resilience — bending without breaking in the storms of life.
   </p>
 
-  <!-- FERN IMAGE (SMALLER) -->
-  <img class="small-img"
-       src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
-       alt="Close-up fern with morning dew">
-
+  <!-- FERN TEXT SECOND -->
   <p>
     The fern reflects renewal, softness, and natural resilience — thriving quietly in its environment.
   </p>

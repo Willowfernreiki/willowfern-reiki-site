@@ -6,9 +6,10 @@ body {
   margin: 0;
   font-family: 'Lora', serif;
 
-  /* soft sage-green base */
-  background: #E6EEE8;
-  color: #2F3A33;
+  /* slightly richer sage green background */
+  background: #DDE9E1;
+
+  color: #26352D;
   line-height: 1.8;
 
   animation: fadeIn 0.6s ease;
@@ -22,19 +23,21 @@ nav {
   position: sticky;
   top: 0;
 
-  background: rgba(230, 238, 232, 0.92);
+  /* slightly deeper green glass effect */
+  background: rgba(221, 233, 225, 0.92);
+
   backdrop-filter: blur(10px);
 
   padding: 18px;
   text-align: center;
 
-  border-bottom: 1px solid rgba(47, 58, 51, 0.08);
+  border-bottom: 1px solid rgba(38, 53, 45, 0.10);
 }
 
 nav a {
   margin: 0 18px;
   text-decoration: none;
-  color: #2F3A33;
+  color: #26352D;
   font-size: 15px;
 
   transition: all 0.25s ease;
@@ -46,7 +49,7 @@ nav a:hover {
 }
 
 /* =========================
-   BUTTONS
+   BUTTONS (slightly richer green)
 ========================= */
 
 .button {
@@ -54,9 +57,10 @@ nav a:hover {
   margin-top: 25px;
   padding: 12px 26px;
 
-  background: #9FB8A6;
-  color: white;
+  /* more natural, slightly richer sage */
+  background: #7FAF8C;
 
+  color: white;
   text-decoration: none;
   border-radius: 30px;
 
@@ -64,13 +68,13 @@ nav a:hover {
 }
 
 .button:hover {
-  background: #8FAE95;
+  background: #6FA07E;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
 }
 
 /* =========================
-   CONTAINERS / SECTIONS
+   CONTAINERS
 ========================= */
 
 .container {
@@ -78,12 +82,13 @@ nav a:hover {
   margin: -80px auto 60px auto;
   padding: 50px 30px;
 
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.80);
+
   border-radius: 20px;
 
   backdrop-filter: blur(8px);
 
-  box-shadow: 0 20px 40px rgba(60, 90, 70, 0.06);
+  box-shadow: 0 20px 40px rgba(40, 80, 55, 0.08);
 
   animation: fadeUp 0.7s ease;
 
@@ -92,7 +97,7 @@ nav a:hover {
 
 .container:hover {
   transform: translateY(-2px);
-  box-shadow: 0 25px 50px rgba(60, 90, 70, 0.08);
+  box-shadow: 0 25px 50px rgba(40, 80, 55, 0.10);
 }
 
 /* =========================
@@ -107,35 +112,30 @@ nav a:hover {
   background-size: cover;
   background-position: center;
 
-  /* calming green-toned grading */
-  filter: saturate(0.82) contrast(1.03) brightness(0.96);
+  /* slightly richer natural tone */
+  filter: saturate(0.88) contrast(1.05) brightness(0.95);
+
+  position: relative;
 
   animation: fadeIn 1s ease;
 }
 
-/* =========================
-   OPTIONAL HERO OVERLAY (soft spa feel)
-========================= */
-
-.hero::after {
+/* soft green overlay (more alive but still calm) */
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(230, 238, 232, 0.12);
-  pointer-events: none;
+
+  background: rgba(120, 160, 135, 0.10);
 }
 
 /* =========================
-   KEYFRAME ANIMATIONS
+   ANIMATIONS
 ========================= */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeUp {

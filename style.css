@@ -1,12 +1,12 @@
 /* =========================
-   BASE
+   BASE STYLES
 ========================= */
 
 body {
   margin: 0;
   font-family: 'Lora', serif;
 
-  background: #DDE9E1; /* soft green calm tone */
+  background: #DDE9E1;
   color: #26352D;
 
   line-height: 1.8;
@@ -51,10 +51,12 @@ nav a:hover {
 ========================= */
 
 .hero {
-  height: 70vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   position: relative;
+
+  margin-bottom: 40px; /* spacing under hero */
 }
 
 .hero::before {
@@ -65,12 +67,12 @@ nav a:hover {
 }
 
 /* =========================
-   CONTAINER
+   MAIN CONTAINER
 ========================= */
 
 .container {
   max-width: 780px;
-  margin: -80px auto 60px auto;
+  margin: 0 auto 60px auto;
   padding: 50px 30px;
 
   background: rgba(255,255,255,0.80);
@@ -103,19 +105,19 @@ nav a:hover {
 }
 
 /* =========================
-   IMAGE LAYOUT (WILLOW + FERN)
+   IMAGE ROW (WILLOW + FERN)
 ========================= */
 
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
 
   flex-wrap: wrap;
   margin: 25px 0;
 }
 
-/* equal-width cards */
+/* each image block */
 .image-card {
   flex: 1;
   min-width: 280px;
@@ -126,20 +128,28 @@ nav a:hover {
   align-items: center;
 }
 
-/* images */
+/* FIXED IMAGE HEIGHT = PERFECT ALIGNMENT */
 .image-card img {
   width: 100%;
-  border-radius: 14px;
+  height: 260px;        /* KEY FIX: makes both identical height */
   object-fit: cover;
+
+  border-radius: 14px;
 
   box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
-/* text under images */
-.image-card p {
+/* CAPTIONS */
+.image-text {
+  margin-top: 12px;
   text-align: center;
-  margin-top: 10px;
-  padding: 0 5px;
+
+  line-height: 1.6;
+
+  min-height: 90px; /* keeps both captions aligned visually */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 /* =========================
@@ -167,16 +177,19 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE SAFETY
+   MOBILE ADJUSTMENTS
 ========================= */
 
 @media (max-width: 600px) {
   .container {
-    margin: -60px auto 40px auto;
     padding: 30px 20px;
   }
 
   .image-card {
     min-width: 100%;
+  }
+
+  .image-card img {
+    height: 220px; /* slightly smaller for mobile */
   }
 }

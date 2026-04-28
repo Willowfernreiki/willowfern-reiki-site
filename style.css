@@ -37,14 +37,17 @@ nav {
 nav a {
   text-decoration: none;
   color: #26352D;
+
   font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 8px;
 
   transition: all 0.2s ease;
 }
 
-/* only hovered item becomes bold */
 nav a:hover {
   font-weight: bold;
+  background: rgba(127, 175, 140, 0.15);
 }
 
 /* =========================
@@ -67,7 +70,7 @@ nav a:hover {
 }
 
 /* =========================
-   HERO (SERVICES PAGE FIX)
+   HERO (SERVICES PAGE)
 ========================= */
 
 .hero-services {
@@ -158,12 +161,10 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* hover pop effect */
 .image-card:hover img {
   transform: scale(1.03);
 }
 
-/* text under images */
 .image-text {
   margin-top: 12px;
   text-align: center;
@@ -197,6 +198,62 @@ footer {
   font-size: 14px;
 
   color: rgba(38, 53, 45, 0.7);
+}
+
+/* =========================
+   CONTACT FORM (PROFESSIONAL UPGRADE)
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+label {
+  font-size: 14px;
+  color: #26352D;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(38, 53, 45, 0.2);
+
+  font-family: 'Lora', serif;
+  font-size: 15px;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #26352D;
+
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #7FAF8C;
+  box-shadow: 0 0 0 3px rgba(127, 175, 140, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+form .button {
+  margin-top: 18px;
+  width: fit-content;
+  align-self: flex-start;
 }
 
 /* =========================

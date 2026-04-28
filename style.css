@@ -1,28 +1,55 @@
+/* =========================
+   BASE
+========================= */
+
 body {
   margin: 0;
   font-family: 'Lora', serif;
-  background: #DDE9E1;
+
+  background: #DDE9E1; /* soft green calm tone */
   color: #26352D;
+
   line-height: 1.8;
 }
 
-/* NAV (mobile safe) */
+/* =========================
+   NAVIGATION (MOBILE SAFE)
+========================= */
+
 nav {
+  position: sticky;
+  top: 0;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 14px;
+
   padding: 16px;
+
   background: rgba(221, 233, 225, 0.92);
   backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(38, 53, 45, 0.08);
 }
 
 nav a {
   text-decoration: none;
   color: #26352D;
+  font-size: 15px;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* HERO */
+nav a:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
   height: 70vh;
   background-size: cover;
@@ -37,60 +64,119 @@ nav a {
   background: rgba(221, 233, 225, 0.12);
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
   max-width: 780px;
   margin: -80px auto 60px auto;
   padding: 50px 30px;
+
   background: rgba(255,255,255,0.80);
   border-radius: 20px;
+
+  box-shadow: 0 20px 40px rgba(40, 80, 55, 0.08);
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
+
 .button {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 26px;
+
   background: #7FAF8C;
   color: white;
+
   border-radius: 30px;
   text-decoration: none;
+
+  transition: all 0.2s ease;
 }
 
-/* IMAGE ROW FIX */
+.button:hover {
+  background: #6F9E7F;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   IMAGE LAYOUT (WILLOW + FERN)
+========================= */
+
 .image-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
+
   flex-wrap: wrap;
   margin: 25px 0;
 }
 
-.image-block {
+/* equal-width cards */
+.image-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 360px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* SAME SIZE IMAGES */
-.image-block img {
+/* images */
+.image-card img {
   width: 100%;
-  max-width: 340px;
   border-radius: 14px;
   object-fit: cover;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
-/* TEXT UNDER EACH IMAGE */
-.image-block p {
+/* text under images */
+.image-card p {
   text-align: center;
   margin-top: 10px;
+  padding: 0 5px;
 }
 
-/* FOOTER */
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2 {
+  color: #26352D;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   text-align: center;
   padding: 30px;
   font-size: 14px;
+
   color: rgba(38, 53, 45, 0.7);
+}
+
+/* =========================
+   RESPONSIVE SAFETY
+========================= */
+
+@media (max-width: 600px) {
+  .container {
+    margin: -60px auto 40px auto;
+    padding: 30px 20px;
+  }
+
+  .image-card {
+    min-width: 100%;
+  }
 }

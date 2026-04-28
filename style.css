@@ -1,128 +1,63 @@
-body {
-  margin: 0;
-  font-family: 'Lora', serif;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  /* soft pistachio base */
-  background: radial-gradient(circle at top, #f3f7f1, #e6efe6);
+  <title>Willow Fern Reiki</title>
 
-  color: #2b3a33;
-  line-height: 1.8;
-}
+  <meta name="description" content="Willow Fern Reiki offers gentle Reiki healing sessions to restore balance, calm, and wellbeing in the UK.">
+  <meta name="keywords" content="Reiki, Reiki healing UK, energy healing, spiritual healing, wellness, holistic therapy">
+  <meta name="author" content="Willow Fern Reiki">
 
-/* HERO */
-header {
-  text-align: center;
-  padding: 120px 20px;
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
-  background:
-    linear-gradient(
-      rgba(243,247,241,0.78),
-      rgba(230,239,230,0.78)
-    ),
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    /* Reiki hands image */
-    url("https://images.unsplash.com/photo-1519821172147-b5d8b2c1b7c1?auto=format&fit=crop&w=1800&q=80");
+<body>
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+<header>
+  <h1>Willow Fern Reiki</h1>
+  <p>Gentle energy healing to restore balance, calm, and clarity</p>
+  <a href="#about" class="button">Begin Your Healing Journey</a>
+</header>
 
-h1 {
-  font-size: 52px;
-  margin-bottom: 10px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: #2b3a33;
-}
+<section id="about">
+  <h2>About Reiki</h2>
+  <p>
+    Reiki is a gentle, non-invasive energy healing practice that helps release stress,
+    restore balance, and support emotional and physical wellbeing.
+  </p>
+</section>
 
-header p {
-  font-size: 18px;
-  max-width: 650px;
-  margin: 0 auto;
-  color: #3b4a41;
-}
+<section id="story">
+  <h2>My Approach</h2>
+  <p>
+    My work is intuitive, calm, and grounded. Each session is guided by your energy
+    and what your system needs most in that moment.
+  </p>
+</section>
 
-/* BUTTON */
-.button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 28px;
+<section id="services">
+  <h2>Sessions</h2>
+  <ul>
+    <li>1:1 Reiki Healing Session (In Person)</li>
+    <li>Distance Reiki Healing</li>
+    <li>Energy Balancing & Emotional Release</li>
+  </ul>
+</section>
 
-  background: #8fae93; /* pistachio green */
-  color: white;
+<section id="contact">
+  <h2>Connect</h2>
+  <p>Email: hello@willowfernreiki.co.uk</p>
+</section>
 
-  text-decoration: none;
-  border-radius: 40px;
+<footer>
+  <p>© 2026 Willow Fern Reiki • Healing energy for mind, body & spirit</p>
+</footer>
 
-  transition: 0.3s ease;
-  font-size: 15px;
-}
-
-.button:hover {
-  background: #7f9f85;
-  transform: translateY(-2px);
-}
-
-/* SECTIONS */
-section {
-  max-width: 850px;
-  margin: 30px auto;
-  padding: 70px 20px;
-
-  background: rgba(255,255,255,0.7);
-  border-radius: 16px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* HEADINGS */
-h2 {
-  font-size: 30px;
-  margin-bottom: 18px;
-  font-weight: 500;
-  color: #2b3a33;
-}
-
-/* TEXT */
-p {
-  font-size: 16.5px;
-  color: #3a3a3a;
-}
-
-/* LIST */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 50px;
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-/* ========================= */
-/* FERN + WILLOW VISUAL LAYER */
-/* ========================= */
-
-section#about {
-  background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay;
-}
-
-section#story {
-  background-image: url("https://images.unsplash.com/photo-1502780402662-acc01917c3b7?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay;
-}
+</body>
+</html>
   opacity: 0.7;
 }

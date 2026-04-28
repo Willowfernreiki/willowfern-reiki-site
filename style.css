@@ -1,3 +1,4 @@
+
 /* =========================
    BASE
 ========================= */
@@ -7,7 +8,7 @@ body {
   font-family: 'Lora', serif;
 
   background: #DDE9E1;
-  color: #26352D; /* ALL TEXT SAME DARK GREEN */
+  color: #26352D;
 
   line-height: 1.8;
 }
@@ -41,13 +42,13 @@ nav a {
   transition: all 0.2s ease;
 }
 
-/* ONLY hovered link becomes bold */
+/* only hovered item becomes bold */
 nav a:hover {
   font-weight: bold;
 }
 
 /* =========================
-   HERO
+   HERO (HOME PAGE)
 ========================= */
 
 .hero {
@@ -59,6 +60,26 @@ nav a:hover {
 }
 
 .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(221, 233, 225, 0.12);
+}
+
+/* =========================
+   HERO (SERVICES PAGE FIX)
+========================= */
+
+.hero-services {
+  height: 50vh;
+  background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1800&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.hero-services::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -90,7 +111,7 @@ nav a:hover {
   padding: 12px 26px;
 
   background: #7FAF8C;
-  color: white; /* KEEP WHITE */
+  color: white;
   font-weight: bold;
 
   border-radius: 30px;
@@ -105,7 +126,7 @@ nav a:hover {
 }
 
 /* =========================
-   IMAGE SECTION
+   IMAGE LAYOUT
 ========================= */
 
 .image-row {
@@ -137,22 +158,33 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-.image-text {
-  margin-top: 12px;
-  text-align: center;
-
-  min-height: 90px;
-
-  transition: transform 0.3s ease;
-}
-
-/* subtle hover */
+/* hover pop effect */
 .image-card:hover img {
   transform: scale(1.03);
 }
 
+/* text under images */
+.image-text {
+  margin-top: 12px;
+  text-align: center;
+
+  transition: transform 0.3s ease;
+}
+
 .image-card:hover .image-text {
   transform: translateY(-3px);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2 {
+  color: #26352D;
+}
+
+p {
+  color: #26352D;
 }
 
 /* =========================
@@ -163,6 +195,7 @@ footer {
   text-align: center;
   padding: 30px;
   font-size: 14px;
+
   color: rgba(38, 53, 45, 0.7);
 }
 
@@ -177,5 +210,9 @@ footer {
 
   .image-card {
     min-width: 100%;
+  }
+
+  .image-card img {
+    height: 220px;
   }
 }

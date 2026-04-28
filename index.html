@@ -12,6 +12,33 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- IMAGE FIX: ensures all images scale consistently -->
+  <style>
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      margin: 20px 0;
+      object-fit: cover;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1600967287356-4866c77f528c?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(221, 233, 225, 0.12);
+    }
+  </style>
 </head>
 
 <body>
@@ -23,8 +50,8 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- WEIGHTED HERO IMAGE: WEIRD / MISTY WILLOW -->
-<div class="hero" style="background-image: url('https://images.unsplash.com/photo-1600967287356-4866c77f528c?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+<!-- HERO -->
+<div class="hero"></div>
 
 <div class="container">
 
@@ -44,14 +71,14 @@
 
   <h2>Healing in Harmony with Nature</h2>
 
-  <!-- FERN CLOSE-UP WITH DEW -->
+  <!-- FERN IMAGE -->
   <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg" alt="Close-up fern with morning dew">
 
   <p>
     The fern reflects renewal, softness, and natural resilience — thriving quietly in its environment.
   </p>
 
-  <!-- WILLOW TREE BY WATER / MIST -->
+  <!-- WILLOW IMAGE -->
   <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=80" alt="Weeping willow tree by creek with morning mist">
 
   <p>

@@ -1,59 +1,119 @@
 body {
   margin: 0;
   font-family: 'Lora', serif;
-  background: #f3f7f1;
-  color: #2b3a33;
+  background: #f4f8f3;
+  color: #2c3a33;
   line-height: 1.8;
 }
 
 /* NAVBAR */
 nav {
-  background: #e6efe6;
-  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: rgba(244,248,243,0.85);
+  backdrop-filter: blur(10px);
+  padding: 18px;
   text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 18px;
   text-decoration: none;
-  color: #2b3a33;
-  font-weight: 500;
+  color: #2c3a33;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
 }
 
-/* HERO IMAGE */
+nav a:hover {
+  opacity: 0.6;
+}
+
+/* HERO */
 .hero {
-  height: 300px;
+  height: 420px;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
-/* CONTENT */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(244,248,243,0.4),
+    rgba(244,248,243,0.9)
+  );
+}
+
+/* CONTAINER */
 .container {
-  max-width: 850px;
-  margin: auto;
-  padding: 40px 20px;
+  max-width: 780px;
+  margin: -80px auto 60px auto;
+  padding: 50px 30px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-/* HEADINGS */
-h1, h2 {
+/* TYPOGRAPHY */
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
   font-weight: 500;
+}
+
+h2 {
+  font-size: 26px;
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16.5px;
+  color: #3c4a43;
+}
+
+/* IMAGES */
+img {
+  width: 100%;
+  border-radius: 14px;
+  margin: 20px 0;
 }
 
 /* BUTTON */
 .button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #8fae93;
+  margin-top: 25px;
+  padding: 12px 26px;
+  background: #9bbfa3;
   color: white;
   text-decoration: none;
   border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: #88ab90;
+  transform: translateY(-2px);
+}
+
+/* LIST */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.6;
 }

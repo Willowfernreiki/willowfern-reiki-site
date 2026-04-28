@@ -1,5 +1,5 @@
 /* =========================
-   BASE STYLES
+   BASE
 ========================= */
 
 body {
@@ -7,7 +7,7 @@ body {
   font-family: 'Lora', serif;
 
   background: #DDE9E1;
-  color: #26352D;
+  color: #26352D; /* ALL TEXT SAME DARK GREEN */
 
   line-height: 1.8;
 }
@@ -38,12 +38,12 @@ nav a {
   color: #26352D;
   font-size: 15px;
 
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
+/* ONLY hovered link becomes bold */
 nav a:hover {
-  opacity: 0.7;
-  transform: translateY(-1px);
+  font-weight: bold;
 }
 
 /* =========================
@@ -81,7 +81,7 @@ nav a:hover {
 }
 
 /* =========================
-   BUTTON (UPDATED)
+   BUTTON
 ========================= */
 
 .button {
@@ -90,8 +90,8 @@ nav a:hover {
   padding: 12px 26px;
 
   background: #7FAF8C;
-  color: white;
-  font-weight: bold; /* ✔ bold text */
+  color: white; /* KEEP WHITE */
+  font-weight: bold;
 
   border-radius: 30px;
   text-decoration: none;
@@ -105,19 +105,17 @@ nav a:hover {
 }
 
 /* =========================
-   IMAGE ROW
+   IMAGE SECTION
 ========================= */
 
 .image-row {
   display: flex;
   justify-content: center;
   gap: 14px;
-
   flex-wrap: wrap;
   margin: 25px 0;
 }
 
-/* IMAGE CARD */
 .image-card {
   flex: 1;
   min-width: 280px;
@@ -126,62 +124,35 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  transition: transform 0.3s ease; /* smooth hover */
 }
 
-/* IMAGE */
 .image-card img {
   width: 100%;
   height: 260px;
   object-fit: cover;
 
   border-radius: 14px;
-
   box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* TEXT UNDER IMAGE */
 .image-text {
   margin-top: 12px;
   text-align: center;
 
-  line-height: 1.6;
-
   min-height: 90px;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
 
   transition: transform 0.3s ease;
 }
 
-/* =========================
-   HOVER EFFECT (SUBTLE POP)
-========================= */
-
+/* subtle hover */
 .image-card:hover img {
   transform: scale(1.03);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.10);
 }
 
 .image-card:hover .image-text {
   transform: translateY(-3px);
-}
-
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-h1, h2 {
-  color: #26352D;
-}
-
-p {
-  margin-bottom: 18px;
 }
 
 /* =========================
@@ -192,7 +163,6 @@ footer {
   text-align: center;
   padding: 30px;
   font-size: 14px;
-
   color: rgba(38, 53, 45, 0.7);
 }
 
@@ -207,9 +177,5 @@ footer {
 
   .image-card {
     min-width: 100%;
-  }
-
-  .image-card img {
-    height: 220px;
   }
 }

@@ -4,7 +4,14 @@ body {
   background: #EAEDE9;
   color: #2F3A33;
   line-height: 1.8;
+
+  /* subtle page fade-in */
+  animation: fadeIn 0.6s ease;
 }
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
   position: sticky;
@@ -21,7 +28,20 @@ nav a {
   text-decoration: none;
   color: #2F3A33;
   font-size: 15px;
+
+  /* smooth hover transition */
+  transition: all 0.25s ease;
 }
+
+/* subtle hover lift */
+nav a:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .button {
   display: inline-block;
@@ -31,12 +51,20 @@ nav a {
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  transition: 0.3s ease;
+
+  transition: all 0.25s ease;
 }
 
+/* soft lift + tone shift */
 .button:hover {
   background: #9FB19A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
+
+/* =========================
+   CONTAINER (CARDS / SECTIONS)
+========================= */
 
 .container {
   max-width: 780px;
@@ -46,11 +74,52 @@ nav a {
   border-radius: 20px;
   backdrop-filter: blur(8px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+
+  /* subtle entry animation */
+  animation: fadeUp 0.7s ease;
+  transition: all 0.3s ease;
 }
+
+/* gentle hover lift for sections */
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   height: 70vh;
   background-size: cover;
   background-position: center;
   filter: saturate(0.9) contrast(1.05);
+
+  /* soft fade in */
+  animation: fadeIn 1s ease;
+}
+
+/* =========================
+   KEYFRAME ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="A curated library of books for personal growth, emotional healing and spiritual development.">
-  <meta name="keywords" content="spiritual books, personal growth books, mindfulness, healing books">
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -27,7 +26,6 @@
       padding: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       transition: all 0.25s ease;
-      text-align: center;
     }
 
     .book-card:hover {
@@ -35,28 +33,41 @@
       box-shadow: 0 18px 35px rgba(0,0,0,0.08);
     }
 
-    .book-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 12px;
+    .book-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .book-tag {
+      font-size: 12px;
+      color: #6F9E7F;
+      margin-bottom: 8px;
+    }
+
+    .book-note {
+      font-size: 14px;
+      margin-bottom: 10px;
     }
 
     .affiliate-button {
       display: inline-block;
-      margin-top: 10px;
       padding: 10px 16px;
       border-radius: 25px;
       background: #7FAF8C;
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.2s ease;
     }
 
     .affiliate-button:hover {
       background: #6F9E7F;
+    }
+
+    .highlight {
+      background: rgba(127, 175, 140, 0.15);
+      padding: 18px;
+      border-radius: 16px;
+      margin-top: 20px;
     }
 
     .disclaimer {
@@ -85,75 +96,31 @@
   <h1>The Growth Library</h1>
 
   <p>
-    A curated collection of books that support personal growth, emotional wellbeing,
-    and spiritual development. These can complement your Reiki journey and support
-    deeper self-awareness.
+    If you're not sure where to begin, start with one of the recommendations below.
+    These are books many people return to during periods of change, stress, or personal growth.
   </p>
 
-  <!-- SPIRITUAL FOUNDATIONS -->
-  <h2>Spiritual Foundations</h2>
+  <!-- START HERE -->
+  <div class="highlight">
 
-  <div class="library-grid">
+    <h2>Start Here</h2>
 
-    <div class="book-card">
-      <h3>The Power of Now — Eckhart Tolle</h3>
-      <p>Living fully in the present moment.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
+    <div class="library-grid">
 
-    <div class="book-card">
-      <h3>A New Earth — Eckhart Tolle</h3>
-      <p>Understanding ego and awakening.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
+      <div class="book-card">
+        <div class="book-title">The Power of Now — Eckhart Tolle</div>
+        <div class="book-tag">Best for: anxiety, overthinking</div>
+        <div class="book-note">A simple but powerful shift into presence.</div>
+        <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
+      </div>
 
-    <div class="book-card">
-      <h3>The Untethered Soul — Michael A. Singer</h3>
-      <p>Inner freedom through awareness.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
+      <div class="book-card">
+        <div class="book-title">The Untethered Soul — Michael A. Singer</div>
+        <div class="book-tag">Best for: emotional freedom</div>
+        <div class="book-note">Understanding your inner voice and letting go.</div>
+        <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
+      </div>
 
-    <div class="book-card">
-      <h3>The Surrender Experiment — Michael A. Singer</h3>
-      <p>Letting life unfold naturally.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>Letting Go — David R. Hawkins</h3>
-      <p>Releasing emotional blocks.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>The Map of Consciousness Explained — David R. Hawkins</h3>
-      <p>Understanding levels of awareness.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>Healing and Recovery — David R. Hawkins</h3>
-      <p>Healing through consciousness.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-  </div>
-
-  <!-- ENERGY + SCIENCE -->
-  <h2>Energy & Consciousness</h2>
-
-  <div class="library-grid">
-
-    <div class="book-card">
-      <h3>The Field — Lynne McTaggart</h3>
-      <p>The science behind energy connection.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>The Power of Eight — Lynne McTaggart</h3>
-      <p>Group intention and healing.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
     </div>
 
   </div>
@@ -164,76 +131,44 @@
   <div class="library-grid">
 
     <div class="book-card">
-      <h3>In the Realm of Hungry Ghosts — Gabor Maté</h3>
-      <p>Understanding addiction and trauma.</p>
+      <div class="book-title">When the Body Says No — Gabor Maté</div>
+      <div class="book-tag">Best for: stress, burnout</div>
+      <div class="book-note">Explores how stress affects physical health.</div>
       <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
     </div>
 
     <div class="book-card">
-      <h3>When the Body Says No — Gabor Maté</h3>
-      <p>Stress and its impact on health.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>Radical Forgiveness — Colin Tipping</h3>
-      <p>Transforming emotional pain.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>Heal Your Body — Louise Hay</h3>
-      <p>Mind-body healing connections.</p>
+      <div class="book-title">Radical Forgiveness — Colin Tipping</div>
+      <div class="book-tag">Best for: letting go of the past</div>
+      <div class="book-note">A different perspective on emotional healing.</div>
       <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
     </div>
 
   </div>
 
-  <!-- PERSONAL + PHILOSOPHY -->
-  <h2>Personal Growth & Philosophy</h2>
+  <!-- SPIRITUAL -->
+  <h2>Spiritual Growth</h2>
 
   <div class="library-grid">
 
     <div class="book-card">
-      <h3>The Four Agreements — Don Miguel Ruiz</h3>
-      <p>Simple principles for freedom.</p>
+      <div class="book-title">A New Earth — Eckhart Tolle</div>
+      <div class="book-tag">Best for: awakening, awareness</div>
+      <div class="book-note">A deeper exploration of consciousness.</div>
       <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
     </div>
 
     <div class="book-card">
-      <h3>The Fifth Agreement — Don Miguel Ruiz</h3>
-      <p>Deepening awareness and truth.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>The Law of Attraction — Esther & Jerry Hicks</h3>
-      <p>Energy, intention and manifestation.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>How to Be a Stoic — Massimo Pigliucci</h3>
-      <p>Ancient philosophy for modern life.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>The Enchanted Life — Sharon Blackie</h3>
-      <p>Meaning through nature and myth.</p>
-      <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
-    </div>
-
-    <div class="book-card">
-      <h3>The Alchemist — Paulo Coelho</h3>
-      <p>A story of purpose and destiny.</p>
+      <div class="book-title">Letting Go — David R. Hawkins</div>
+      <div class="book-tag">Best for: emotional release</div>
+      <div class="book-note">Practical approach to releasing stored emotions.</div>
       <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
     </div>
 
   </div>
 
   <p class="disclaimer">
-    Some links on this page may be affiliate links. This means a small commission may be earned if you choose to purchase, at no additional cost to you.
+    Some links may be affiliate links. This means a small commission may be earned at no additional cost to you.
   </p>
 
 </div>

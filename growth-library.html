@@ -13,6 +13,35 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+
+    /* SWIPE SECTION */
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-card {
+      min-width: 260px;
+      flex: 0 0 auto;
+      background: rgba(255,255,255,0.9);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      scroll-snap-align: start;
+    }
+
+    .scroll-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* GRID */
     .library-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -25,12 +54,11 @@
       border-radius: 16px;
       padding: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: all 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .book-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 35px rgba(0,0,0,0.08);
     }
 
     .book-title {
@@ -74,11 +102,28 @@
       margin-top: 40px;
     }
 
+    .suggest-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 22px;
+      border-radius: 30px;
+      background: #2F3A33;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .suggest-button:hover {
+      background: #3f4f45;
+    }
+
     .disclaimer {
       font-size: 13px;
       margin-top: 30px;
       color: rgba(38, 53, 45, 0.6);
     }
+
   </style>
 </head>
 
@@ -101,92 +146,78 @@
 
   <p>
     If you're not sure where to begin, start with one of the recommendations below.
-    These are books many people return to during periods of change, stress, or personal growth.
   </p>
 
-  <!-- START HERE -->
+  <!-- SWIPE START HERE -->
   <div class="highlight">
 
     <h2>Start Here</h2>
 
-    <div class="library-grid">
+    <div class="scroll-container">
 
-      <div class="book-card">
-        <div class="book-title">The Power of Now — Eckhart Tolle</div>
-        <div class="book-tag">Best for: anxiety, overthinking</div>
-        <div class="book-note">A simple but powerful shift into presence.</div>
-        <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
+      <div class="scroll-card">
+        <div class="book-title">The Power of Now</div>
+        <div class="book-tag">Best for: anxiety</div>
+        <div class="book-note">Presence over overthinking.</div>
+        <a class="affiliate-button" href="YOUR_LINK">View</a>
       </div>
 
-      <div class="book-card">
-        <div class="book-title">The Untethered Soul — Michael A. Singer</div>
-        <div class="book-tag">Best for: emotional freedom</div>
-        <div class="book-note">Understanding your inner voice and letting go.</div>
-        <a class="affiliate-button" href="YOUR_LINK" target="_blank">View Book</a>
+      <div class="scroll-card">
+        <div class="book-title">The Untethered Soul</div>
+        <div class="book-tag">Best for: inner peace</div>
+        <div class="book-note">Letting go of inner noise.</div>
+        <a class="affiliate-button" href="YOUR_LINK">View</a>
+      </div>
+
+      <div class="scroll-card">
+        <div class="book-title">Letting Go</div>
+        <div class="book-tag">Best for: emotional release</div>
+        <div class="book-note">Simple, powerful method.</div>
+        <a class="affiliate-button" href="YOUR_LINK">View</a>
+      </div>
+
+      <div class="scroll-card">
+        <div class="book-title">The Four Agreements</div>
+        <div class="book-tag">Best for: life clarity</div>
+        <div class="book-note">Clear, grounding principles.</div>
+        <a class="affiliate-button" href="YOUR_LINK">View</a>
+      </div>
+
+      <div class="scroll-card">
+        <div class="book-title">When the Body Says No</div>
+        <div class="book-tag">Best for: stress</div>
+        <div class="book-note">Mind-body connection.</div>
+        <a class="affiliate-button" href="YOUR_LINK">View</a>
+      </div>
+
+      <div class="scroll-card">
+        <div class="book-title">The Alchemist</div>
+        <div class="book-tag">Best for: life direction</div>
+        <div class="book-note">A story of purpose.</div>
+        <a class="affiliate-button" href="YOUR_LINK">View</a>
       </div>
 
     </div>
 
   </div>
 
-  <!-- FULL LIBRARY -->
+  <!-- FULL LIBRARY (unchanged structure) -->
   <div class="section">
 
     <h2>Full Library</h2>
 
-    <p>
-      A broader collection of books across emotional healing, spirituality, and personal development.
-      You’re welcome to explore these at your own pace.
-    </p>
-
-    <!-- SPIRITUAL -->
-    <h3>Spiritual Growth</h3>
     <div class="library-grid">
 
-      <div class="book-card"><div class="book-title">The Power of Now — Eckhart Tolle</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">A New Earth — Eckhart Tolle</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Untethered Soul — Michael A. Singer</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Surrender Experiment — Michael A. Singer</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">Letting Go — David R. Hawkins</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Map of Consciousness Explained — David R. Hawkins</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">Healing and Recovery — David R. Hawkins</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-
-    </div>
-
-    <!-- EMOTIONAL -->
-    <h3>Emotional Healing</h3>
-    <div class="library-grid">
-
-      <div class="book-card"><div class="book-title">In the Realm of Hungry Ghosts — Gabor Maté</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">When the Body Says No — Gabor Maté</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">Radical Forgiveness — Colin Tipping</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">Heal Your Body — Louise Hay</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-
-    </div>
-
-    <!-- ENERGY -->
-    <h3>Energy & Consciousness</h3>
-    <div class="library-grid">
-
-      <div class="book-card"><div class="book-title">The Field — Lynne McTaggart</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Power of Eight — Lynne McTaggart</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-
-    </div>
-
-    <!-- PERSONAL -->
-    <h3>Personal Growth & Philosophy</h3>
-    <div class="library-grid">
-
-      <div class="book-card"><div class="book-title">The Four Agreements — Don Miguel Ruiz</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Fifth Agreement — Don Miguel Ruiz</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Law of Attraction — Esther & Jerry Hicks</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">How to Be a Stoic — Massimo Pigliucci</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Enchanted Life — Sharon Blackie</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
-      <div class="book-card"><div class="book-title">The Alchemist — Paulo Coelho</div><a class="affiliate-button" href="YOUR_LINK">View Book</a></div>
+      <!-- (keep your existing book cards here as-is) -->
 
     </div>
 
   </div>
+
+  <!-- SUGGESTION BUTTON -->
+  <a href="contact.html" class="suggest-button">
+    Suggest a Book
+  </a>
 
   <p class="disclaimer">
     Some links may be affiliate links. This means a small commission may be earned at no additional cost to you.

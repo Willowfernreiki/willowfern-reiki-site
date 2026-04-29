@@ -8,26 +8,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Client testimonials for Willow Fern Reiki UK. Experiences of relaxation, emotional balance, and Reiki healing sessions.">
-  <meta name="keywords" content="Reiki testimonials, Reiki reviews UK, energy healing feedback, Reiki London clients">
-  <meta name="author" content="Willow Fern Reiki">
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .testimonial {
-      margin-bottom: 35px;
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 20px;
     }
 
-    .testimonial p {
+    .testimonial-card {
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: all 0.25s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.08);
+    }
+
+    .testimonial-text {
       font-style: italic;
       font-size: 16px;
+      margin-bottom: 10px;
     }
 
-    .client {
+    .testimonial-client {
       font-size: 13px;
       color: rgba(38, 53, 45, 0.7);
-      margin-top: 6px;
+    }
+
+    @media (min-width: 700px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -53,28 +73,32 @@
     A selection of experiences shared by clients following Reiki sessions.
   </p>
 
-  <div class="testimonial">
-    <p>
-      “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time.
-      It felt like everything just settled. I left feeling clearer and more grounded.”
-    </p>
-    <div class="client">Andy — Creative</div>
-  </div>
+  <div class="testimonials-grid">
 
-  <div class="testimonial">
-    <p>
-      “As someone constantly giving energy to others, this was the first time I felt like I had space to reset.
-      It was deeply calming and I noticed the difference in my stress levels for days afterwards.”
-    </p>
-    <div class="client">Sarah — Primary School Teacher</div>
-  </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time.
+        It felt like everything just settled. I left feeling clearer and more grounded.”
+      </div>
+      <div class="testimonial-client">Andy — Creative</div>
+    </div>
 
-  <div class="testimonial">
-    <p>
-      “I was initially sceptical, but I found the experience surprisingly effective.
-      It helped me switch off from work pressure and I felt noticeably more balanced afterwards.”
-    </p>
-    <div class="client">David — Finance Analyst, City of London</div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        “As someone constantly giving energy to others, this was the first time I felt like I had space to reset.
+        It was deeply calming and I noticed the difference in my stress levels for days afterwards.”
+      </div>
+      <div class="testimonial-client">Sarah — Primary School Teacher</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        “I was initially sceptical, but I found the experience surprisingly effective.
+        It helped me switch off from work pressure and I felt noticeably more balanced afterwards.”
+      </div>
+      <div class="testimonial-client">David — Finance Analyst, City of London</div>
+    </div>
+
   </div>
 
 </div>

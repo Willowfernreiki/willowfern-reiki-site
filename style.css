@@ -1,32 +1,79 @@
+/* =====================================================
+   WILLLOW & FERN REIKI — DESIGN SYSTEM v1
+   Unified styling across all pages
+===================================================== */
 
-/* ===== HERO ===== */
-.hero {
-  height: 50vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin-bottom: 40px;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(221, 233, 225, 0.12);
+body {
+  font-family: 'Lora', serif;
+  background: #f7f6f3;
+  color: #26352D;
+  line-height: 1.7;
 }
 
-/* ===== GENERAL LAYOUT ===== */
+/* ===== LAYOUT ===== */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px 20px;
 }
 
-h1, h2 {
+/* ===== TYPOGRAPHY ===== */
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* ===== NAVIGATION (UNIFIED + ACTIVE STATE) ===== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px 24px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+nav a {
+  text-decoration: none;
   color: #26352D;
+  font-weight: 400;
+  position: relative;
+  transition: 0.2s ease;
+  padding-bottom: 4px;
 }
 
-/* ===== BUTTON (SITE WIDE CONSISTENCY) ===== */
+/* hover = subtle emphasis */
+nav a:hover {
+  font-weight: 600;
+}
+
+/* active page state */
+nav a.active {
+  font-weight: 700;
+  border-bottom: 2px solid #AEBFA9;
+}
+
+/* ===== BUTTON SYSTEM ===== */
 .button {
   display: inline-block;
   margin-top: 15px;
@@ -45,7 +92,25 @@ h1, h2 {
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
-/* ===== IMAGE GRID ===== */
+/* ===== HERO ===== */
+.hero,
+.hero-services {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.hero::before,
+.hero-services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(221, 233, 225, 0.12);
+}
+
+/* ===== IMAGE BLOCKS ===== */
 .image-row {
   display: flex;
   gap: 20px;
@@ -80,66 +145,23 @@ h1, h2 {
   transform: translateY(-2px);
 }
 
-/* ===== NAV ===== */
-nav {
-  display: flex;
-  gap: 20px;
-  padding: 15px 20px;
-  background: white;
-}
-
-nav a {
-  text-decoration: none;
-  color: #26352D;
-  transition: 0.2s ease;
-}
-
-nav a:hover {
-  font-weight: 600;
-}
-
-nav a.active {
-  font-weight: 700;
-  border-bottom: 2px solid #AEBFA9;
-}
-
-/* ===== TESTIMONIAL CAROUSEL ===== */
-.testimonial-carousel-wrapper {
-  position: relative;
-  margin-top: 20px;
-}
-
-.testimonial-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 16px;
-  padding: 10px 0;
-}
-
-.testimonial-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.testimonial-slide {
-  min-width: 280px;
+/* ===== CARDS (GENERAL USE) ===== */
+.card {
   background: rgba(255,255,255,0.85);
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.testimonial-slide:hover {
+.card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.08);
 }
 
+/* ===== TESTIMONIALS ===== */
 .testimonial-text {
   font-style: italic;
   margin-bottom: 10px;
-  line-height: 1.6;
 }
 
 .testimonial-name {
@@ -147,32 +169,40 @@ nav a.active {
   color: rgba(38, 53, 45, 0.7);
 }
 
-/* ARROWS */
-.testimonial-arrow {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.95);
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+/* ===== FORM STYLING ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-.testimonial-arrow:hover {
-  transform: translateY(-50%) scale(1.1);
+input,
+textarea,
+select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(38, 53, 45, 0.2);
+  font-family: inherit;
+  background: white;
 }
 
-.testimonial-arrow.left { left: -10px; }
-.testimonial-arrow.right { right: -10px; }
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #AEBFA9;
+}
 
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 30px 20px;
-  color: rgba(38, 53, 45, 0.7);
+  padding: 40px 20px;
   margin-top: 60px;
+  color: rgba(38, 53, 45, 0.7);
+}
+
+/* ===== SCROLL BEHAVIOUR ===== */
+html {
+  scroll-behavior: smooth;
 }

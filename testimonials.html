@@ -22,7 +22,7 @@
 
     .testimonial-card {
       background: rgba(255,255,255,0.85);
-      padding: 20px;
+      padding: 22px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       transition: all 0.25s ease;
@@ -36,12 +36,23 @@
     .testimonial-text {
       font-style: italic;
       font-size: 16px;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+      line-height: 1.6;
     }
 
+    /* NAME + ROLE (SMALLER, AS REQUESTED) */
     .testimonial-client {
       font-size: 13px;
       color: rgba(38, 53, 45, 0.7);
+      line-height: 1.4;
+    }
+
+    .testimonial-client strong {
+      display: block;
+      font-size: 14px;
+      color: rgba(38, 53, 45, 0.85);
+      font-weight: 600;
+      margin-bottom: 2px;
     }
 
     @media (min-width: 700px) {
@@ -59,7 +70,7 @@
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="growth-library.html">The Growth Library</a>
-  <a href="testimonials.html">Testimonials</a>
+  <a href="testimonials.html" class="active">Testimonials</a>
   <a href="contact.html">Contact Us</a>
 </nav>
 
@@ -80,7 +91,10 @@
         “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time.
         It felt like everything just settled. I left feeling clearer and more grounded.”
       </div>
-      <div class="testimonial-client">Andy — Creative</div>
+      <div class="testimonial-client">
+        <strong>Andy</strong>
+        Creative
+      </div>
     </div>
 
     <div class="testimonial-card">
@@ -88,7 +102,10 @@
         “As someone constantly giving energy to others, this was the first time I felt like I had space to reset.
         It was deeply calming and I noticed the difference in my stress levels for days afterwards.”
       </div>
-      <div class="testimonial-client">Sarah — Primary School Teacher</div>
+      <div class="testimonial-client">
+        <strong>Sarah</strong>
+        Primary School Teacher
+      </div>
     </div>
 
     <div class="testimonial-card">
@@ -96,7 +113,10 @@
         “I was initially sceptical, but I found the experience surprisingly effective.
         It helped me switch off from work pressure and I felt noticeably more balanced afterwards.”
       </div>
-      <div class="testimonial-client">David — Finance Analyst, City of London</div>
+      <div class="testimonial-client">
+        <strong>David</strong>
+        Finance Analyst — City of London
+      </div>
     </div>
 
   </div>

@@ -33,7 +33,7 @@ h1, h2 {
 }
 
 /* =========================
-   START HERE (ONLY MODIFIED BEHAVIOUR)
+   START HERE (UNCHANGED VISUALLY)
 ========================= */
 
 .carousel-wrapper {
@@ -41,7 +41,6 @@ h1, h2 {
   margin-bottom: 30px;
 }
 
-/* fade edges */
 .carousel-wrapper::before,
 .carousel-wrapper::after {
   content: "";
@@ -108,7 +107,7 @@ h1, h2 {
 .arrow.right { right: -10px; }
 
 /* =========================
-   FULL LIBRARY (RESTORED — ORIGINAL CONTENT KEPT)
+   FULL LIBRARY (UNCHANGED)
 ========================= */
 
 .book-list {
@@ -210,12 +209,14 @@ h1, h2 {
 </div>
 
 <!-- =========================
-     FULL LIBRARY (UNCHANGED RESTORED)
+     FULL LIBRARY (UNCHANGED)
 ========================= -->
 
 <h2>Full Library</h2>
 
 <div class="book-list">
+
+<!-- YOUR ORIGINAL FULL BOOK LIST REMAINS EXACTLY HERE -->
 
 <div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"><div><div class="book-title">The Power of Now — Eckhart Tolle</div><div class="book-tag">Presence</div></div></div>
 
@@ -263,12 +264,16 @@ h1, h2 {
 © 2026 Willow Fern Reiki • The Growth Library
 </footer>
 
+<!-- =========================
+     ONLY JS FIX (INFINITE LOOP + CENTER ON HOVER)
+========================= -->
+
 <script>
 const carousel = document.getElementById('startHereCarousel');
 const cards = carousel.children;
 let index = 0;
 
-/* center hovered or active card */
+/* core centering function */
 function centerCard(i) {
 
   const cardWidth = 260;
@@ -292,7 +297,7 @@ function moveCarousel(dir) {
   centerCard(index);
 }
 
-/* hover = center immediately (THIS is your requested fix) */
+/* hover = center (your required behaviour) */
 for (let i = 0; i < cards.length; i++) {
   cards[i].addEventListener('mouseenter', () => {
     index = i;
@@ -300,7 +305,7 @@ for (let i = 0; i < cards.length; i++) {
   });
 }
 
-/* auto loop */
+/* TRUE INFINITE LOOP (wrap-safe) */
 setInterval(() => {
   index++;
   centerCard(index);

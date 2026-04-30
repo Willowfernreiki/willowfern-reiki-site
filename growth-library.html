@@ -13,7 +13,7 @@
 <style>
 
 /* =========================
-   GLOBAL
+   BASE
 ========================= */
 
 body {
@@ -33,7 +33,7 @@ h1, h2 {
 }
 
 /* =========================
-   START HERE (STEP 1 INCLUDED)
+   START HERE CAROUSEL (PREMIUM)
 ========================= */
 
 .carousel-wrapper {
@@ -41,7 +41,7 @@ h1, h2 {
   margin-bottom: 30px;
 }
 
-/* soft luxury fade edges */
+/* fade edges */
 .carousel-wrapper::before,
 .carousel-wrapper::after {
   content: "";
@@ -63,7 +63,7 @@ h1, h2 {
   background: linear-gradient(to left, #faf9f6, transparent);
 }
 
-/* carousel track */
+/* track */
 .scroll-container {
   display: flex;
   gap: 16px;
@@ -85,7 +85,7 @@ h1, h2 {
   transition: all 0.3s ease;
 }
 
-/* active card */
+/* active focus card */
 .scroll-card.active {
   opacity: 1;
   transform: scale(1.06);
@@ -159,6 +159,8 @@ h1, h2 {
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -183,7 +185,7 @@ h1, h2 {
 
 <h1>The Growth Library</h1>
 
-<p>A curated space of books for emotional clarity, healing, and inner growth.</p>
+<p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
 <!-- =========================
      START HERE CAROUSEL
@@ -198,33 +200,28 @@ h1, h2 {
   <div class="scroll-container" id="startHereCarousel">
 
     <div class="scroll-card">
-      <div class="scroll-title">The Power of Now</div>
-      <div class="scroll-tag">Anxiety • Presence</div>
-      <a class="button">View</a>
+      <div>The Power of Now</div>
+      <div class="book-tag">Anxiety • Presence</div>
     </div>
 
     <div class="scroll-card">
-      <div class="scroll-title">The Untethered Soul</div>
-      <div class="scroll-tag">Inner Peace</div>
-      <a class="button">View</a>
+      <div>The Untethered Soul</div>
+      <div class="book-tag">Inner Peace</div>
     </div>
 
     <div class="scroll-card">
-      <div class="scroll-title">Letting Go</div>
-      <div class="scroll-tag">Emotional Release</div>
-      <a class="button">View</a>
+      <div>Letting Go</div>
+      <div class="book-tag">Emotional Release</div>
     </div>
 
     <div class="scroll-card">
-      <div class="scroll-title">The Four Agreements</div>
-      <div class="scroll-tag">Clarity</div>
-      <a class="button">View</a>
+      <div>The Four Agreements</div>
+      <div class="book-tag">Clarity</div>
     </div>
 
     <div class="scroll-card">
-      <div class="scroll-title">When the Body Says No</div>
-      <div class="scroll-tag">Stress • Trauma</div>
-      <a class="button">View</a>
+      <div>When the Body Says No</div>
+      <div class="book-tag">Stress • Trauma</div>
     </div>
 
   </div>
@@ -234,14 +231,50 @@ h1, h2 {
 </div>
 
 <!-- =========================
-     FULL LIBRARY (UNCHANGED)
+     FULL LIBRARY
 ========================= -->
 
 <h2>Full Library</h2>
 
 <div class="book-list">
 
-<!-- (your full book list remains unchanged here — same as before) -->
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"><div><div class="book-title">The Power of Now — Eckhart Tolle</div><div class="book-tag">Presence</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1512820790803-83ca734da794"><div><div class="book-title">A New Earth — Eckhart Tolle</div><div class="book-tag">Awakening</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1528207776546-365bb710ee93"><div><div class="book-title">Radical Forgiveness — Colin Tipping</div><div class="book-tag">Healing</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1455390582262-044cdead277a"><div><div class="book-title">The Untethered Soul — Michael Singer</div><div class="book-tag">Inner Peace</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d"><div><div class="book-title">The Surrender Experiment</div><div class="book-tag">Flow</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1519681393784-d120267933ba"><div><div class="book-title">The Field — Lynne McTaggart</div><div class="book-tag">Energy</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"><div><div class="book-title">The Power of Eight</div><div class="book-tag">Collective Healing</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"><div><div class="book-title">In the Realm of Hungry Ghosts</div><div class="book-tag">Trauma</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da"><div><div class="book-title">When the Body Says No</div><div class="book-tag">Stress</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570"><div><div class="book-title">Letting Go — Hawkins</div><div class="book-tag">Release</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"><div><div class="book-title">Map of Consciousness</div><div class="book-tag">Awareness</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc"><div><div class="book-title">Healing and Recovery</div><div class="book-tag">Healing</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1455885667314-a0d48ep0a0"><div><div class="book-title">How to Be a Stoic</div><div class="book-tag">Clarity</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"><div><div class="book-title">Heal Your Body</div><div class="book-tag">Mind-Body</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1526318472351-c75fcf070305"><div><div class="book-title">Law of Attraction</div><div class="book-tag">Manifestation</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d"><div><div class="book-title">The Four Agreements</div><div class="book-tag">Clarity</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1496104679561-38b3b4d5b7b2"><div><div class="book-title">The Fifth Agreement</div><div class="book-tag">Awareness</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1472173148041-00294f0814a2"><div><div class="book-title">The Enchanted Life</div><div class="book-tag">Nature Wisdom</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"><div><div class="book-title">The Alchemist</div><div class="book-tag">Purpose</div></div></div>
 
 </div>
 
@@ -250,6 +283,57 @@ h1, h2 {
 <footer>
 © 2026 Willow Fern Reiki • The Growth Library
 </footer>
+
+<!-- =========================
+     STEP 2 SCRIPT
+========================= -->
+
+<script>
+const carousel = document.getElementById('startHereCarousel');
+
+let index = 0;
+const cards = carousel.children;
+const total = cards.length;
+
+function updateCarousel() {
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove('active');
+  }
+
+  const activeIndex = (index % total + total) % total;
+
+  cards[activeIndex].classList.add('active');
+
+  const cardWidth = 260;
+
+  carousel.scrollTo({
+    left: activeIndex * cardWidth,
+    behavior: 'smooth'
+  });
+}
+
+function scrollStartHere(direction) {
+  index += direction;
+  updateCarousel();
+}
+
+let autoScroll = setInterval(() => {
+  index++;
+  updateCarousel();
+}, 4500);
+
+carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+
+carousel.addEventListener('mouseleave', () => {
+  autoScroll = setInterval(() => {
+    index++;
+    updateCarousel();
+  }, 4500);
+});
+
+updateCarousel();
+</script>
 
 </body>
 </html>

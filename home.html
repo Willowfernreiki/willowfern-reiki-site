@@ -13,6 +13,85 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hero {
+      height: 50vh;
+      background-image: url('https://images.unsplash.com/photo-1600967287356-4866c77f528c?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(221, 233, 225, 0.12);
+    }
+
+    /* ===== TESTIMONIAL CAROUSEL ===== */
+
+    .testimonial-carousel-wrapper {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .testimonial-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 16px;
+      padding: 10px 0;
+    }
+
+    .testimonial-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-slide {
+      min-width: 280px;
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      flex-shrink: 0;
+      transition: 0.3s ease;
+    }
+
+    .testimonial-slide:hover {
+      transform: translateY(-4px);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .testimonial-name {
+      font-size: 13px;
+      color: rgba(38, 53, 45, 0.7);
+    }
+
+    .testimonial-arrow {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.95);
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-arrow.left { left: -10px; }
+    .testimonial-arrow.right { right: -10px; }
+
+  </style>
 </head>
 
 <body>
@@ -26,7 +105,7 @@
   <a href="contact.html">Contact Us</a>
 </nav>
 
-<div class="hero" style="background-image: url('https://images.unsplash.com/photo-1600967287356-4866c77f528c?q=80&w=1600&auto=format&fit=crop');"></div>
+<div class="hero"></div>
 
 <div class="container">
 
@@ -64,11 +143,72 @@
 
   </div>
 
+  <!-- ===== TESTIMONIALS CAROUSEL ===== -->
+
+  <h2>What Clients Say</h2>
+
+  <div class="testimonial-carousel-wrapper">
+
+    <button class="testimonial-arrow left" onclick="scrollTestimonials(-1)">‹</button>
+
+    <div class="testimonial-carousel" id="testimonialCarousel">
+
+      <div class="testimonial-slide">
+        <p class="testimonial-text">
+          “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time. I left feeling clearer and more grounded.”
+        </p>
+        <p class="testimonial-name">Andy — Creative</p>
+      </div>
+
+      <div class="testimonial-slide">
+        <p class="testimonial-text">
+          “As someone constantly giving energy to others, this was the first time I felt like I had space to reset. It was deeply calming and stayed with me for days.”
+        </p>
+        <p class="testimonial-name">Sarah — Primary School Teacher</p>
+      </div>
+
+      <div class="testimonial-slide">
+        <p class="testimonial-text">
+          “I was sceptical at first, but I left feeling noticeably more balanced and less mentally overloaded. It helped me switch off completely.”
+        </p>
+        <p class="testimonial-name">David — Finance Analyst, City of London</p>
+      </div>
+
+    </div>
+
+    <button class="testimonial-arrow right" onclick="scrollTestimonials(1)">›</button>
+
+  </div>
+
 </div>
 
 <footer>
   © 2026 Willow Fern Reiki • Reiki Healing UK
 </footer>
+
+<script>
+const testimonialCarousel = document.getElementById('testimonialCarousel');
+
+function scrollTestimonials(direction) {
+  testimonialCarousel.scrollBy({
+    left: direction * 300,
+    behavior: 'smooth'
+  });
+}
+
+/* auto scroll */
+setInterval(() => {
+  if (!testimonialCarousel) return;
+
+  const maxScroll = testimonialCarousel.scrollWidth - testimonialCarousel.clientWidth;
+
+  if (testimonialCarousel.scrollLeft >= maxScroll) {
+    testimonialCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+  } else {
+    testimonialCarousel.scrollBy({ left: 300, behavior: 'smooth' });
+  }
+}, 5000);
+</script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* =====================================================
-   WILLLOW & FERN REIKI — DESIGN SYSTEM v1
-   Unified styling across all pages
+   WILLOW & FERN REIKI — UNIFIED DESIGN SYSTEM
+   Use across ALL pages
 ===================================================== */
 
 /* ===== RESET ===== */
@@ -10,6 +10,7 @@
   box-sizing: border-box;
 }
 
+/* ===== BODY ===== */
 body {
   font-family: 'Lora', serif;
   background: #f7f6f3;
@@ -17,7 +18,7 @@ body {
   line-height: 1.7;
 }
 
-/* ===== LAYOUT ===== */
+/* ===== CONTAINER ===== */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -37,10 +38,10 @@ h2 {
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
-/* ===== NAVIGATION (UNIFIED + ACTIVE STATE) ===== */
+/* ===== NAVIGATION ===== */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -57,12 +58,11 @@ nav a {
   text-decoration: none;
   color: #26352D;
   font-weight: 400;
-  position: relative;
-  transition: 0.2s ease;
   padding-bottom: 4px;
+  transition: 0.2s ease;
 }
 
-/* hover = subtle emphasis */
+/* hover state */
 nav a:hover {
   font-weight: 600;
 }
@@ -73,7 +73,7 @@ nav a.active {
   border-bottom: 2px solid #AEBFA9;
 }
 
-/* ===== BUTTON SYSTEM ===== */
+/* ===== BUTTON SYSTEM (GLOBAL CTA CONSISTENCY) ===== */
 .button {
   display: inline-block;
   margin-top: 15px;
@@ -83,6 +83,8 @@ nav a.active {
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -92,7 +94,7 @@ nav a.active {
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (ALL PAGES) ===== */
 .hero,
 .hero-services {
   height: 50vh;
@@ -110,7 +112,7 @@ nav a.active {
   background: rgba(221, 233, 225, 0.12);
 }
 
-/* ===== IMAGE BLOCKS ===== */
+/* ===== IMAGE LAYOUT ===== */
 .image-row {
   display: flex;
   gap: 20px;
@@ -145,31 +147,24 @@ nav a.active {
   transform: translateY(-2px);
 }
 
-/* ===== CARDS (GENERAL USE) ===== */
-.card {
+/* ===== TESTIMONIALS ===== */
+.testimonial-slide,
+.testimonial-card {
   background: rgba(255,255,255,0.85);
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.25s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+/* equal height fix */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonial-text {
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.testimonial-name {
-  font-size: 13px;
-  color: rgba(38, 53, 45, 0.7);
-}
-
-/* ===== FORM STYLING ===== */
+/* ===== FORMS ===== */
 form {
   display: flex;
   flex-direction: column;
@@ -202,7 +197,7 @@ footer {
   color: rgba(38, 53, 45, 0.7);
 }
 
-/* ===== SCROLL BEHAVIOUR ===== */
+/* ===== GLOBAL SMOOTHING ===== */
 html {
   scroll-behavior: smooth;
 }

@@ -10,20 +10,52 @@ body {
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 18px;
+  gap: 32px;
+  padding: 20px;
   background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
   text-decoration: none;
   color: #2F3A33;
   font-weight: 500;
-  transition: 0.2s ease;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s ease, font-weight 0.25s ease;
+}
+
+/* UNDERLINE ANIMATION */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #AEBFA9;
+  transition: width 0.25s ease;
 }
 
 nav a:hover {
+  font-weight: 600;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE PAGE STATE */
+nav a.active {
   font-weight: 700;
+  color: #2F3A33;
+}
+
+nav a.active::after {
+  width: 100%;
+  background: #7FAF8C;
 }
 
 /* CONTAINER */
@@ -50,7 +82,7 @@ p {
   line-height: 1.6;
 }
 
-/* BUTTON (ORIGINAL STYLE + SUBTLE ANIMATION) */
+/* BUTTON */
 .button {
   display: inline-block;
   margin-top: 20px;

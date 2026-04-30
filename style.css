@@ -1,81 +1,91 @@
-/* =====================================================
-   WILLOW & FERN REIKI — GLOBAL STYLE SYSTEM
-   SINGLE SOURCE OF TRUTH (ALL PAGES)
-===================================================== */
 
-/* RESET */
+/* =========================
+   BASE / GLOBAL
+========================= */
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
+  margin: 0;
   font-family: 'Lora', serif;
-  background: #f7f6f3;
   color: #26352D;
-  line-height: 1.7;
+  background: #F7F6F3;
+
+  /* page load animation */
+  opacity: 0;
+  animation: pageFade 0.6s ease forwards;
 }
 
-/* CONTAINER */
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
   padding: 40px 20px;
 }
 
-/* TYPOGRAPHY */
 h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 26px;
-  margin-top: 40px;
+  font-size: 42px;
   margin-bottom: 15px;
 }
 
+h2 {
+  margin-top: 40px;
+  font-size: 24px;
+}
+
 p {
-  margin-bottom: 16px;
+  line-height: 1.8;
+  font-size: 16.5px;
   max-width: 800px;
 }
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
   display: flex;
-  flex-wrap: wrap;
   gap: 18px;
-  padding: 18px 24px;
-  background: white;
+  padding: 18px 20px;
+  justify-content: center;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  z-index: 100;
 }
 
 nav a {
   text-decoration: none;
   color: #26352D;
+  font-size: 14px;
+  position: relative;
   padding-bottom: 4px;
-  transition: 0.2s ease;
 }
 
 nav a:hover {
-  font-weight: 600;
+  color: #6F9E7F;
 }
 
 nav a.active {
-  font-weight: 700;
+  font-weight: 600;
   border-bottom: 2px solid #AEBFA9;
 }
 
-/* BUTTON (GLOBAL CTA STYLE) */
-.button {
+/* =========================
+   BUTTONS (GLOBAL)
+========================= */
+
+.button,
+button.button {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 22px;
+  padding: 10px 18px;
   background: #AEBFA9;
   color: white;
   text-decoration: none;
@@ -83,16 +93,19 @@ nav a.active {
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.25s ease;
+  font-family: inherit;
 }
 
 .button:hover {
   background: #9FB19A;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
-/* HERO */
+/* =========================
+   HERO (DEFAULT)
+========================= */
+
 .hero {
   height: 50vh;
   background-size: cover;
@@ -101,103 +114,232 @@ nav a.active {
   margin-bottom: 40px;
 }
 
-/* IMAGE GRID */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(221,233,225,0.12);
+}
+
+/* =========================
+   IMAGE ROW (HOME)
+========================= */
+
 .image-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .image-card {
   flex: 1;
-  min-width: 280px;
+  min-width: 250px;
 }
 
 .image-card img {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .image-text {
+  font-size: 14px;
   margin-top: 10px;
+  line-height: 1.6;
 }
 
-/* TESTIMONIALS */
-.testimonials-grid {
+/* =========================
+   GROWTH LIBRARY CARDS
+========================= */
+
+.library-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
-@media (min-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.book-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 360px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.book-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.book-title {
+  font-weight: 600;
+}
+
+.book-tag {
+  font-size: 12px;
+  color: #6F9E7F;
+  margin-bottom: 10px;
+}
+
+/* force equal button alignment */
+.book-card .button {
+  margin-top: auto;
+  text-align: center;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-card {
+  min-width: 260px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.scroll-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.95);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.arrow.left { left: -10px; }
+.arrow.right { right: -10px; }
+
+/* =========================
+   TESTIMONIALS GRID
+========================= */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: stretch;
 }
 
 .testimonial-card {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   padding: 22px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
   display: flex;
   flex-direction: column;
-  min-height: 220px;
+  justify-content: space-between;
+  min-height: 240px;
 }
 
 .testimonial-text {
   font-style: italic;
+  line-height: 1.7;
   flex-grow: 1;
 }
 
 .testimonial-client {
-  margin-top: 15px;
   font-size: 13px;
-  color: rgba(38, 53, 45, 0.65);
+  color: rgba(38,53,45,0.7);
+  margin-top: auto;
 }
 
-/* FORMS (FIXED + CLEAN) */
+/* =========================
+   FORM STYLING
+========================= */
+
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
   max-width: 650px;
+  margin-top: 20px;
 }
 
-form div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+label {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 input,
-textarea,
-select {
-  padding: 12px;
+select,
+textarea {
+  padding: 12px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(38, 53, 45, 0.2);
+  border: 1px solid rgba(0,0,0,0.08);
   font-family: inherit;
-  width: 100%;
+  font-size: 15px;
+  background: rgba(255,255,255,0.9);
 }
 
 input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
+select:focus,
+textarea:focus {
   border-color: #AEBFA9;
+  outline: none;
 }
 
-/* FOOTER */
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   text-align: center;
   padding: 40px 20px;
-  margin-top: 60px;
-  color: rgba(38, 53, 45, 0.7);
-}
-
-/* SMOOTH SCROLL */
-html {
-  scroll-behavior: smooth;
+  font-size: 13px;
+  color: rgba(38,53,45,0.7);
 }

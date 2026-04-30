@@ -14,69 +14,113 @@
 
 body {
   font-family: 'Lora', serif;
+  background: #faf9f6;
 }
 
-/* GRID */
-.library-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+/* PAGE WRAPPER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* BOOK CARD */
-.book-card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+/* SECTION TITLE */
+h1 {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.subtext {
+  color: rgba(0,0,0,0.65);
+  margin-bottom: 30px;
+}
+
+/* BOOK LIST (EDITORIAL STYLE) */
+.book-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: 0.25s ease;
+  gap: 18px;
 }
 
-.book-card:hover {
-  transform: translateY(-5px);
+/* BOOK ROW */
+.book-row {
+  display: flex;
+  gap: 18px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  transition: all 0.25s ease;
+  align-items: center;
 }
 
-/* COVER IMAGE */
-.book-card img {
-  width: 100%;
-  height: 180px;
+.book-row:hover {
+  transform: translateY(-3px);
+}
+
+/* COVER */
+.book-cover {
+  width: 80px;
+  height: 110px;
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* INFO AREA */
+.book-info {
+  flex: 1;
 }
 
 /* TITLE */
 .book-title {
   font-weight: 600;
   font-size: 15px;
-  margin-bottom: 6px;
-  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
-/* BUTTON (CONSISTENT) */
+/* TAG / NOTE */
+.book-tag {
+  font-size: 13px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* ACTION AREA */
+.book-action {
+  display: flex;
+  align-items: center;
+}
+
+/* BUTTON */
 .button {
   display: inline-block;
-  margin-top: 12px;
   padding: 10px 18px;
   background: #AEBFA9;
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: 0.2s ease;
 }
 
 .button:hover {
   background: #9FB19A;
+  transform: translateY(-1px);
 }
 
-/* SECTION SPACING */
-.section {
-  margin-top: 40px;
+/* MOBILE */
+@media (max-width: 700px) {
+  .book-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .book-action {
+    width: 100%;
+  }
 }
 
 </style>
@@ -97,92 +141,106 @@ body {
 
 <h1>The Growth Library</h1>
 
-<p>If you're not sure where to begin, start here:</p>
+<p class="subtext">
+A curated selection of books for emotional clarity, grounding, healing, and inner expansion.
+</p>
 
-<div class="library-grid">
+<div class="book-list">
 
 <!-- BOOK 1 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Power of Now — Eckhart Tolle</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">The Power of Now — Eckhart Tolle</div>
+    <div class="book-tag">Presence • Anxiety • Awareness</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 2 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">A New Earth — Eckhart Tolle</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">A New Earth — Eckhart Tolle</div>
+    <div class="book-tag">Consciousness • Growth</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 3 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">Radical Forgiveness — Colin Tipping</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">Radical Forgiveness — Colin Tipping</div>
+    <div class="book-tag">Release • Emotional Healing</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 4 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Untethered Soul — Michael A. Singer</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">The Untethered Soul — Michael A. Singer</div>
+    <div class="book-tag">Inner Peace • Awareness</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 5 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1455885667314-a0d48ep0a0?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Surrender Experiment — Michael A. Singer</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">The Field — Lynne McTaggart</div>
+    <div class="book-tag">Energy • Consciousness</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 6 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Field — Lynne McTaggart</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">When the Body Says No — Gabor Maté</div>
+    <div class="book-tag">Stress • Somatic Healing</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 7 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Power of Eight — Lynne McTaggart</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">The Four Agreements — Don Miguel Ruiz</div>
+    <div class="book-tag">Clarity • Mindset</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 <!-- BOOK 8 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">When the Body Says No — Gabor Maté</div>
-  <a href="#" class="button">View Book</a>
-</div>
-
-<!-- BOOK 9 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">Letting Go — David R. Hawkins</div>
-  <a href="#" class="button">View Book</a>
-</div>
-
-<!-- BOOK 10 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Four Agreements — Don Miguel Ruiz</div>
-  <a href="#" class="button">View Book</a>
-</div>
-
-<!-- BOOK 11 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">The Alchemist — Paulo Coelho</div>
-  <a href="#" class="button">View Book</a>
-</div>
-
-<!-- BOOK 12 -->
-<div class="book-card">
-  <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop">
-  <div class="book-title">Heal Your Body — Louise Hay</div>
-  <a href="#" class="button">View Book</a>
+<div class="book-row">
+  <img class="book-cover" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&auto=format&fit=crop">
+  <div class="book-info">
+    <div class="book-title">The Alchemist — Paulo Coelho</div>
+    <div class="book-tag">Purpose • Direction</div>
+  </div>
+  <div class="book-action">
+    <a class="button" href="#">View</a>
+  </div>
 </div>
 
 </div>

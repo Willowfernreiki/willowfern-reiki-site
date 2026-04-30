@@ -1,16 +1,16 @@
 /* =====================================================
-   WILLOW & FERN REIKI — UNIFIED DESIGN SYSTEM
-   Use across ALL pages
+   WILLOW & FERN REIKI — GLOBAL STYLE SYSTEM
+   SINGLE SOURCE OF TRUTH (ALL PAGES)
 ===================================================== */
 
-/* ===== RESET ===== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+/* BODY */
 body {
   font-family: 'Lora', serif;
   background: #f7f6f3;
@@ -18,14 +18,14 @@ body {
   line-height: 1.7;
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* TYPOGRAPHY */
 h1 {
   font-size: 40px;
   margin-bottom: 20px;
@@ -39,9 +39,10 @@ h2 {
 
 p {
   margin-bottom: 16px;
+  max-width: 800px;
 }
 
-/* ===== NAVIGATION ===== */
+/* NAV */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -57,23 +58,20 @@ nav {
 nav a {
   text-decoration: none;
   color: #26352D;
-  font-weight: 400;
   padding-bottom: 4px;
   transition: 0.2s ease;
 }
 
-/* hover state */
 nav a:hover {
   font-weight: 600;
 }
 
-/* active page state */
 nav a.active {
   font-weight: 700;
   border-bottom: 2px solid #AEBFA9;
 }
 
-/* ===== BUTTON SYSTEM (GLOBAL CTA CONSISTENCY) ===== */
+/* BUTTON (GLOBAL CTA STYLE) */
 .button {
   display: inline-block;
   margin-top: 15px;
@@ -85,7 +83,7 @@ nav a.active {
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .button:hover {
@@ -94,9 +92,8 @@ nav a.active {
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
-/* ===== HERO (ALL PAGES) ===== */
-.hero,
-.hero-services {
+/* HERO */
+.hero {
   height: 50vh;
   background-size: cover;
   background-position: center;
@@ -104,26 +101,16 @@ nav a.active {
   margin-bottom: 40px;
 }
 
-.hero::before,
-.hero-services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(221, 233, 225, 0.12);
-}
-
-/* ===== IMAGE LAYOUT ===== */
+/* IMAGE GRID */
 .image-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
 }
 
 .image-card {
   flex: 1;
   min-width: 280px;
-  transition: transform 0.3s ease;
 }
 
 .image-card img {
@@ -131,45 +118,58 @@ nav a.active {
   height: 280px;
   object-fit: cover;
   border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.image-card:hover img {
-  transform: scale(1.03);
 }
 
 .image-text {
   margin-top: 10px;
-  transition: transform 0.3s ease;
 }
 
-.image-card:hover .image-text {
-  transform: translateY(-2px);
+/* TESTIMONIALS */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonial-slide,
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .testimonial-card {
   background: rgba(255,255,255,0.85);
-  padding: 20px;
+  padding: 22px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* equal height fix */
-.testimonial-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 180px;
+  min-height: 220px;
 }
 
-/* ===== FORMS ===== */
+.testimonial-text {
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.testimonial-client {
+  margin-top: 15px;
+  font-size: 13px;
+  color: rgba(38, 53, 45, 0.65);
+}
+
+/* FORMS (FIXED + CLEAN) */
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 14px;
+  max-width: 650px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 input,
@@ -179,7 +179,7 @@ select {
   border-radius: 10px;
   border: 1px solid rgba(38, 53, 45, 0.2);
   font-family: inherit;
-  background: white;
+  width: 100%;
 }
 
 input:focus,
@@ -189,7 +189,7 @@ select:focus {
   border-color: #AEBFA9;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -197,7 +197,7 @@ footer {
   color: rgba(38, 53, 45, 0.7);
 }
 
-/* ===== GLOBAL SMOOTHING ===== */
+/* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
 }

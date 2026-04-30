@@ -31,7 +31,6 @@
       background: rgba(221, 233, 225, 0.12);
     }
 
-    /* FORCE EQUAL IMAGE SIZES */
     .image-row {
       display: flex;
       gap: 20px;
@@ -57,9 +56,21 @@
       line-height: 1.6;
     }
 
-    /* CLEAN TESTIMONIAL BLOCK (NOT CAROUSEL) */
+    .expect-box {
+      margin-top: 50px;
+      background: rgba(255,255,255,0.85);
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .expect-box p {
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
     .testimonials-home {
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     .testimonial-simple {
@@ -114,21 +125,17 @@
 
   <div class="image-row">
 
-    <!-- ✔ WILLOW (FIRST IMAGE) -->
     <div class="image-card">
       <img src="https://images.unsplash.com/photo-1648503653373-ee748b4858b9?q=80&w=735&auto=format&fit=crop"
            alt="Willow tree reflecting emotional balance and healing">
-
       <p class="image-text">
         The willow reflects emotional balance, flexibility, and healing.
       </p>
     </div>
 
-    <!-- ✔ FERN (SECOND IMAGE) -->
     <div class="image-card">
       <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
            alt="Fern symbolising growth and renewal">
-
       <p class="image-text">
         The fern symbolises quiet growth, renewal, and resilience.
       </p>
@@ -136,29 +143,36 @@
 
   </div>
 
-  <!-- CLEAN TESTIMONIAL SECTION -->
+  <div class="expect-box">
+
+    <h2>What to Expect</h2>
+
+    <p>You are welcome to arrive 5–10 minutes before your session to settle in. We begin with a brief check-in and intention setting.</p>
+
+    <p>Optional grounding elements such as palo santo, sage, or agua de florida may be used — always with your consent.</p>
+
+    <p>Reiki is then offered in a calm, respectful way while you remain fully comfortable and at ease.</p>
+
+    <p>Each session is supported by soft, meditative music to encourage deep relaxation and balance.</p>
+
+  </div>
+
   <div class="testimonials-home">
 
     <h2>What Clients Say</h2>
 
     <div class="testimonial-simple">
-      <p>
-        “I didn’t really know what to expect, but I left feeling noticeably calmer and more grounded.”
-      </p>
+      <p>“I left feeling noticeably calmer and more grounded.”</p>
       <span>Andy — Creative</span>
     </div>
 
     <div class="testimonial-simple">
-      <p>
-        “It created a deep sense of reset that stayed with me for days afterwards.”
-      </p>
-      <span>Sarah — Primary School Teacher</span>
+      <p>“It created a deep sense of reset that stayed with me for days.”</p>
+      <span>Sarah — Teacher</span>
     </div>
 
     <div class="testimonial-simple">
-      <p>
-        “Helped me fully switch off from work pressure and mental overload.”
-      </p>
+      <p>“Helped me fully switch off from mental overload.”</p>
       <span>David — Finance Analyst</span>
     </div>
 

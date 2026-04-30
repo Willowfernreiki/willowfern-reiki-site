@@ -15,6 +15,7 @@
 /* ===== CAROUSEL ===== */
 .carousel-wrapper {
   position: relative;
+  margin-top: 20px;
 }
 
 .scroll-container {
@@ -46,15 +47,16 @@
 /* ARROWS */
 .arrow {
   position: absolute;
-  top: 40%;
+  top: 45%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border: none;
   padding: 10px 14px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 18px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 2;
 }
 
 .arrow.left { left: -10px; }
@@ -80,27 +82,39 @@
   transform: translateY(-5px);
 }
 
-.book-title { font-weight: 600; }
-.book-tag { font-size: 12px; color: #6F9E7F; margin: 6px 0; }
-.book-note { font-size: 14px; margin-bottom: 10px; }
+.book-title {
+  font-weight: 600;
+}
 
-/* BUTTON (MATCHES YOUR SITE) */
+/* BUTTON (MATCH SITE CONSISTENCY) */
 .button {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 18px;
+  padding: 12px 22px;
   background: #AEBFA9;
   color: white;
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .button:hover {
   background: #9FB19A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
 }
 
-.section { margin-top: 40px; }
+/* SECTION SPACING */
+.section {
+  margin-top: 50px;
+}
+
+/* NAV ACTIVE (SAFE FALLBACK IF NOT IN GLOBAL CSS) */
+nav a.active {
+  font-weight: 700;
+  border-bottom: 2px solid #AEBFA9;
+}
 
 </style>
 </head>
@@ -111,12 +125,12 @@
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="services.html">Services</a>
-<a href="growth-library.html">The Growth Library</a>
+<a href="growth-library.html" class="active">The Growth Library</a>
 <a href="testimonials.html">Testimonials</a>
 <a href="contact.html">Contact Us</a>
 </nav>
 
-<div class="hero" style="background-image: url('https://images.unsplash.com/photo-1455885667314-a0d48ep0a0?auto=format&fit=crop&w=1600&q=80');"></div>
+<div class="hero" style="background-image: url('https://images.unsplash.com/photo-1455885667314-a0d48e6a0a0b?auto=format&fit=crop&w=1600&q=80');"></div>
 
 <div class="container">
 
@@ -124,23 +138,23 @@
 
 <p>If you're not sure where to begin, start here:</p>
 
-<!-- ===== CAROUSEL ===== -->
+<!-- ===== START HERE CAROUSEL ===== -->
 <div class="carousel-wrapper">
 
-<button class="arrow left" onclick="scrollLeft()">‹</button>
+<button class="arrow left" onclick="scrollCarousel(-1)">‹</button>
 
 <div class="scroll-container" id="carousel">
 
-<div class="scroll-card"><div class="book-title">The Power of Now</div><div class="book-tag">Anxiety</div><a href="YOUR_LINK" class="button">View</a></div>
-<div class="scroll-card"><div class="book-title">The Untethered Soul</div><div class="book-tag">Inner Peace</div><a href="YOUR_LINK" class="button">View</a></div>
-<div class="scroll-card"><div class="book-title">Letting Go</div><div class="book-tag">Emotional Release</div><a href="YOUR_LINK" class="button">View</a></div>
-<div class="scroll-card"><div class="book-title">The Four Agreements</div><div class="book-tag">Clarity</div><a href="YOUR_LINK" class="button">View</a></div>
-<div class="scroll-card"><div class="book-title">When the Body Says No</div><div class="book-tag">Stress</div><a href="YOUR_LINK" class="button">View</a></div>
-<div class="scroll-card"><div class="book-title">The Alchemist</div><div class="book-tag">Life Direction</div><a href="YOUR_LINK" class="button">View</a></div>
+<div class="scroll-card"><div class="book-title">The Power of Now</div><a href="#" class="button">View</a></div>
+<div class="scroll-card"><div class="book-title">The Untethered Soul</div><a href="#" class="button">View</a></div>
+<div class="scroll-card"><div class="book-title">Letting Go</div><a href="#" class="button">View</a></div>
+<div class="scroll-card"><div class="book-title">The Four Agreements</div><a href="#" class="button">View</a></div>
+<div class="scroll-card"><div class="book-title">When the Body Says No</div><a href="#" class="button">View</a></div>
+<div class="scroll-card"><div class="book-title">The Alchemist</div><a href="#" class="button">View</a></div>
 
 </div>
 
-<button class="arrow right" onclick="scrollRight()">›</button>
+<button class="arrow right" onclick="scrollCarousel(1)">›</button>
 
 </div>
 
@@ -151,33 +165,34 @@
 
 <div class="library-grid">
 
-<!-- ALL BOOKS -->
-<div class="book-card"><div class="book-title">The Power of Now — Eckhart Tolle</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">A New Earth — Eckhart Tolle</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">Radical Forgiveness — Colin Tipping</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Untethered Soul — Michael A. Singer</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Surrender Experiment — Michael A. Singer</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Field — Lynne McTaggart</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Power of Eight — Lynne McTaggart</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">In the Realm of Hungry Ghosts — Gabor Maté</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">When the Body Says No — Gabor Maté</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">Letting Go — David R. Hawkins</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Map of Consciousness Explained — David R. Hawkins</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">Healing and Recovery — David R. Hawkins</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">How to Be a Stoic — Massimo Pigliucci</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">Heal Your Body — Louise Hay</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Law of Attraction — Esther & Jerry Hicks</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Four Agreements — Don Miguel Ruiz</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Fifth Agreement — Don Miguel Ruiz</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Enchanted Life — Sharon Blackie</div><a href="YOUR_LINK" class="button">View Book</a></div>
-<div class="book-card"><div class="book-title">The Alchemist — Paulo Coelho</div><a href="YOUR_LINK" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Power of Now — Eckhart Tolle</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">A New Earth — Eckhart Tolle</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">Radical Forgiveness — Colin Tipping</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Untethered Soul — Michael A. Singer</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Surrender Experiment — Michael A. Singer</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Field — Lynne McTaggart</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Power of Eight — Lynne McTaggart</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">In the Realm of Hungry Ghosts — Gabor Maté</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">When the Body Says No — Gabor Maté</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">Letting Go — David R. Hawkins</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Map of Consciousness Explained — David R. Hawkins</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">Healing and Recovery — David R. Hawkins</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">How to Be a Stoic — Massimo Pigliucci</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">Heal Your Body — Louise Hay</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Law of Attraction — Esther & Jerry Hicks</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Four Agreements — Don Miguel Ruiz</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Fifth Agreement — Don Miguel Ruiz</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Enchanted Life — Sharon Blackie</div><a href="#" class="button">View Book</a></div>
+<div class="book-card"><div class="book-title">The Alchemist — Paulo Coelho</div><a href="#" class="button">View Book</a></div>
 
 </div>
 
 </div>
 
-<!-- SUGGEST BUTTON -->
-<a href="contact.html" class="button">Suggest a Book</a>
+<!-- CTA -->
+<div class="section">
+  <a href="contact.html" class="button">Suggest a Book</a>
+</div>
 
 </div>
 
@@ -186,24 +201,11 @@
 </footer>
 
 <script>
-const carousel = document.getElementById('carousel');
-
-function scrollLeft() {
-  carousel.scrollBy({ left: -300, behavior: 'smooth' });
+function scrollCarousel(direction) {
+  const carousel = document.getElementById('carousel');
+  const scrollAmount = 280;
+  carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
-
-function scrollRight() {
-  carousel.scrollBy({ left: 300, behavior: 'smooth' });
-}
-
-/* AUTO LOOP SCROLL */
-setInterval(() => {
-  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    carousel.scrollBy({ left: 260, behavior: 'smooth' });
-  }
-}, 3000);
 </script>
 
 </body>

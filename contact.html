@@ -23,8 +23,6 @@
   background-size: cover;
   background-position: center;
   position: relative;
-
-  /* refined spacing */
   margin-bottom: 12px;
 }
 
@@ -40,10 +38,10 @@
   padding-top: 12px;
 }
 
-/* ===== TYPOGRAPHY (CONTROLLED RHYTHM) ===== */
+/* ===== TYPOGRAPHY ===== */
 h1 {
   font-size: 42px;
-  margin: 0 0 12px 0; /* removes top gap fully */
+  margin: 0 0 12px 0;
 }
 
 p {
@@ -52,12 +50,16 @@ p {
   margin: 0 0 18px 0;
 }
 
+/* ===== FORM WRAPPER (centers visually without breaking layout) ===== */
+.form-wrapper {
+  max-width: 650px;
+}
+
 /* ===== FORM ===== */
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 650px;
   margin-top: 12px;
 }
 
@@ -102,6 +104,18 @@ input:focus, select:focus, textarea:focus {
   background: #9FB19A;
 }
 
+/* ===== FADE-IN ANIMATION ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== SECTION SPACING ===== */
 h2 {
   margin-top: 40px;
@@ -132,37 +146,42 @@ h2 {
     I will respond within 24–48 hours.
   </p>
 
-  <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+  <!-- FADE-IN WRAPPER -->
+  <div class="form-wrapper fade-in">
 
-    <label>Your Name</label>
-    <input type="text" name="name" required>
+    <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
 
-    <label>Your Email</label>
-    <input type="email" name="email" required>
+      <label>Your Name</label>
+      <input type="text" name="name" required>
 
-    <label>Phone Number (optional)</label>
-    <input type="text" name="phone">
+      <label>Your Email</label>
+      <input type="email" name="email" required>
 
-    <label>Type of Session</label>
-    <select name="service">
-      <option>1:1 Energy & Emotional Balance</option>
-      <option>Distance Reiki</option>
-      <option>Open-Air Reiki</option>
-      <option>Corporate Reiki</option>
-      <option>Other</option>
-    </select>
+      <label>Phone Number (optional)</label>
+      <input type="text" name="phone">
 
-    <label>Preferred Date / Time</label>
-    <input type="text" name="time">
+      <label>Type of Session</label>
+      <select name="service">
+        <option>1:1 Energy & Emotional Balance</option>
+        <option>Distance Reiki</option>
+        <option>Open-Air Reiki</option>
+        <option>Corporate Reiki</option>
+        <option>Other</option>
+      </select>
 
-    <label>Message</label>
-    <textarea name="message" rows="6"></textarea>
+      <label>Preferred Date / Time</label>
+      <input type="text" name="time">
 
-    <button type="submit" class="button">
-      Submit Booking Request
-    </button>
+      <label>Message</label>
+      <textarea name="message" rows="6"></textarea>
 
-  </form>
+      <button type="submit" class="button">
+        Submit Booking Request
+      </button>
+
+    </form>
+
+  </div>
 
   <h2>What Happens Next?</h2>
 
@@ -182,6 +201,21 @@ h2 {
 <footer>
 © 2026 Willow & Fern Reiki • Contact
 </footer>
+
+<script>
+/* SCROLL FADE-IN */
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+fadeElements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

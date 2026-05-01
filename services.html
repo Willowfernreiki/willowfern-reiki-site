@@ -12,7 +12,10 @@
 
 <style>
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .dual-hero {
   display: flex;
   width: 100%;
@@ -31,50 +34,85 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.18);
+  background: rgba(221, 233, 225, 0.12);
 }
 
-/* LAYOUT */
+/* =========================
+   LAYOUT
+========================= */
+
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* SERVICE CARDS */
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 24px;
+  max-width: 750px;
+}
+
+/* =========================
+   SERVICE CARDS (REFINED)
+========================= */
+
 .service-card {
   background: rgba(255,255,255,0.92);
   border-radius: 18px;
-  padding: 24px;
-  margin-bottom: 18px;
+  padding: 22px;
+  margin-bottom: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.07);
 }
 
 .service-title {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .service-price {
   font-size: 14px;
-  color: rgba(0,0,0,0.6);
-  margin: 6px 0 12px;
+  color: rgba(38,53,45,0.7);
+  margin-bottom: 12px;
 }
 
 .service-text {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #26352D;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
+
 .button {
-  margin-top: 20px;
   display: inline-block;
   padding: 10px 18px;
   background: #AEBFA9;
   color: white;
   border-radius: 30px;
   text-decoration: none;
+  font-weight: 600;
+  margin-top: 24px;
+  transition: 0.25s ease;
+}
+
+.button:hover {
+  background: #9FB19A;
+  transform: translateY(-2px);
 }
 
 </style>
@@ -116,7 +154,7 @@ Reiki healing sessions designed to restore balance, release emotional tension, a
   <div class="service-title">Nature-Based Reiki Session</div>
   <div class="service-price">£75 · 60 minutes (open-air)</div>
   <div class="service-text">
-    A grounding Reiki session held outdoors combining nature and energy healing.
+    A grounding Reiki session held outdoors, combining nature and energy healing for deeper relaxation.
   </div>
 </div>
 
@@ -124,7 +162,7 @@ Reiki healing sessions designed to restore balance, release emotional tension, a
   <div class="service-title">Distance Reiki</div>
   <div class="service-price">£45 · 45 minutes</div>
   <div class="service-text">
-    Receive Reiki remotely to support balance and clarity wherever you are.
+    Receive Reiki remotely to support balance, clarity, and emotional calm wherever you are.
   </div>
 </div>
 
@@ -132,7 +170,7 @@ Reiki healing sessions designed to restore balance, release emotional tension, a
   <div class="service-title">Corporate Reiki</div>
   <div class="service-price">Price on request</div>
   <div class="service-text">
-    Available for individuals or groups. Please get in touch to discuss your needs.
+    Available for individuals or groups. Tailored sessions to support workplace wellbeing.
   </div>
 </div>
 

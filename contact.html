@@ -16,13 +16,16 @@
 
 <style>
 
-/* ===== DUAL HERO ===== */
+/* =========================
+   DUAL HERO (REFINED ALIGNMENT)
+========================= */
+
 .dual-hero {
   display: flex;
   width: 100%;
   height: 40vh;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .hero-image {
@@ -30,7 +33,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  transform: scale(1.02); /* subtle premium depth */
+  transform: scale(1.02);
 }
 
 .hero-image::after {
@@ -40,55 +43,76 @@
   background: rgba(221,233,225,0.12);
 }
 
-/* ===== STRUCTURE ===== */
+/* =========================
+   CONTAINER RHYTHM FIX
+========================= */
+
 .container {
-  padding-top: 12px;
+  padding-top: 20px;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* =========================
+   TYPOGRAPHY (TIGHTER RHYTHM)
+========================= */
+
 h1 {
   font-size: 42px;
   margin: 0 0 12px 0;
 }
 
+h2 {
+  margin-top: 36px;
+  margin-bottom: 10px;
+}
+
 p {
   max-width: 750px;
   line-height: 1.8;
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
 }
 
-/* ===== FORM ===== */
+/* =========================
+   FORM (CONSISTENT WITH SITE)
+========================= */
+
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
   max-width: 650px;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
-/* ===== INPUTS ===== */
 label {
   font-size: 14px;
   font-weight: 500;
   color: rgba(38,53,45,0.9);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 12px 14px;
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.08);
   font-family: inherit;
   font-size: 15px;
-  outline: none;
   background: rgba(255,255,255,0.9);
+  outline: none;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border-color: #AEBFA9;
 }
 
-/* ===== BUTTON ===== */
-.button, button.button {
+/* =========================
+   BUTTON (UNCHANGED FEEL)
+========================= */
+
+.button,
+button.button {
   display: inline-block;
   padding: 10px 18px;
   background: #AEBFA9;
@@ -105,23 +129,22 @@ input:focus, select:focus, textarea:focus {
 
 .button:hover {
   background: #9FB19A;
+  transform: translateY(-2px);
 }
 
-/* ===== FADE-IN ===== */
+/* =========================
+   SMOOTHER REVEAL (MATCH GLOBAL FEEL)
+========================= */
+
 .fade-in {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ===== SECTION SPACING ===== */
-h2 {
-  margin-top: 40px;
 }
 
 </style>
@@ -138,7 +161,7 @@ h2 {
   <a href="contact.html" class="active">Contact Us</a>
 </nav>
 
-<!-- ✅ DUAL HERO -->
+<!-- HERO -->
 <div class="dual-hero">
 
   <div class="hero-image"
@@ -224,7 +247,7 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0.18 });
 
 fadeElements.forEach(el => observer.observe(el));
 </script>

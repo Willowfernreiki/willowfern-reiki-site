@@ -31,21 +31,17 @@
       background: rgba(221, 233, 225, 0.12);
     }
 
-    /* =========================
-       IMAGE SECTION — CENTERED BALANCE FIX
-       (same size, better page fit)
-    ========================= */
-
+    /* IMAGE LAYOUT (UNCHANGED FUNCTIONALLY) */
     .image-row {
       display: flex;
-      justify-content: center;   /* 👈 key fix: centers the group */
+      justify-content: center;
       gap: 28px;
       flex-wrap: wrap;
       margin-top: 20px;
     }
 
     .image-card {
-      width: 320px;              /* fixed consistent width */
+      width: 320px;
       display: flex;
       flex-direction: column;
     }
@@ -67,10 +63,39 @@
       margin-right: auto;
     }
 
-    /* ensure no hover effects */
     .image-card:hover {
       transform: none !important;
       box-shadow: none !important;
+    }
+
+    /* =========================
+       TESTIMONIAL ADJUSTMENT (UPDATED)
+    ========================= */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.9);
+      padding: 20px 18px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+
+    .testimonial-text {
+      font-style: normal;
+      font-size: 14.5px;
+      line-height: 1.7;
+      text-align: center;
+      color: #26352D;
     }
 
   </style>
@@ -126,7 +151,7 @@
   </div>
 
   <!-- =========================
-       RESTORED SUMMARISED TESTIMONIALS
+       TESTIMONIALS (REFINED TONE)
   ========================= -->
 
   <h2>What Clients Say</h2>
@@ -135,23 +160,20 @@
 
     <div class="testimonial-card">
       <p class="testimonial-text">
-        “The session created a rare sense of calm and mental space that stayed with me afterwards.”
+        “It gave me a real sense of calm I hadn’t felt in a while.”
       </p>
-      <p class="testimonial-client">Andy — Creative</p>
     </div>
 
     <div class="testimonial-card">
       <p class="testimonial-text">
-        “It felt like a reset. Gentle, grounding, and deeply restorative without being overwhelming.”
+        “I felt noticeably more grounded and clear afterwards.”
       </p>
-      <p class="testimonial-client">Sarah — Primary School Teacher</p>
     </div>
 
     <div class="testimonial-card">
       <p class="testimonial-text">
-        “I walked away feeling lighter, clearer, and noticeably less mentally cluttered.”
+        “A gentle reset that stayed with me for the rest of the day.”
       </p>
-      <p class="testimonial-client">David — Finance Analyst, City of London</p>
     </div>
 
   </div>

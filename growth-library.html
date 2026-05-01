@@ -25,20 +25,42 @@ body {
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
-}
-
-h1, h2 {
-  font-weight: 600;
+  padding: 24px 20px;
 }
 
 /* =========================
-   START HERE (UNCHANGED VISUALLY)
+   TYPOGRAPHY (TIGHTENED HIERARCHY)
+========================= */
+
+h1 {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 28px 0 12px 0;
+  letter-spacing: -0.1px;
+}
+
+p {
+  max-width: 750px;
+  line-height: 1.75;
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: rgba(38,53,45,0.92);
+}
+
+/* =========================
+   START HERE CAROUSEL
 ========================= */
 
 .carousel-wrapper {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .carousel-wrapper::before,
@@ -64,29 +86,38 @@ h1, h2 {
 
 .scroll-container {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   overflow: hidden;
-  padding: 20px 40px;
+  padding: 16px 40px;
   scroll-behavior: smooth;
 }
 
+/* cards */
 .scroll-card {
   min-width: 240px;
   background: rgba(255,255,255,0.92);
   border-radius: 16px;
   padding: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
   flex-shrink: 0;
-  opacity: 0.55;
-  transform: scale(0.95);
-  transition: all 0.3s ease;
+
+  opacity: 0.6;
+  transform: scale(0.96);
+
+  transition: all 0.35s ease;
   cursor: pointer;
 }
 
 .scroll-card.active {
   opacity: 1;
-  transform: scale(1.10);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+  transform: scale(1.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+}
+
+/* subtle hover lift (depth only) */
+.scroll-card:hover {
+  transform: translateY(-2px) scale(1.06);
 }
 
 .arrow {
@@ -107,47 +138,56 @@ h1, h2 {
 .arrow.right { right: -10px; }
 
 /* =========================
-   FULL LIBRARY (UNCHANGED)
+   FULL LIBRARY LIST
 ========================= */
 
 .book-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-top: 30px;
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .book-row {
   display: flex;
-  gap: 18px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 18px;
-  padding: 16px;
+  gap: 16px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 16px;
+  padding: 14px 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+
   align-items: center;
-  transition: 0.25s ease;
+
+  transition: all 0.25s ease;
 }
 
 .book-row:hover {
-  transform: scale(1.02);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.08);
 }
 
 .book-cover {
-  width: 80px;
-  height: 110px;
+  width: 78px;
+  height: 108px;
   border-radius: 10px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .book-title {
   font-weight: 600;
+  font-size: 15.5px;
+  margin-bottom: 2px;
 }
 
 .book-tag {
   font-size: 13px;
   color: rgba(0,0,0,0.55);
 }
+
+/* =========================
+   BUTTON
+========================= */
 
 .button {
   padding: 10px 18px;
@@ -158,10 +198,20 @@ h1, h2 {
   font-weight: 600;
   border: none;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .button:hover {
   background: #9FB19A;
+}
+
+/* =========================
+   MICRO MOTION (SUBTLE DEPTH)
+========================= */
+
+.scroll-card,
+.book-row {
+  will-change: transform, box-shadow;
 }
 
 </style>
@@ -184,10 +234,6 @@ h1, h2 {
 
 <p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
-<!-- =========================
-     START HERE
-========================= -->
-
 <h2>Start Here</h2>
 
 <div class="carousel-wrapper">
@@ -208,15 +254,9 @@ h1, h2 {
 
 </div>
 
-<!-- =========================
-     FULL LIBRARY (UNCHANGED)
-========================= -->
-
 <h2>Full Library</h2>
 
 <div class="book-list">
-
-<!-- YOUR ORIGINAL FULL BOOK LIST REMAINS EXACTLY HERE -->
 
 <div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"><div><div class="book-title">The Power of Now — Eckhart Tolle</div><div class="book-tag">Presence</div></div></div>
 

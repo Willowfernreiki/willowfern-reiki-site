@@ -7,9 +7,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Willow Fern Reiki offers calming Reiki healing in London and across the UK including in-person, distance and nature-based sessions for stress and emotional wellbeing.">
+  <meta name="description" content="Willow & Fern Reiki offers calming Reiki healing in the UK including in-person, distance and nature-based sessions for stress and emotional wellbeing.">
 
-  <meta name="keywords" content="Reiki UK, Reiki London, Reiki healing, energy healing, holistic therapy UK">
+  <meta name="keywords" content="Reiki UK, Reiki healing London, energy healing, holistic therapy UK">
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -17,7 +17,7 @@
   <style>
     .hero {
       height: 50vh;
-      background-image: url('https://images.unsplash.com/photo-1600967287356-4866c77f528c?q=80&w=1600&auto=format&fit=crop');
+      background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aGVhbGluZyUyMGhhbmRzfGVufDB8fDB8fHwy');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -31,68 +31,66 @@
       background: rgba(221, 233, 225, 0.12);
     }
 
-    .image-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+    /* ===== TESTIMONIAL CAROUSEL ===== */
+
+    .testimonial-carousel-wrapper {
+      position: relative;
       margin-top: 20px;
     }
 
-    .image-card {
-      flex: 1;
-      min-width: 260px;
+    .testimonial-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 16px;
+      padding: 10px 0;
     }
 
-    .image-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+    .testimonial-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-slide {
+      min-width: 280px;
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
       border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      flex-shrink: 0;
+      transition: 0.3s ease;
     }
 
-    .image-text {
-      font-size: 14px;
-      margin-top: 10px;
+    .testimonial-slide:hover {
+      transform: translateY(-4px);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 10px;
       line-height: 1.6;
     }
 
-    .expect-box {
-      margin-top: 50px;
-      background: rgba(255,255,255,0.85);
-      padding: 22px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
-
-    .expect-box p {
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    .testimonials-home {
-      margin-top: 50px;
-    }
-
-    .testimonial-simple {
-      background: rgba(255,255,255,0.85);
-      padding: 18px;
-      border-radius: 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
-    }
-
-    .testimonial-simple p {
-      margin: 0;
-      font-style: italic;
-      line-height: 1.7;
-    }
-
-    .testimonial-simple span {
-      display: block;
-      margin-top: 8px;
+    .testimonial-name {
       font-size: 13px;
-      color: rgba(38,53,45,0.7);
+      color: rgba(38, 53, 45, 0.7);
     }
+
+    .testimonial-arrow {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.95);
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-arrow.left { left: -10px; }
+    .testimonial-arrow.right { right: -10px; }
+
   </style>
 </head>
 
@@ -107,6 +105,7 @@
   <a href="contact.html">Contact Us</a>
 </nav>
 
+<!-- UPDATED HERO IMAGE ONLY -->
 <div class="hero"></div>
 
 <div class="container">
@@ -125,17 +124,21 @@
 
   <div class="image-row">
 
+    <!-- 🌿 WILLOW (UPDATED IMAGE ONLY) -->
     <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1648503653373-ee748b4858b9?q=80&w=735&auto=format&fit=crop"
+      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2lsbG93JTIwdHJlZXxlbnwwfHwwfHx8Mg%3D%3D"
            alt="Willow tree reflecting emotional balance and healing">
+
       <p class="image-text">
         The willow reflects emotional balance, flexibility, and healing.
       </p>
     </div>
 
+    <!-- 🌱 FERN (UNCHANGED) -->
     <div class="image-card">
       <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
            alt="Fern symbolising growth and renewal">
+
       <p class="image-text">
         The fern symbolises quiet growth, renewal, and resilience.
       </p>
@@ -143,39 +146,40 @@
 
   </div>
 
-  <!-- ANCHOR TARGET ADDED HERE -->
-  <div class="expect-box" id="what-to-expect">
+  <!-- ===== TESTIMONIALS CAROUSEL ===== -->
 
-    <h2>What to Expect</h2>
+  <h2>What Clients Say</h2>
 
-    <p>You are welcome to arrive 5–10 minutes before your session to settle in. We begin with a brief check-in and intention setting.</p>
+  <div class="testimonial-carousel-wrapper">
 
-    <p>Optional grounding elements such as palo santo, sage, or agua de florida may be used — always with your consent.</p>
+    <button class="testimonial-arrow left" onclick="scrollTestimonials(-1)">‹</button>
 
-    <p>Reiki is then offered in a calm, holistic way while you remain fully comfortable and at ease.</p>
+    <div class="testimonial-carousel" id="testimonialCarousel">
 
-    <p>Each session is supported by soft, meditative music to encourage deep relaxation and balance.</p>
+      <div class="testimonial-slide">
+        <p class="testimonial-text">
+          “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time. I left feeling clearer and more grounded.”
+        </p>
+        <p class="testimonial-name">Andy — Creative</p>
+      </div>
 
-  </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-text">
+          “As someone constantly giving energy to others, this was the first time I felt like I had space to reset. It was deeply calming and stayed with me for days.”
+        </p>
+        <p class="testimonial-name">Sarah — Primary School Teacher</p>
+      </div>
 
-  <div class="testimonials-home">
+      <div class="testimonial-slide">
+        <p class="testimonial-text">
+          “I was sceptical at first, but I left feeling noticeably more balanced and less mentally overloaded. It helped me switch off completely.”
+        </p>
+        <p class="testimonial-name">David — Finance Analyst, City of London</p>
+      </div>
 
-    <h2>What Clients Say</h2>
-
-    <div class="testimonial-simple">
-      <p>“I left feeling noticeably calmer and more grounded.”</p>
-      <span>Andy — Creative</span>
     </div>
 
-    <div class="testimonial-simple">
-      <p>“It created a deep sense of reset that stayed with me for days.”</p>
-      <span>Sarah — Teacher</span>
-    </div>
-
-    <div class="testimonial-simple">
-      <p>“Helped me fully switch off from mental overload.”</p>
-      <span>David — Finance Analyst</span>
-    </div>
+    <button class="testimonial-arrow right" onclick="scrollTestimonials(1)">›</button>
 
   </div>
 
@@ -184,6 +188,29 @@
 <footer>
   © 2026 Willow & Fern Reiki • Reiki Healing UK
 </footer>
+
+<script>
+const testimonialCarousel = document.getElementById('testimonialCarousel');
+
+function scrollTestimonials(direction) {
+  testimonialCarousel.scrollBy({
+    left: direction * 300,
+    behavior: 'smooth'
+  });
+}
+
+setInterval(() => {
+  if (!testimonialCarousel) return;
+
+  const maxScroll = testimonialCarousel.scrollWidth - testimonialCarousel.clientWidth;
+
+  if (testimonialCarousel.scrollLeft >= maxScroll) {
+    testimonialCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+  } else {
+    testimonialCarousel.scrollBy({ left: 300, behavior: 'smooth' });
+  }
+}, 5000);
+</script>
 
 </body>
 </html>

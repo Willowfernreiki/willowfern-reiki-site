@@ -2,6 +2,16 @@
    BASE / GLOBAL
 ========================= */
 
+:root {
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,6 +25,10 @@ body {
   /* page load animation */
   opacity: 0;
   animation: pageFade 0.6s ease forwards;
+
+  /* ✨ subtle smoothing upgrade */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes pageFade {
@@ -22,26 +36,40 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
+/* =========================
+   TYPOGRAPHY (REFINED HIERARCHY)
+========================= */
 
 h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
+  font-size: 44px;
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+  letter-spacing: -0.2px;
 }
 
 h2 {
-  margin-top: 40px;
-  font-size: 24px;
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-2);
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.1px;
 }
 
 p {
   line-height: 1.8;
   font-size: 16.5px;
   max-width: 800px;
+  margin-bottom: var(--space-2);
+}
+
+/* =========================
+   CONTAINER (8pt SYSTEM)
+========================= */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: var(--space-5) var(--space-3);
 }
 
 /* =========================
@@ -50,8 +78,8 @@ p {
 
 nav {
   display: flex;
-  gap: 18px;
-  padding: 18px 20px;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
   justify-content: center;
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(10px);
@@ -110,9 +138,9 @@ button.button {
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-5);
 
-  /* 🌿 ADDED: slow zoom effect */
+  /* 🌿 slow zoom effect */
   animation: heroZoom 18s ease-in-out infinite alternate;
   transform-origin: center;
   will-change: transform;
@@ -125,14 +153,9 @@ button.button {
   background: rgba(221,233,225,0.12);
 }
 
-/* 🌿 ADDED: hero animation keyframes */
 @keyframes heroZoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.06);
-  }
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
 }
 
 /* =========================
@@ -141,17 +164,17 @@ button.button {
 
 .image-row {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: var(--space-4);
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: var(--space-3);
 }
 
 .image-card {
   flex: 1;
   min-width: 250px;
 
-  /* 🌱 ADDED: premium hover transition */
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   will-change: transform;
 }
 
@@ -161,13 +184,13 @@ button.button {
 }
 
 .image-card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(0,0,0,0.08);
 }
 
 .image-text {
   font-size: 14px;
-  margin-top: 10px;
+  margin-top: var(--space-2);
   line-height: 1.6;
 }
 
@@ -178,13 +201,13 @@ button.button {
 .library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: var(--space-3);
 }
 
 .book-card {
   background: rgba(255,255,255,0.9);
   border-radius: 16px;
-  padding: 16px;
+  padding: var(--space-2);
 
   display: flex;
   flex-direction: column;
@@ -192,6 +215,12 @@ button.button {
 
   min-height: 360px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .book-card img {
@@ -199,7 +228,7 @@ button.button {
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-2);
 }
 
 .book-title {
@@ -229,8 +258,8 @@ button.button {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 16px;
-  padding: 10px 0;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -241,7 +270,7 @@ button.button {
   min-width: 260px;
   background: rgba(255,255,255,0.9);
   border-radius: 16px;
-  padding: 14px;
+  padding: var(--space-2);
   flex-shrink: 0;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
@@ -277,7 +306,7 @@ button.button {
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: var(--space-3);
   align-items: stretch;
 }
 
@@ -289,8 +318,15 @@ button.button {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   min-height: 240px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .testimonial-text {
@@ -312,9 +348,9 @@ button.button {
 form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--space-2);
   max-width: 650px;
-  margin-top: 20px;
+  margin-top: var(--space-3);
 }
 
 label {
@@ -346,7 +382,7 @@ textarea:focus {
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(12px);
   transition: all 0.7s ease;
 }
 
@@ -361,7 +397,7 @@ textarea:focus {
 
 footer {
   text-align: center;
-  padding: 40px 20px;
+  padding: var(--space-5) var(--space-2);
   font-size: 13px;
   color: rgba(38,53,45,0.7);
 }

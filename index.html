@@ -14,9 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- 🔒 HOMEPAGE-ONLY FIX (does NOT affect other pages) -->
   <style>
-    /* HERO */
     .hero {
       height: 50vh;
       background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aGVhbGluZyUyMGhhbmRzfGVufDB8fDB8fHwy');
@@ -34,29 +32,27 @@
     }
 
     /* =========================
-       IMAGE FIX (NO HOVER EFFECT)
-       LOCKED UNIFORM SIZE
+       IMAGE SECTION — CENTERED BALANCE FIX
+       (same size, better page fit)
     ========================= */
 
     .image-row {
       display: flex;
-      gap: 20px;
+      justify-content: center;   /* 👈 key fix: centers the group */
+      gap: 28px;
       flex-wrap: wrap;
       margin-top: 20px;
-      align-items: stretch;
     }
 
     .image-card {
-      flex: 1;
-      min-width: 220px;
-      max-width: 320px;
+      width: 320px;              /* fixed consistent width */
       display: flex;
       flex-direction: column;
     }
 
     .image-card img {
       width: 100%;
-      height: 210px;
+      height: 220px;
       object-fit: cover;
       border-radius: 16px;
     }
@@ -71,7 +67,7 @@
       margin-right: auto;
     }
 
-    /* REMOVE ANY HOVER EFFECTS ON THIS PAGE ONLY */
+    /* ensure no hover effects */
     .image-card:hover {
       transform: none !important;
       box-shadow: none !important;
@@ -109,50 +105,51 @@
 
   <div class="image-row">
 
-    <!-- WILLOW -->
     <div class="image-card">
       <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2lsbG93JTIwdHJlZXxlbnwwfHwwfHx8Mg%3D%3D"
            alt="Willow tree reflecting emotional balance and healing">
 
       <p class="image-text">
-        The willow reflects emotional balance, flexibility, and healing.
+        The willow reflects emotional balance, flexibility, and gentle restoration.
       </p>
     </div>
 
-    <!-- FERN -->
     <div class="image-card">
       <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
            alt="Fern symbolising growth and renewal">
 
       <p class="image-text">
-        The fern symbolises quiet growth, renewal, and resilience.
+        The fern represents steady growth, quiet resilience, and natural renewal.
       </p>
     </div>
 
   </div>
 
-  <!-- TESTIMONIALS (UNCHANGED STRUCTURE FROM YOUR SITE) -->
+  <!-- =========================
+       RESTORED SUMMARISED TESTIMONIALS
+  ========================= -->
+
   <h2>What Clients Say</h2>
 
   <div class="testimonials-grid">
 
     <div class="testimonial-card">
       <p class="testimonial-text">
-        “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time.”
+        “The session created a rare sense of calm and mental space that stayed with me afterwards.”
       </p>
       <p class="testimonial-client">Andy — Creative</p>
     </div>
 
     <div class="testimonial-card">
       <p class="testimonial-text">
-        “As someone constantly giving energy to others, this was the first time I felt like I had space to reset.”
+        “It felt like a reset. Gentle, grounding, and deeply restorative without being overwhelming.”
       </p>
       <p class="testimonial-client">Sarah — Primary School Teacher</p>
     </div>
 
     <div class="testimonial-card">
       <p class="testimonial-text">
-        “I left feeling noticeably more balanced and less mentally overloaded.”
+        “I walked away feeling lighter, clearer, and noticeably less mentally cluttered.”
       </p>
       <p class="testimonial-client">David — Finance Analyst, City of London</p>
     </div>

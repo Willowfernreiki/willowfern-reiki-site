@@ -32,7 +32,7 @@
     }
 
     /* =========================
-       IMAGE ROW (UPDATED ALIGNMENT)
+       IMAGE ROW
     ========================= */
 
     .image-row {
@@ -68,14 +68,13 @@
       margin-right: auto;
     }
 
-    /* subtle hover (kept very light) */
     .image-card:hover {
       transform: translateY(-2px);
       transition: 0.3s ease;
     }
 
     /* =========================
-       TESTIMONIALS (HOME SUMMARY)
+       TESTIMONIALS SUMMARY
     ========================= */
 
     .testimonials-grid {
@@ -102,6 +101,29 @@
       line-height: 1.7;
       text-align: center;
       color: #26352D;
+    }
+
+    /* =========================
+       WHAT TO EXPECT (RESTORED)
+    ========================= */
+
+    .expect-box {
+      margin-top: 40px;
+      padding: 22px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .expect-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .expect-box p {
+      line-height: 1.8;
+      font-size: 15px;
+      margin-bottom: 12px;
     }
 
   </style>
@@ -136,9 +158,9 @@
 
   <div class="image-row">
 
-    <!-- LEFT: WILLOW -->
+    <!-- WILLOW (LEFT) -->
     <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2lsbG93JTIwdHJlZXxlbnwwfHwwfHx8Mg%3D%3D"
+      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60"
            alt="Willow tree reflecting emotional balance and healing">
 
       <p class="image-text">
@@ -146,7 +168,7 @@
       </p>
     </div>
 
-    <!-- RIGHT: FERN -->
+    <!-- FERN (RIGHT) -->
     <div class="image-card">
       <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
            alt="Fern symbolising growth and renewal">
@@ -158,27 +180,39 @@
 
   </div>
 
-  <!-- TESTIMONIAL SUMMARY (HOME VERSION) -->
+  <!-- RESTORED SECTION -->
+  <div class="expect-box" id="what-to-expect">
+
+    <h3>What to Expect</h3>
+
+    <p>
+      Each session begins with a short grounding conversation so you can settle in and feel comfortable.
+    </p>
+
+    <p>
+      You’ll then lie fully clothed while Reiki energy is gently offered, either through light touch or just above the body depending on preference.
+    </p>
+
+    <p>
+      Most people describe feeling deeply relaxed, calm, and more emotionally balanced afterwards. There is no pressure or expectation — simply space to rest and reset.
+    </p>
+
+  </div>
+
   <h2>What Clients Say</h2>
 
   <div class="testimonials-grid">
 
     <div class="testimonial-card">
-      <p class="testimonial-text">
-        “It gave me a real sense of calm I hadn’t felt in a while.”
-      </p>
+      <p class="testimonial-text">“It gave me a real sense of calm I hadn’t felt in a while.”</p>
     </div>
 
     <div class="testimonial-card">
-      <p class="testimonial-text">
-        “I felt noticeably more grounded and clear afterwards.”
-      </p>
+      <p class="testimonial-text">“I felt noticeably more grounded and clear afterwards.”</p>
     </div>
 
     <div class="testimonial-card">
-      <p class="testimonial-text">
-        “A gentle reset that stayed with me for the rest of the day.”
-      </p>
+      <p class="testimonial-text">“A gentle reset that stayed with me for the rest of the day.”</p>
     </div>
 
   </div>

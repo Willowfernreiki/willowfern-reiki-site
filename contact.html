@@ -9,14 +9,14 @@
 
 <meta name="description" content="Book a Reiki healing session in the UK with Willow Fern Reiki. In-person, distance, corporate and open-air Reiki available.">
 <meta name="keywords" content="Book Reiki UK, Reiki contact, Reiki healing appointment, Reiki London, holistic therapy UK">
-<meta name="author" content="Willow & Fern Reiki">
+<meta name="author" content="Willow Fern Reiki">
 
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <style>
 
-/* ===== HERO (UNCHANGED) ===== */
+/* ===== HERO ===== */
 .hero {
   height: 40vh;
   background-image: url('https://images.unsplash.com/photo-1491386764408-cd3cbe1b9f7d?q=80&w=1600&auto=format&fit=crop');
@@ -24,8 +24,8 @@
   background-position: center;
   position: relative;
 
-  /* FIX 1: reduce excessive gap below hero */
-  margin-bottom: 20px;
+  /* refined spacing */
+  margin-bottom: 12px;
 }
 
 .hero::before {
@@ -35,17 +35,33 @@
   background: rgba(221,233,225,0.12);
 }
 
-/* ===== FORM LAYOUT FIX (UNCHANGED STRUCTURE) ===== */
+/* ===== STRUCTURE ===== */
+.container {
+  padding-top: 12px;
+}
+
+/* ===== TYPOGRAPHY (CONTROLLED RHYTHM) ===== */
+h1 {
+  font-size: 42px;
+  margin: 0 0 12px 0; /* removes top gap fully */
+}
+
+p {
+  max-width: 750px;
+  line-height: 1.8;
+  margin: 0 0 18px 0;
+}
+
+/* ===== FORM ===== */
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
   max-width: 650px;
-
-  /* FIX 2: reduce push-down effect */
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
+/* ===== INPUTS ===== */
 label {
   font-size: 14px;
   font-weight: 500;
@@ -66,7 +82,7 @@ input:focus, select:focus, textarea:focus {
   border-color: #AEBFA9;
 }
 
-/* ===== BUTTON (UNCHANGED) ===== */
+/* ===== BUTTON ===== */
 .button, button.button {
   display: inline-block;
   padding: 10px 18px;
@@ -79,29 +95,14 @@ input:focus, select:focus, textarea:focus {
   cursor: pointer;
   transition: 0.25s ease;
   font-family: inherit;
+  margin-top: 10px;
 }
 
 .button:hover {
   background: #9FB19A;
 }
 
-/* ===== TYPOGRAPHY (ONLY SMALL TIGHTENING) ===== */
-.container {
-  padding-top: 20px; /* FIX 3: was 40px → reduced */
-}
-
-h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-p {
-  max-width: 750px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-/* ===== SECTION SPACING (UNCHANGED) ===== */
+/* ===== SECTION SPACING ===== */
 h2 {
   margin-top: 40px;
 }

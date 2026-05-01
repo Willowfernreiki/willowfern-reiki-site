@@ -16,17 +16,24 @@
 
 <style>
 
-/* ===== HERO ===== */
-.hero {
+/* ===== DUAL HERO ===== */
+.dual-hero {
+  display: flex;
+  width: 100%;
   height: 40vh;
-  background-image: url('https://images.unsplash.com/photo-1491386764408-cd3cbe1b9f7d?q=80&w=1600&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  overflow: hidden;
   margin-bottom: 12px;
 }
 
-.hero::before {
+.hero-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transform: scale(1.02); /* subtle premium depth */
+}
+
+.hero-image::after {
   content:"";
   position:absolute;
   inset:0;
@@ -50,16 +57,12 @@ p {
   margin: 0 0 18px 0;
 }
 
-/* ===== FORM WRAPPER (centers visually without breaking layout) ===== */
-.form-wrapper {
-  max-width: 650px;
-}
-
 /* ===== FORM ===== */
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  max-width: 650px;
   margin-top: 12px;
 }
 
@@ -104,7 +107,7 @@ input:focus, select:focus, textarea:focus {
   background: #9FB19A;
 }
 
-/* ===== FADE-IN ANIMATION ===== */
+/* ===== FADE-IN ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(25px);
@@ -135,7 +138,18 @@ h2 {
   <a href="contact.html" class="active">Contact Us</a>
 </nav>
 
-<div class="hero"></div>
+<!-- ✅ DUAL HERO -->
+<div class="dual-hero">
+
+  <div class="hero-image"
+       style="background-image:url('https://images.pexels.com/photos/16654882/pexels-photo-16654882.jpeg');">
+  </div>
+
+  <div class="hero-image"
+       style="background-image:url('https://images.unsplash.com/photo-1722554086475-f11257a9eb6d?w=1200&auto=format&fit=crop');">
+  </div>
+
+</div>
 
 <div class="container">
 
@@ -146,8 +160,7 @@ h2 {
     I will respond within 24–48 hours.
   </p>
 
-  <!-- FADE-IN WRAPPER -->
-  <div class="form-wrapper fade-in">
+  <div class="fade-in">
 
     <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
 
@@ -203,7 +216,6 @@ h2 {
 </footer>
 
 <script>
-/* SCROLL FADE-IN */
 const fadeElements = document.querySelectorAll('.fade-in');
 
 const observer = new IntersectionObserver(entries => {

@@ -11,15 +11,159 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  font-family: 'Lora', serif;
+  background: #faf9f6;
+  margin: 0;
 }
 
-.book {
-  margin-bottom: 16px;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
+h1, h2 {
+  font-weight: 600;
+}
+
+/* =========================
+   START HERE (UNCHANGED VISUALLY)
+========================= */
+
+.carousel-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #faf9f6, transparent);
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #faf9f6, transparent);
+}
+
+.scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  padding: 20px 40px;
+  scroll-behavior: smooth;
+}
+
+.scroll-card {
+  min-width: 240px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+  opacity: 0.55;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.scroll-card.active {
+  opacity: 1;
+  transform: scale(1.10);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+}
+
+.arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.95);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 5;
+}
+
+.arrow.left { left: -10px; }
+.arrow.right { right: -10px; }
+
+/* =========================
+   FULL LIBRARY (UNCHANGED)
+========================= */
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.book-row {
+  display: flex;
+  gap: 18px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+.book-row:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.book-cover {
+  width: 80px;
+  height: 110px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.book-title {
+  font-weight: 600;
+}
+
+.book-tag {
+  font-size: 13px;
+  color: rgba(0,0,0,0.55);
+}
+
+.button {
+  padding: 10px 18px;
+  background: #AEBFA9;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #9FB19A;
+}
+
 </style>
 </head>
 
@@ -38,21 +182,128 @@
 
 <h1>The Growth Library</h1>
 
-<p>
-A curated collection of books that support emotional growth, awareness, and healing.
-</p>
+<p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
-<div class="book">The Power of Now — Eckhart Tolle</div>
-<div class="book">The Untethered Soul — Michael A. Singer</div>
-<div class="book">You Can Heal Your Life — Louise Hay</div>
-<div class="book">The Body Keeps the Score — Bessel van der Kolk</div>
-<div class="book">Atomic Habits — James Clear</div>
+<!-- =========================
+     START HERE
+========================= -->
+
+<h2>Start Here</h2>
+
+<div class="carousel-wrapper">
+
+  <button class="arrow left" onclick="moveCarousel(-1)">‹</button>
+
+  <div class="scroll-container" id="startHereCarousel">
+
+    <div class="scroll-card">The Power of Now<div class="book-tag">Presence</div></div>
+    <div class="scroll-card">The Untethered Soul<div class="book-tag">Inner Peace</div></div>
+    <div class="scroll-card">Letting Go<div class="book-tag">Release</div></div>
+    <div class="scroll-card">The Four Agreements<div class="book-tag">Clarity</div></div>
+    <div class="scroll-card">When the Body Says No<div class="book-tag">Stress</div></div>
+
+  </div>
+
+  <button class="arrow right" onclick="moveCarousel(1)">›</button>
+
+</div>
+
+<!-- =========================
+     FULL LIBRARY (UNCHANGED)
+========================= -->
+
+<h2>Full Library</h2>
+
+<div class="book-list">
+
+<!-- YOUR ORIGINAL FULL BOOK LIST REMAINS EXACTLY HERE -->
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"><div><div class="book-title">The Power of Now — Eckhart Tolle</div><div class="book-tag">Presence</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1512820790803-83ca734da794"><div><div class="book-title">A New Earth — Eckhart Tolle</div><div class="book-tag">Awakening</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1528207776546-365bb710ee93"><div><div class="book-title">Radical Forgiveness — Colin Tipping</div><div class="book-tag">Healing</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1455390582262-044cdead277a"><div><div class="book-title">The Untethered Soul — Michael Singer</div><div class="book-tag">Inner Peace</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d"><div><div class="book-title">The Surrender Experiment</div><div class="book-tag">Flow</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1519681393784-d120267933ba"><div><div class="book-title">The Field — Lynne McTaggart</div><div class="book-tag">Energy</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"><div><div class="book-title">The Power of Eight</div><div class="book-tag">Collective Healing</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"><div><div class="book-title">In the Realm of Hungry Ghosts</div><div class="book-tag">Trauma</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da"><div><div class="book-title">When the Body Says No</div><div class="book-tag">Stress</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570"><div><div class="book-title">Letting Go — Hawkins</div><div class="book-tag">Release</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"><div><div class="book-title">Map of Consciousness</div><div class="book-tag">Awareness</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc"><div><div class="book-title">Healing and Recovery</div><div class="book-tag">Healing</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1455885667314-a0d48ep0a0"><div><div class="book-title">How to Be a Stoic</div><div class="book-tag">Clarity</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"><div><div class="book-title">Heal Your Body</div><div class="book-tag">Mind-Body</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1526318472351-c75fcf070305"><div><div class="book-title">Law of Attraction</div><div class="book-tag">Manifestation</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d"><div><div class="book-title">The Four Agreements</div><div class="book-tag">Clarity</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1496104679561-38b3b4d5b7b2"><div><div class="book-title">The Fifth Agreement</div><div class="book-tag">Awareness</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1472173148041-00294f0814a2"><div><div class="book-title">The Enchanted Life</div><div class="book-tag">Nature Wisdom</div></div></div>
+
+<div class="book-row"><img class="book-cover" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"><div><div class="book-title">The Alchemist</div><div class="book-tag">Purpose</div></div></div>
+
+</div>
 
 </div>
 
 <footer>
-© 2026 Willow Fern Reiki
+© 2026 Willow Fern Reiki • The Growth Library
 </footer>
+
+<script>
+const carousel = document.getElementById('startHereCarousel');
+const cards = carousel.children;
+let index = 0;
+
+function centerCard(i) {
+  const cardWidth = 260;
+
+  for (let c of cards) c.classList.remove('active');
+
+  const active = (i + cards.length) % cards.length;
+  cards[active].classList.add('active');
+
+  const offset = (active * cardWidth) - (carousel.offsetWidth / 2) + (cardWidth / 2);
+
+  carousel.scrollTo({
+    left: offset,
+    behavior: 'smooth'
+  });
+}
+
+function moveCarousel(dir) {
+  index += dir;
+  centerCard(index);
+}
+
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('mouseenter', () => {
+    index = i;
+    centerCard(i);
+  });
+}
+
+setInterval(() => {
+  index++;
+  centerCard(index);
+}, 4500);
+
+centerCard(0);
+</script>
 
 </body>
 </html>

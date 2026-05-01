@@ -15,13 +15,18 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       height: 50vh;
       background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aGVhbGluZyUyMGhhbmRzfGVufDB8fDB8fHwy');
       background-size: cover;
       background-position: center;
       position: relative;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
     .hero::before {
@@ -31,19 +36,86 @@
       background: rgba(221, 233, 225, 0.12);
     }
 
-    /* ===== TESTIMONIAL CAROUSEL ===== */
+    /* =========================
+       TYPOGRAPHY TIGHTENING
+    ========================= */
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      line-height: 1.75;
+      max-width: 760px;
+      margin: 0 0 16px 0;
+      font-size: 16px;
+      color: rgba(38,53,45,0.92);
+    }
+
+    h2 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       IMAGE ROW (BALANCED FIX)
+    ========================= */
+
+    .image-row {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .image-card {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .image-text {
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 1.6;
+      color: rgba(38,53,45,0.85);
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .button {
+      margin-top: 8px;
+    }
+
+    /* =========================
+       TESTIMONIALS (SIMPLIFIED / MORE NATURAL)
+    ========================= */
 
     .testimonial-carousel-wrapper {
       position: relative;
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
     .testimonial-carousel {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
-      gap: 16px;
-      padding: 10px 0;
+      gap: 14px;
+      padding: 6px 0;
     }
 
     .testimonial-carousel::-webkit-scrollbar {
@@ -52,27 +124,24 @@
 
     .testimonial-slide {
       min-width: 280px;
-      background: rgba(255,255,255,0.85);
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.75);
+      padding: 16px 18px;
+      border-radius: 14px;
+
       flex-shrink: 0;
-      transition: 0.3s ease;
+      transition: 0.25s ease;
     }
 
     .testimonial-slide:hover {
-      transform: translateY(-4px);
+      transform: translateY(-2px);
     }
 
     .testimonial-text {
-      font-style: italic;
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    .testimonial-name {
-      font-size: 13px;
-      color: rgba(38, 53, 45, 0.7);
+      line-height: 1.7;
+      margin-bottom: 0;
+      font-size: 15px;
+      font-style: normal;
+      color: rgba(38,53,45,0.9);
     }
 
     .testimonial-arrow {
@@ -85,7 +154,7 @@
       border-radius: 50%;
       cursor: pointer;
       font-size: 18px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     }
 
     .testimonial-arrow.left { left: -10px; }
@@ -123,9 +192,8 @@
 
   <div class="image-row">
 
-    <!-- 🌿 WILLOW (NOW SECOND IMAGE) -->
     <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2lsbG93JTIwdHJlZXxlbnwwfHwwfHx8Mg%3D%3D"
+      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60"
            alt="Willow tree reflecting emotional balance and healing">
 
       <p class="image-text">
@@ -133,7 +201,6 @@
       </p>
     </div>
 
-    <!-- 🌱 FERN (NOW FIRST IMAGE) -->
     <div class="image-card">
       <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
            alt="Fern symbolising growth and renewal">
@@ -145,8 +212,6 @@
 
   </div>
 
-  <!-- ===== TESTIMONIALS CAROUSEL ===== -->
-
   <h2>What Clients Say</h2>
 
   <div class="testimonial-carousel-wrapper">
@@ -157,23 +222,20 @@
 
       <div class="testimonial-slide">
         <p class="testimonial-text">
-          “I didn’t really know what to expect, but the session helped me slow down mentally in a way I haven’t managed in a long time. I left feeling clearer and more grounded.”
+          “The session helped me slow down and feel more grounded afterwards.”
         </p>
-        <p class="testimonial-name">Andy — Creative</p>
       </div>
 
       <div class="testimonial-slide">
         <p class="testimonial-text">
-          “As someone constantly giving energy to others, this was the first time I felt like I had space to reset. It was deeply calming and stayed with me for days.”
+          “I felt calmer and more balanced, and it stayed with me beyond the session.”
         </p>
-        <p class="testimonial-name">Sarah — Primary School Teacher</p>
       </div>
 
       <div class="testimonial-slide">
         <p class="testimonial-text">
-          “I was sceptical at first, but I left feeling noticeably more balanced and less mentally overloaded. It helped me switch off completely.”
+          “It gave me a proper moment to reset mentally.”
         </p>
-        <p class="testimonial-name">David — Finance Analyst, City of London</p>
       </div>
 
     </div>

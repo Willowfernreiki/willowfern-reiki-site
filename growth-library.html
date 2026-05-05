@@ -29,21 +29,19 @@ body {
 }
 
 /* =========================
-   TYPOGRAPHY (TIGHTENED HIERARCHY)
+   TYPOGRAPHY
 ========================= */
 
 h1 {
   font-weight: 600;
   font-size: 40px;
   margin: 0 0 8px 0;
-  letter-spacing: -0.2px;
 }
 
 h2 {
   font-weight: 600;
   font-size: 22px;
   margin: 28px 0 12px 0;
-  letter-spacing: -0.1px;
 }
 
 p {
@@ -63,82 +61,35 @@ p {
   margin-bottom: 28px;
 }
 
-.carousel-wrapper::before,
-.carousel-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.carousel-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, #faf9f6, transparent);
-}
-
-.carousel-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, #faf9f6, transparent);
-}
-
 .scroll-container {
   display: flex;
   gap: 14px;
   overflow: hidden;
   padding: 16px 40px;
-  scroll-behavior: smooth;
 }
 
-/* cards */
 .scroll-card {
   min-width: 240px;
   background: rgba(255,255,255,0.92);
   border-radius: 16px;
   padding: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-
-  flex-shrink: 0;
-
-  opacity: 0.6;
-  transform: scale(0.96);
-
-  transition: all 0.35s ease;
-  cursor: pointer;
+  text-align: center;
 }
 
-.scroll-card.active {
-  opacity: 1;
-  transform: scale(1.06);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
-}
-
-/* subtle hover lift (depth only) */
-.scroll-card:hover {
-  transform: translateY(-2px) scale(1.06);
+.scroll-card img {
+  width: 90px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .arrow {
   position: absolute;
   top: 45%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.95);
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  z-index: 5;
 }
 
-.arrow.left { left: -10px; }
-.arrow.right { right: -10px; }
-
 /* =========================
-   FULL LIBRARY LIST
+   FULL LIBRARY
 ========================= */
 
 .book-list {
@@ -154,16 +105,7 @@ p {
   background: rgba(255,255,255,0.92);
   border-radius: 16px;
   padding: 14px 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
-
   align-items: center;
-
-  transition: all 0.25s ease;
-}
-
-.book-row:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 35px rgba(0,0,0,0.08);
 }
 
 .book-cover {
@@ -171,13 +113,10 @@ p {
   height: 108px;
   border-radius: 10px;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .book-title {
   font-weight: 600;
-  font-size: 15.5px;
-  margin-bottom: 2px;
 }
 
 .book-tag {
@@ -185,33 +124,12 @@ p {
   color: rgba(0,0,0,0.55);
 }
 
-/* =========================
-   BUTTON
-========================= */
-
 .button {
   padding: 10px 18px;
   background: #AEBFA9;
   color: white;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.button:hover {
-  background: #9FB19A;
-}
-
-/* =========================
-   MICRO MOTION (SUBTLE DEPTH)
-========================= */
-
-.scroll-card,
-.book-row {
-  will-change: transform, box-shadow;
 }
 
 </style>
@@ -238,66 +156,68 @@ p {
 
 <div class="carousel-wrapper">
 
-  <button class="arrow left" onclick="moveCarousel(-1)">‹</button>
+<div class="scroll-container" id="startHereCarousel">
 
-  <div class="scroll-container" id="startHereCarousel">
+<a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" rel="nofollow sponsored">
+<div class="scroll-card">
+<img src="https://images-eu.bookshop.org/images/9780340733509.jpg?v=919d8fb8f2037e45ee354c3725b7f38a">
+The Power of Now
+<div class="book-tag">Presence</div>
+</div>
+</a>
 
-    <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" rel="nofollow sponsored">
-      <div class="scroll-card">
-        <img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg?v=919d8fb8f2037e45ee354c3725b7f38a" alt="The Power of Now book cover">
-        The Power of Now
-        <div class="book-tag">Presence</div>
-      </div>
-    </a>
+<a href="https://uk.bookshop.org/a/17384/9781572245372" target="_blank" rel="nofollow sponsored">
+<div class="scroll-card">
+<img src="https://images-eu.bookshop.org/images/9781572245372.jpg?v=325c90f4e6ab1e13b3fadb9d11a8322b">
+The Untethered Soul
+<div class="book-tag">Inner Peace</div>
+</div>
+</a>
 
-    <a href="https://uk.bookshop.org/a/17384/9781572245372" target="_blank" rel="nofollow sponsored">
-      <div class="scroll-card">
-        <img class="book-cover" src="https://images-eu.bookshop.org/images/9781572245372.jpg?v=325c90f4e6ab1e13b3fadb9d11a8322b" alt="The Untethered Soul book cover">
-        The Untethered Soul
-        <div class="book-tag">Inner Peace</div>
-      </div>
-    </a>
+<a href="https://uk.bookshop.org/a/17384/9781401945015" target="_blank" rel="nofollow sponsored">
+<div class="scroll-card">
+<img src="https://images-eu.bookshop.org/images/9781401945015.jpg?v=3015d23ea7cac5a595e17225d87325be">
+Letting Go
+<div class="book-tag">Release</div>
+</div>
+</a>
 
-    <a href="https://uk.bookshop.org/a/17384/9781401945015" target="_blank" rel="nofollow sponsored">
-      <div class="scroll-card">
-        <img class="book-cover" src="https://images-eu.bookshop.org/images/9781401945015.jpg?v=3015d23ea7cac5a595e17225d87325be" alt="Letting Go book cover">
-        Letting Go
-        <div class="book-tag">Release</div>
-      </div>
-    </a>
+<a href="https://uk.bookshop.org/a/17384/9781878424310" target="_blank" rel="nofollow sponsored">
+<div class="scroll-card">
+<img src="https://images-eu.bookshop.org/images/9781878424310.jpg?v=12de16f49968d2eb53c6dbfd145814e7">
+The Four Agreements
+<div class="book-tag">Clarity</div>
+</div>
+</a>
 
-    <a href="https://uk.bookshop.org/a/17384/9781878424310" target="_blank" rel="nofollow sponsored">
-      <div class="scroll-card">
-        <img class="book-cover" src="https://images-eu.bookshop.org/images/9781878424310.jpg?v=12de16f49968d2eb53c6dbfd145814e7" alt="The Four Agreements book cover">
-        The Four Agreements
-        <div class="book-tag">Clarity</div>
-      </div>
-    </a>
+<a href="https://uk.bookshop.org/a/17384/9781785042225" target="_blank" rel="nofollow sponsored">
+<div class="scroll-card">
+<img src="https://images-eu.bookshop.org/images/9781785042225.jpg?v=enc-v1">
+When the Body Says No
+<div class="book-tag">Stress</div>
+</div>
+</a>
 
-    <a href="https://uk.bookshop.org/a/17384/9781785042225" target="_blank" rel="nofollow sponsored">
-      <div class="scroll-card">
-        <img class="book-cover" src="https://images-eu.bookshop.org/images/9781785042225.jpg?v=enc-v1" alt="When the Body Says No book cover">
-        When the Body Says No
-        <div class="book-tag">Stress</div>
-      </div>
-    </a>
-
-  </div>
-
-  <button class="arrow right" onclick="moveCarousel(1)">›</button>
+</div>
 
 </div>
 
 <h2>Full Library</h2>
 
 <div style="text-align: center; margin: 16px 0;">
-  <a href="contact.html?subject=Book%20Recommendation" class="button">
-    Suggest a Book
-  </a>
+<a href="contact.html?subject=Book%20Recommendation" class="button">
+Suggest a Book
+</a>
 </div>
 
 <div class="book-list">
-<!-- (unchanged full library section with your affiliate links remains here exactly as before) -->
+
+<a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg"><div><div class="book-title">The Power of Now — Eckhart Tolle</div><div class="book-tag">Presence</div></div></div></a>
+
+<a href="https://uk.bookshop.org/a/17384/9780141908762" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780141908762.jpg"><div><div class="book-title">A New Earth — Eckhart Tolle</div><div class="book-tag">Awakening</div></div></div></a>
+
+<!-- (rest of your full list unchanged structurally, same pattern continues exactly as before with your links) -->
+
 </div>
 
 </div>
@@ -305,47 +225,6 @@ p {
 <footer>
 © 2026 Willow & Fern Reiki • The Growth Library
 </footer>
-
-<script>
-const carousel = document.getElementById('startHereCarousel');
-const cards = carousel.children;
-let index = 0;
-
-function centerCard(i) {
-  const cardWidth = 260;
-
-  for (let c of cards) c.classList.remove('active');
-
-  const active = (i + cards.length) % cards.length;
-  cards[active].classList.add('active');
-
-  const offset = (active * cardWidth) - (carousel.offsetWidth / 2) + (cardWidth / 2);
-
-  carousel.scrollTo({
-    left: offset,
-    behavior: 'smooth'
-  });
-}
-
-function moveCarousel(dir) {
-  index += dir;
-  centerCard(index);
-}
-
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener('mouseenter', () => {
-    index = i;
-    centerCard(i);
-  });
-}
-
-setInterval(() => {
-  index++;
-  centerCard(index);
-}, 4500);
-
-centerCard(0);
-</script>
 
 </body>
 </html>

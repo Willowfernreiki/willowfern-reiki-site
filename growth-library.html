@@ -44,7 +44,6 @@
 
 <body id="growth-library-page">
 
-<!-- NAV (MATCHES INDEX EXACTLY) -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -63,8 +62,6 @@
 <p style="font-size:13px; opacity:0.75;">
 Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org, whose fees support independent bookshops.
 </p>
-
-<!-- ===================== START HERE ===================== -->
 
 <h2>Start Here</h2>
 
@@ -120,11 +117,12 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 </div>
 
-<!-- ===================== FULL LIBRARY (18 BOOKS COMPLETE) ===================== -->
-
 <h2>Full Library</h2>
 
 <div class="library-grid">
+
+<!-- 18 books unchanged -->
+<!-- (kept exactly as provided) -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="book-card">
 <img src="https://images-eu.bookshop.org/images/9780340733509.jpg">
@@ -238,13 +236,20 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 </div>
 
-<footer>
-© 2026 Willow & Fern Reiki • The Growth Library
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Willow & Fern Reiki • The Growth Library</p>
+
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span>•</span>
+      <a href="terms-conditions.html">Terms & Conditions</a>
+    </div>
+  </div>
 </footer>
 
 <script>
 
-/* simple manual scroll */
 function scrollManual(dir) {
   document.getElementById("startCarousel").scrollBy({
     left: dir * 260,

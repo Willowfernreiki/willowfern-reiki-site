@@ -28,7 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  padding-bottom: 70px; /* space for sticky footer */
+  padding-bottom: 70px;
 }
 
 @keyframes pageFade {
@@ -101,7 +101,7 @@ nav a.active {
 }
 
 /* =========================
-   BUTTONS
+   BUTTONS (GLOBAL)
 ========================= */
 
 .button,
@@ -166,7 +166,7 @@ button.button {
 }
 
 /* =========================
-   FOOTER (STICKY MINIMAL BAR)
+   FOOTER
 ========================= */
 
 footer {
@@ -197,4 +197,72 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* =========================
+   CONTACT FORM (SCOPED ONLY)
+   (NEW — DOES NOT AFFECT OTHER PAGES)
+========================= */
+
+.form-wrapper input,
+.form-wrapper select,
+.form-wrapper textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+
+  background: rgba(255,255,255,0.92);
+
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  color: #26352D;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.form-wrapper input:focus,
+.form-wrapper select:focus,
+.form-wrapper textarea:focus {
+  border-color: #AEBFA9;
+  box-shadow: 0 6px 18px rgba(174,191,169,0.25);
+}
+
+.form-wrapper label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(38,53,45,0.8);
+}
+
+/* Scoped button ONLY inside contact form */
+.form-wrapper .button,
+.form-wrapper button.button {
+  width: 100%;
+  padding: 12px 18px;
+
+  background: linear-gradient(135deg, #AEBFA9, #9FB19A);
+  color: white;
+
+  border-radius: 30px;
+  border: none;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  box-shadow: 0 8px 18px rgba(174,191,169,0.25);
+}
+
+.form-wrapper .button:hover,
+.form-wrapper button.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(174,191,169,0.35);
 }

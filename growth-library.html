@@ -67,14 +67,27 @@ h2 {
   font-weight: 600;
 }
 
-/* START HERE CAROUSEL */
+/* =========================
+   START HERE CAROUSEL (RESTORED)
+========================= */
+
+.carousel-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
 .scroll-container {
   display: flex;
   gap: 14px;
   overflow-x: auto;
-  padding: 14px 6px;
+  padding: 14px 40px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
 .scroll-card {
@@ -86,7 +99,6 @@ h2 {
   scroll-snap-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 
-  /* FIX: remove blue link styling */
   text-decoration: none;
   color: inherit;
   display: block;
@@ -103,6 +115,31 @@ h2 {
 .scroll-card .title {
   font-size: 13px;
   font-weight: 600;
+}
+
+/* arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  cursor: pointer;
+  z-index: 5;
+  font-size: 18px;
+  color: rgba(38,53,45,0.8);
+}
+
+.carousel-btn.left {
+  left: 6px;
+}
+
+.carousel-btn.right {
+  right: 6px;
 }
 
 /* FULL LIBRARY */
@@ -135,7 +172,7 @@ h2 {
   border-radius: 8px;
 }
 
-/* FOOTER (UNIFIED SYSTEM) */
+/* FOOTER */
 footer {
   display: flex;
   justify-content: space-between;
@@ -183,7 +220,11 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 <h2>Start Here</h2>
 
-<div class="scroll-container">
+<div class="carousel-wrapper">
+
+<button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
+
+<div class="scroll-container" id="startCarousel">
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="scroll-card">
 <img src="https://images-eu.bookshop.org/images/9780340733509.jpg?v=919d8fb8f2037e45ee354c3725b7f38a">
@@ -209,6 +250,10 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 <img src="https://images-eu.bookshop.org/images/9781785042225.jpg?v=enc-v1">
 <div class="title">When the Body Says No</div>
 </a>
+
+</div>
+
+<button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
 
 </div>
 
@@ -267,6 +312,24 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
     <a href="terms.html">Terms & Conditions</a>
   </div>
 </footer>
+
+<script>
+function scrollCarousel(direction) {
+  const container = document.getElementById('startCarousel');
+  const scrollAmount = 220;
+
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+
+  setTimeout(() => {
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }, 600);
+}
+</script>
 
 </body>
 </html>

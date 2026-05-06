@@ -89,12 +89,15 @@ nav a {
   text-decoration: none;
   color: #26352D;
   font-size: 14px;
+  padding-bottom: 2px; /* ensures underline alignment consistency */
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: #6F9E7F;
 }
 
+/* ✅ SINGLE SOURCE OF TRUTH FOR ACTIVE STATE */
 nav a.active {
   font-weight: 600;
   border-bottom: 2px solid #AEBFA9;
@@ -201,7 +204,6 @@ footer a:hover {
 
 /* =========================
    CONTACT FORM (SCOPED ONLY)
-   (NEW — DOES NOT AFFECT OTHER PAGES)
 ========================= */
 
 .form-wrapper input,

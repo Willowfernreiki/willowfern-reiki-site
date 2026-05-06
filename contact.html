@@ -35,31 +35,31 @@
   margin: auto;
 }
 
-/* SMALL NOTE */
+/* NOTE */
 .note {
   font-size: 13px;
   opacity: 0.75;
   margin-bottom: 20px;
 }
 
-/* FOOTER (CONSISTENT GLOBAL STYLE) */
+/* FOOTER (CONSISTENT WITH ALL OTHER PAGES) */
 footer {
-  position: sticky;
-  bottom: 0;
-  background: rgba(247,246,243,0.95);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  padding: 14px 20px;
-  font-size: 12px;
   display: flex;
-  justify-content: center;
-  gap: 18px;
-  color: rgba(38,53,45,0.75);
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  font-size: 13px;
+  color: rgba(38,53,45,0.7);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 footer a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
+  margin-left: 12px;
 }
 
 footer a:hover {
@@ -93,29 +93,60 @@ If you’d like to book a session, ask a question, or suggest a book for the Gro
 
 <div class="form-wrapper">
 
-<form id="contact-form">
+<!-- NETLIFY FORM -->
+<form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
 
-<label>Name</label>
-<input type="text" name="name" required>
+  <!-- REQUIRED FOR NETLIFY -->
+  <input type="hidden" name="form-name" value="contact">
 
-<label>Email</label>
-<input type="email" name="email" required>
+  <!-- SPAM PROTECTION -->
+  <p style="display:none;">
+    <label>Don’t fill this out if you're human:
+      <input name="bot-field">
+    </label>
+  </p>
 
-<label>Reason for enquiry</label>
-<select name="reason" required>
+  <label>Name</label>
+  <input type="text" name="name" required>
 
-  <option value="">Select an option</option>
-  <option value="booking">Booking a Reiki Session</option>
-  <option value="question">General Question</option>
-  <option value="suggest-book">Suggest a Book (Growth Library)</option>
-  <option value="other">Other</option>
+  <label>Email</label>
+  <input type="email" name="email" required>
 
-</select>
+  <label>Reason for enquiry</label>
+  <select name="reason" required>
 
-<label>Message</label>
-<textarea name="message" rows="6" required></textarea>
+    <option value="">Select an option</option>
 
-<button class="button" type="submit">Send Message</button>
+    <option value="energy-emotional-balance">
+      1:1 Energy & Emotional Balance Session
+    </option>
+
+    <option value="nature-based-reiki">
+      Nature-Based Reiki Session
+    </option>
+
+    <option value="distance-reiki">
+      Distance Reiki
+    </option>
+
+    <option value="corporate-reiki">
+      Corporate Reiki
+    </option>
+
+    <option value="suggest-book">
+      Suggest a Book (Growth Library)
+    </option>
+
+    <option value="other">
+      Other
+    </option>
+
+  </select>
+
+  <label>Message</label>
+  <textarea name="message" rows="6" required></textarea>
+
+  <button class="button" type="submit">Send Message</button>
 
 </form>
 
@@ -128,9 +159,11 @@ I aim to respond within 24–48 hours.
 </div>
 
 <footer>
-  <a href="privacy.html">Privacy Policy</a>
-  <span>•</span>
-  <a href="terms.html">Terms & Conditions</a>
+  <div>© 2026 Willow & Fern Reiki • Contact</div>
+  <div>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+  </div>
 </footer>
 
 </body>

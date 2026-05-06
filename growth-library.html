@@ -68,7 +68,7 @@ h2 {
   font-weight: 600;
 }
 
-/* CAROUSEL */
+/* CAROUSEL (RESTORED VERSION) */
 .carousel-wrapper {
   position: relative;
   margin-top: 10px;
@@ -110,17 +110,25 @@ h2 {
   font-weight: 600;
 }
 
+/* ARROWS */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border: none;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   cursor: pointer;
+  font-size: 18px;
+  color: rgba(38,53,45,0.8);
+  z-index: 5;
 }
+
+.carousel-btn.left { left: 6px; }
+.carousel-btn.right { right: 6px; }
 
 /* FULL LIBRARY */
 .book-list {
@@ -151,7 +159,7 @@ h2 {
   border-radius: 8px;
 }
 
-/* FOOTER */
+/* FOOTER (FIXED COLOUR) */
 footer {
   display: flex;
   justify-content: space-between;
@@ -159,11 +167,17 @@ footer {
   font-size: 13px;
   border-top: 1px solid rgba(0,0,0,0.05);
   margin-top: 60px;
+  color: rgba(38,53,45,0.75);
 }
 
 .footer-right a {
   margin-left: 12px;
   text-decoration: none;
+  color: rgba(38,53,45,0.75);
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -186,9 +200,16 @@ footer {
 
 <p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
+<p style="font-size:13px; opacity:0.75;">
+Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org, whose fees support independent bookshops.
+</p>
+
 <h2>Start Here</h2>
 
 <div class="carousel-wrapper">
+
+<button class="carousel-btn left" onclick="scrollLeftCarousel()">‹</button>
+
 <div class="scroll-container" id="carousel">
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="scroll-card">
@@ -217,11 +238,20 @@ footer {
 </a>
 
 </div>
+
+<button class="carousel-btn right" onclick="scrollRightCarousel()">›</button>
+
 </div>
 
 <h2>Full Library</h2>
 
+<div style="text-align:center; margin:16px 0;">
+<a class="button" href="contact.html?subject=Book%20Recommendation">Suggest a Book</a>
+</div>
+
 <div class="book-list">
+
+<!-- ALL 18 BOOKS (UNCHANGED) -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg">The Power Of Now</div></a>
 <a href="https://uk.bookshop.org/a/17384/9780141908762" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780141908762.jpg">A New Earth</div></a>
@@ -253,6 +283,16 @@ footer {
     <a href="terms.html">Terms & Conditions</a>
   </div>
 </footer>
+
+<script>
+function scrollRightCarousel() {
+  document.getElementById("carousel").scrollBy({ left: 220, behavior: "smooth" });
+}
+
+function scrollLeftCarousel() {
+  document.getElementById("carousel").scrollBy({ left: -220, behavior: "smooth" });
+}
+</script>
 
 </body>
 </html>

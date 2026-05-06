@@ -69,7 +69,10 @@ h2 {
   font-weight: 600;
 }
 
-/* CAROUSEL */
+/* =========================
+   TRUE INFINITE CAROUSEL
+========================= */
+
 .carousel-wrapper {
   position: relative;
   margin-top: 10px;
@@ -131,8 +134,13 @@ h2 {
   color: rgba(38,53,45,0.8);
 }
 
-.carousel-btn.left { left: 6px; }
-.carousel-btn.right { right: 6px; }
+.carousel-btn.left {
+  left: 6px;
+}
+
+.carousel-btn.right {
+  right: 6px;
+}
 
 /* FULL LIBRARY */
 .book-list {
@@ -140,6 +148,11 @@ h2 {
   flex-direction: column;
   gap: 12px;
   margin-top: 20px;
+}
+
+.book-list a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .book-row {
@@ -202,7 +215,7 @@ footer {
 <p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
 <p style="font-size:13px; opacity:0.75;">
-Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org.
+Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org, whose fees support independent bookshops.
 </p>
 
 <h2>Start Here</h2>
@@ -252,7 +265,7 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 <div class="book-list">
 
-<!-- FULL 18 BOOKS RESTORED -->
+<!-- 18 BOOKS RESTORED EXACTLY -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg">The Power of Now</div></a>
 
@@ -304,16 +317,21 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 <script>
 const carousel = document.getElementById("carousel");
+
+// infinite clone
 carousel.innerHTML += carousel.innerHTML;
 
+let step = 220;
+
 function scrollRightCarousel() {
-  carousel.scrollBy({ left: 220, behavior: "smooth" });
+  carousel.scrollBy({ left: step, behavior: "smooth" });
 }
 
 function scrollLeftCarousel() {
-  carousel.scrollBy({ left: -220, behavior: "smooth" });
+  carousel.scrollBy({ left: -step, behavior: "smooth" });
 }
 
+// seamless loop correction (no visible jump)
 carousel.addEventListener("scroll", () => {
   const half = carousel.scrollWidth / 2;
   if (carousel.scrollLeft >= half) {

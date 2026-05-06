@@ -14,7 +14,10 @@
 
 <style>
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero {
   height: 40vh;
   background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1600&auto=format&fit=crop');
@@ -31,7 +34,10 @@
   background: rgba(221,233,225,0.12);
 }
 
-/* LAYOUT */
+/* =========================
+   LAYOUT
+========================= */
+
 .container {
   padding-top: 40px;
   max-width: 1100px;
@@ -52,7 +58,10 @@ p {
   margin-bottom: 24px;
 }
 
-/* TESTIMONIAL GRID */
+/* =========================
+   TESTIMONIAL GRID
+========================= */
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -96,33 +105,31 @@ p {
 }
 
 /* =========================
-   STICKY FOOTER BAR
+   FOOTER BAR
 ========================= */
 
-.sticky-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
+.site-footer {
+  margin-top: 60px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.85);
   border-top: 1px solid rgba(0,0,0,0.06);
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  padding: 10px 16px;
   font-size: 12.5px;
   color: rgba(38,53,45,0.75);
-  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.sticky-footer a {
+.site-footer a {
+  color: rgba(38,53,45,0.75);
   text-decoration: none;
-  color: rgba(38,53,45,0.85);
+  margin-left: 10px;
 }
 
-.sticky-footer a:hover {
-  color: #6F9E7F;
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -176,12 +183,14 @@ p {
 
 </div>
 
-<!-- STICKY FOOTER -->
-<div class="sticky-footer">
-  <span>© 2026 Willow & Fern Reiki</span>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-conditions.html">Terms & Conditions</a>
-</div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div>© 2026 Willow & Fern Reiki • Testimonials</div>
+  <div>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-and-conditions.html">Terms & Conditions</a>
+  </div>
+</footer>
 
 </body>
 </html>

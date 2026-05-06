@@ -12,64 +12,49 @@
 
 <style>
 
-/* =========================
-   PAGE LAYOUT OVERRIDES
-========================= */
-
-.container {
-  max-width: 900px;
-}
-
-/* =========================
-   LEGAL TEXT STYLE
-========================= */
-
-p, li {
-  font-size: 15.5px;
-  line-height: 1.8;
-}
-
+/* TYPOGRAPHY CONSISTENCY */
 h1 {
+  font-size: 42px;
   margin-bottom: 10px;
 }
 
 h2 {
-  margin-top: 34px;
+  margin-top: 40px;
   font-size: 22px;
 }
 
-/* =========================
-   STICKY FOOTER BAR (MINIMAL)
-========================= */
+p, li {
+  line-height: 1.8;
+  font-size: 16px;
+  max-width: 850px;
+}
 
-.legal-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px 16px;
+/* CONTENT BOX */
+.terms-box {
+  background: rgba(255,255,255,0.9);
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 20px;
   font-size: 13px;
-  z-index: 999;
+  color: rgba(38,53,45,0.7);
 }
 
-.legal-footer a {
+footer a {
+  color: inherit;
   text-decoration: none;
-  color: #26352D;
-  opacity: 0.8;
 }
 
-.legal-footer a:hover {
-  opacity: 1;
+footer a:hover {
+  text-decoration: underline;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -85,84 +70,73 @@ h2 {
 
 <div class="container">
 
-<h1>Terms & Conditions</h1>
+  <h1>Terms & Conditions</h1>
 
-<p>Last updated: 06/05/2026</p>
+  <div class="terms-box">
 
-<h2>1. About Us</h2>
-<p>
-Willow & Fern Reiki (“we”, “us”, “our”) provides Reiki therapy services.
-</p>
+    <p><strong>Last updated:</strong> 06/05/2026</p>
 
-<p>
-Email: your email address<br>
-Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK
-</p>
+    <h2>1. About Us</h2>
+    <p>
+      Willow & Fern Reiki provides Reiki healing services intended for relaxation and emotional wellbeing.
+    </p>
+    <p>
+      Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK<br>
+      Email: willowfernreiki@gmail.com
+    </p>
 
-<h2>2. Services</h2>
-<p>
-Reiki is a complementary therapy intended to support relaxation and wellbeing.
-It is not a substitute for medical advice, diagnosis, or treatment.
-We reserve the right to decline or stop treatment where appropriate.
-</p>
+    <h2>2. Nature of Services</h2>
+    <p>
+      Reiki is a complementary therapy and does not replace medical advice, diagnosis, or treatment.
+    </p>
 
-<h2>3. Bookings</h2>
-<p>
-All sessions must be booked in advance. A booking is only confirmed once payment is received.
-</p>
+    <h2>3. Bookings & Payment</h2>
+    <p>
+      All sessions must be booked in advance. Payment is required to confirm bookings.
+    </p>
 
-<h2>4. Payment</h2>
-<p>
-Full payment is required at booking. Prices may change at any time.
-Unpaid bookings are not confirmed.
-</p>
+    <h2>4. Cancellation Policy</h2>
+    <ul>
+      <li>48+ hours: no charge</li>
+      <li>24–48 hours: 50% fee</li>
+      <li>Less than 24 hours / no-show: 100% fee</li>
+    </ul>
 
-<h2>5. Cancellation Policy</h2>
-<ul>
-<li>48+ hours: no fee</li>
-<li>24–48 hours: 50% fee</li>
-<li>Less than 24 hours: 100% fee</li>
-<li>No-show: 100% fee</li>
-</ul>
+    <h2>5. Health Disclaimer</h2>
+    <p>
+      You are responsible for informing us of any relevant health conditions. Reiki is not a substitute for medical care.
+    </p>
 
-<h2>6. Late Arrival</h2>
-<p>
-Sessions may be shortened if you arrive late, but full payment still applies.
-</p>
+    <h2>6. Liability</h2>
+    <p>
+      We are not liable for outcomes beyond our control or for indirect losses. Nothing excludes liability where unlawful.
+    </p>
 
-<h2>7. Health Responsibility</h2>
-<p>
-You confirm that all health information provided is accurate and you understand Reiki is not medical treatment.
-</p>
+    <h2>7. Cookies & Affiliate Disclosure</h2>
+    <p>
+      This website does not use tracking cookies for analytics or advertising.
+      However, it may contain affiliate links (e.g. Bookshop.org). These third-party sites may use cookies in accordance with their own policies.
+    </p>
 
-<h2>8. Liability</h2>
-<p>
-We are not liable for indirect loss. We do not guarantee outcomes. Nothing excludes liability where unlawful.
-</p>
+    <h2>8. Intellectual Property</h2>
+    <p>
+      All content on this website belongs to Willow & Fern Reiki unless otherwise stated.
+    </p>
 
-<h2>9. Cookies</h2>
-<p>
-This website does not use tracking cookies. However, third-party affiliate links (e.g. book platforms)
-may use cookies once you leave our site. We are not responsible for those external cookie policies.
-</p>
+    <h2>9. Governing Law</h2>
+    <p>
+      These terms are governed by the laws of England and Wales.
+    </p>
 
-<h2>10. Changes</h2>
-<p>
-We may update these terms at any time. The latest version will always appear on this page.
-</p>
-
-<h2>11. Governing Law</h2>
-<p>
-These terms are governed by the laws of England and Wales.
-</p>
+  </div>
 
 </div>
 
-<!-- STICKY FOOTER -->
-<div class="legal-footer">
-  <a href="privacy.html">Privacy Policy</a>
+<footer>
+  <span>© 2026 Willow & Fern Reiki</span> •
+  <a href="privacy.html">Privacy Policy</a> •
   <a href="terms.html">Terms & Conditions</a>
-</div>
+</footer>
 
 </body>
 </html>

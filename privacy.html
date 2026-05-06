@@ -12,46 +12,50 @@
 
 <style>
 
-/* PAGE TYPOGRAPHY CONSISTENCY */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
 h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 p, li {
   line-height: 1.8;
   font-size: 16px;
-  max-width: 850px;
+  margin-bottom: 14px;
 }
 
-h2 {
-  margin-top: 40px;
-  font-size: 22px;
+section {
+  margin-bottom: 28px;
 }
 
-/* CONTENT WRAP */
-.policy-box {
-  background: rgba(255,255,255,0.9);
-  padding: 26px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* FOOTER */
+/* sticky footer */
 footer {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 13px;
-  color: rgba(38,53,45,0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 12px;
+  font-size: 12px;
 }
 
 footer a {
-  color: inherit;
   text-decoration: none;
+  color: #26352D;
+  opacity: 0.8;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
 
 </style>
@@ -59,78 +63,42 @@ footer a:hover {
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="growth-library.html">The Growth Library</a>
-  <a href="testimonials.html">Testimonials</a>
-  <a href="contact.html">Contact Us</a>
-</nav>
-
 <div class="container">
 
-  <h1>Privacy Policy</h1>
+<h1>Privacy Policy</h1>
+<p><strong>Last updated:</strong> 06/05/2026</p>
 
-  <div class="policy-box">
+<section>
+<h2>Who We Are</h2>
+<p>Willow & Fern Reiki is responsible for your personal data.</p>
+<p>Email: [your email]</p>
+<p>Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK</p>
+</section>
 
-    <p><strong>Last updated:</strong> 06/05/2026</p>
+<section>
+<h2>What We Collect</h2>
+<p>We collect contact details, health information, and treatment records necessary to provide Reiki services safely.</p>
+</section>
 
-    <h2>1. Who We Are</h2>
-    <p>
-      Willow & Fern Reiki (“we”, “us”, “our”) is the data controller responsible for your personal data.
-    </p>
-    <p>
-      Contact: willowfernreiki@gmail.com<br>
-      Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK
-    </p>
+<section>
+<h2>How We Use Your Data</h2>
+<p>We use your information to provide treatments, communicate with you, and meet legal obligations.</p>
+</section>
 
-    <h2>2. What Information We Collect</h2>
-    <p>We may collect:</p>
-    <ul>
-      <li>Name, email, phone number, address</li>
-      <li>Health and treatment information (including medical notes where relevant)</li>
-      <li>Emergency contact details</li>
-      <li>Session notes and consent records</li>
-    </ul>
+<section>
+<h2>Data Protection</h2>
+<p>Your data is stored securely and never sold or shared for marketing purposes.</p>
+</section>
 
-    <h2>3. How We Use Your Data</h2>
-    <p>
-      We use your information to provide Reiki sessions, manage bookings, maintain records, and comply with legal obligations.
-    </p>
-
-    <h2>4. Lawful Basis</h2>
-    <p>
-      We process data based on consent, contractual necessity, and legitimate interest. Sensitive health data is processed only with explicit consent.
-    </p>
-
-    <h2>5. Data Storage</h2>
-    <p>
-      Your data is stored securely and only accessible where necessary. Records are retained for up to 7 years for insurance and legal compliance.
-    </p>
-
-    <h2>6. Cookies</h2>
-    <p>
-      This website does not use tracking or analytics cookies. However, third-party services (such as affiliate links to Bookshop.org) may use basic cookies outside of our control.
-    </p>
-
-    <h2>7. Your Rights</h2>
-    <p>
-      You may request access, correction, deletion, or restriction of your data at any time. You may also withdraw consent.
-    </p>
-
-    <h2>8. Contact</h2>
-    <p>
-      For privacy requests, contact willowfernreiki@gmail.com
-    </p>
-
-  </div>
+<section>
+<h2>Cookies</h2>
+<p>This website does not actively use tracking cookies. However, third-party platforms linked via affiliate links may use cookies in accordance with their own policies.</p>
+</section>
 
 </div>
 
 <footer>
-  <span>© 2026 Willow & Fern Reiki</span> •
-  <a href="privacy.html">Privacy Policy</a> •
+  <a href="privacy.html">Privacy Policy</a>
   <a href="terms.html">Terms & Conditions</a>
 </footer>
 

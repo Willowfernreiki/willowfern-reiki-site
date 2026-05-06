@@ -42,7 +42,7 @@
   margin-bottom: 20px;
 }
 
-/* FOOTER (CONSISTENT WITH ALL OTHER PAGES) */
+/* FOOTER (MATCH ALL PAGES) */
 footer {
   display: flex;
   justify-content: space-between;
@@ -112,6 +112,10 @@ If you’d like to book a session, ask a question, or suggest a book for the Gro
   <label>Email</label>
   <input type="email" name="email" required>
 
+  <!-- NEW: OPTIONAL PHONE -->
+  <label>Phone Number (optional)</label>
+  <input type="tel" name="phone">
+
   <label>Reason for enquiry</label>
   <select name="reason" required>
 
@@ -142,6 +146,10 @@ If you’d like to book a session, ask a question, or suggest a book for the Gro
     </option>
 
   </select>
+
+  <!-- NEW: HOW DID YOU HEAR -->
+  <label>How did you hear about us?</label>
+  <input type="text" name="referral">
 
   <label>Message</label>
   <textarea name="message" rows="6" required></textarea>

@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+
+/* HERO */
 .hero {
   height: 50vh;
   background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop');
@@ -31,6 +33,7 @@
   background: rgba(221, 233, 225, 0.12);
 }
 
+/* IMAGE ROW */
 .image-row {
   display: flex;
   justify-content: space-between;
@@ -59,15 +62,54 @@
   margin-top: 10px;
   line-height: 1.6;
   text-align: center;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* =========================
-   MINIMAL STICKY FOOTER BAR
-========================= */
+/* WHAT TO EXPECT */
+.expect-box {
+  margin-top: 40px;
+  padding: 22px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
 
+.expect-box h3 {
+  margin-top: 0;
+}
+
+.expect-box p {
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+/* TESTIMONIALS (SIMPLE VERSION YOU LIKED) */
+.testimonial-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 14px;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-slide {
+  min-width: 280px;
+  background: rgba(255,255,255,0.9);
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  line-height: 1.7;
+  font-style: normal;
+}
+
+/* FOOTER */
 footer {
   position: fixed;
   bottom: 0;
@@ -81,7 +123,6 @@ footer {
   gap: 18px;
   padding: 10px 12px;
   font-size: 12px;
-  z-index: 999;
 }
 
 footer a {
@@ -93,6 +134,7 @@ footer a {
 footer a:hover {
   opacity: 1;
 }
+
 </style>
 </head>
 
@@ -121,55 +163,61 @@ natural wellbeing.
 
 <a href="about.html" class="button">Learn More</a>
 
-<h2>Our Inspiration</h2>
+<h2>Inspiration</h2>
 
 <div class="image-row">
 
   <div class="image-card">
-    <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60">
-    <p class="image-text">
-      The willow reflects emotional balance, flexibility, and healing.
-    </p>
+    <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop">
+    <p class="image-text">The willow reflects emotional balance and flexibility.</p>
   </div>
 
   <div class="image-card">
     <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg">
-    <p class="image-text">
-      The fern symbolises quiet growth, renewal, and resilience.
-    </p>
+    <p class="image-text">The fern represents steady growth and renewal.</p>
   </div>
+
+</div>
+
+<!-- RESTORED WHAT TO EXPECT -->
+<div class="expect-box" id="what-to-expect">
+
+<h3>What to Expect</h3>
+
+<p>
+A typical Reiki session takes place in a calm, quiet space where you remain fully clothed and comfortable, either lying down or seated.
+</p>
+
+<p>
+The practitioner gently places their hands either lightly on or just above the body, allowing energy to flow where it is needed most.
+</p>
+
+<p>
+You may feel deeply relaxed, drift into sleep, or notice warmth, tingling, or gentle energy shifts.
+</p>
+
+<p>
+Each experience is individual and unfolds naturally. You remain in full control throughout the session.
+</p>
 
 </div>
 
 <h2>What Clients Say</h2>
 
-<div class="testimonial-carousel-wrapper">
+<!-- RESTORED SIMPLE CAROUSEL -->
+<div class="testimonial-carousel" id="testimonialCarousel">
 
-  <button class="testimonial-arrow left" onclick="scrollTestimonials(-1)">‹</button>
-
-  <div class="testimonial-carousel" id="testimonialCarousel">
-
-    <div class="testimonial-slide">
-      <p class="testimonial-text">
-        “The session helped me slow down and feel more grounded afterwards.”
-      </p>
-    </div>
-
-    <div class="testimonial-slide">
-      <p class="testimonial-text">
-        “I felt calmer and more balanced, and it stayed with me beyond the session.”
-      </p>
-    </div>
-
-    <div class="testimonial-slide">
-      <p class="testimonial-text">
-        “It gave me a proper moment to reset mentally.”
-      </p>
-    </div>
-
+  <div class="testimonial-slide">
+    <p class="testimonial-text">“The session helped me slow down and feel more grounded.”</p>
   </div>
 
-  <button class="testimonial-arrow right" onclick="scrollTestimonials(1)">›</button>
+  <div class="testimonial-slide">
+    <p class="testimonial-text">“I felt calmer and more balanced afterwards.”</p>
+  </div>
+
+  <div class="testimonial-slide">
+    <p class="testimonial-text">“A gentle reset that really stayed with me.”</p>
+  </div>
 
 </div>
 
@@ -179,29 +227,6 @@ natural wellbeing.
   <a href="privacy.html">Privacy Policy</a>
   <a href="terms.html">Terms & Conditions</a>
 </footer>
-
-<script>
-const testimonialCarousel = document.getElementById('testimonialCarousel');
-
-function scrollTestimonials(direction) {
-  testimonialCarousel.scrollBy({
-    left: direction * 300,
-    behavior: 'smooth'
-  });
-}
-
-setInterval(() => {
-  if (!testimonialCarousel) return;
-
-  const maxScroll = testimonialCarousel.scrollWidth - testimonialCarousel.clientWidth;
-
-  if (testimonialCarousel.scrollLeft >= maxScroll) {
-    testimonialCarousel.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    testimonialCarousel.scrollBy({ left: 300, behavior: 'smooth' });
-  }
-}, 5000);
-</script>
 
 </body>
 </html>

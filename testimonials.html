@@ -95,21 +95,34 @@ p {
   margin-top: 14px;
 }
 
-/* FOOTER (CONSISTENT) */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 13px;
-  color: rgba(38,53,45,0.7);
+/* =========================
+   STICKY FOOTER BAR
+========================= */
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: rgba(38,53,45,0.75);
+  z-index: 999;
 }
 
-footer a {
-  color: inherit;
+.sticky-footer a {
   text-decoration: none;
+  color: rgba(38,53,45,0.85);
 }
 
-footer a:hover {
-  text-decoration: underline;
+.sticky-footer a:hover {
+  color: #6F9E7F;
 }
 
 </style>
@@ -163,14 +176,12 @@ footer a:hover {
 
 </div>
 
-<!-- CONSISTENT FOOTER -->
-<footer>
+<!-- STICKY FOOTER -->
+<div class="sticky-footer">
   <span>© 2026 Willow & Fern Reiki</span>
-  <span>•</span>
-  <a href="privacy.html">Privacy Policy</a>
-  <span>•</span>
-  <a href="terms.html">Terms & Conditions</a>
-</footer>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-conditions.html">Terms & Conditions</a>
+</div>
 
 </body>
 </html>

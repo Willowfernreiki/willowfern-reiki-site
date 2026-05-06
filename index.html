@@ -9,6 +9,8 @@
 
 <meta name="description" content="Willow & Fern Reiki offers calming Reiki healing in the UK including in-person, distance and nature-based sessions for stress and emotional wellbeing.">
 
+<meta name="keywords" content="Reiki UK, Reiki healing London, energy healing, holistic therapy UK">
+
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
@@ -17,11 +19,11 @@
 /* HERO */
 .hero {
   height: 50vh;
-  background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aGVhbGluZyUyMGhhbmRzfGVufDB8fDB8fHwy');
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .hero::before {
@@ -34,30 +36,56 @@
 /* IMAGE ROW */
 .image-row {
   display: flex;
-  justify-content: space-between;
-  gap: 28px;
+  gap: 18px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .image-card {
   flex: 1;
-  min-width: 280px;
-  max-width: 520px;
+  min-width: 260px;
 }
 
 .image-card img {
   width: 100%;
-  height: 260px;
+  height: 240px;
   object-fit: cover;
   border-radius: 16px;
+  display: block;
 }
 
 .image-text {
-  font-size: 14.5px;
+  font-size: 14px;
   margin-top: 10px;
   line-height: 1.6;
+  color: rgba(38,53,45,0.85);
+}
+
+/* TESTIMONIALS (HOME VERSION RESTORED STYLE) */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.9);
+  padding: 20px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.testimonial-text {
+  font-style: normal;
+  font-size: 14.5px;
+  line-height: 1.7;
   text-align: center;
+  color: #26352D;
 }
 
 /* WHAT TO EXPECT */
@@ -69,50 +97,15 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* TESTIMONIALS */
-.testimonial-carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 14px;
-  scroll-behavior: smooth;
-  padding: 10px 0;
+.expect-box h3 {
+  margin-top: 0;
+  font-size: 20px;
 }
 
-.testimonial-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.testimonial-slide {
-  min-width: 280px;
-  background: rgba(255,255,255,0.9);
-  padding: 18px;
-  border-radius: 14px;
-}
-
-/* FOOTER */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  padding: 10px 12px;
-  font-size: 12px;
-}
-
-footer a {
-  text-decoration: none;
-  color: #26352D;
-  opacity: 0.8;
-}
-
-footer a:hover {
-  opacity: 1;
+.expect-box p {
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 12px;
 }
 
 </style>
@@ -137,42 +130,80 @@ footer a:hover {
 
 <p>
 A calm, grounded space for healing. Through gentle Reiki energy work,
-sessions are designed to restore balance, ease tension, and support your natural wellbeing.
+sessions are designed to restore balance, ease tension, and support your
+natural wellbeing.
 </p>
 
 <a href="about.html" class="button">Learn More</a>
 
-<h2>Inspiration</h2>
+<h2>Our Inspiration</h2>
 
 <div class="image-row">
 
   <div class="image-card">
-    <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop">
-    <p class="image-text">The willow reflects emotional balance and flexibility.</p>
+    <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60"
+         alt="Willow tree reflecting emotional balance and healing">
+
+    <p class="image-text">
+      The willow reflects emotional balance, flexibility, and healing.
+    </p>
   </div>
 
   <div class="image-card">
-    <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg">
-    <p class="image-text">The fern represents steady growth and renewal.</p>
+    <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
+         alt="Fern symbolising growth and renewal">
+
+    <p class="image-text">
+      The fern symbolises quiet growth, renewal, and resilience.
+    </p>
   </div>
 
-</div>
-
-<h2>What to Expect</h2>
-
-<div class="expect-box">
-<p>A typical Reiki session takes place in a calm, quiet space where you remain fully clothed and comfortable.</p>
-<p>Gentle hand placement is used to support energetic balance.</p>
-<p>You may feel warmth, tingling, or deep relaxation.</p>
 </div>
 
 <h2>What Clients Say</h2>
 
-<div class="testimonial-carousel">
+<div class="testimonials-grid">
 
-  <div class="testimonial-slide">“The session helped me slow down and feel grounded.”</div>
-  <div class="testimonial-slide">“I felt calmer and more balanced afterwards.”</div>
-  <div class="testimonial-slide">“A gentle reset that stayed with me.”</div>
+  <div class="testimonial-card">
+    <p class="testimonial-text">
+      “The session helped me slow down and feel more grounded afterwards.”
+    </p>
+  </div>
+
+  <div class="testimonial-card">
+    <p class="testimonial-text">
+      “I felt calmer and more balanced, and it stayed with me beyond the session.”
+    </p>
+  </div>
+
+  <div class="testimonial-card">
+    <p class="testimonial-text">
+      “It gave me a proper moment to reset mentally.”
+    </p>
+  </div>
+
+</div>
+
+<!-- WHAT TO EXPECT (RESTORED) -->
+<div class="expect-box" id="what-to-expect">
+
+  <h3>What to Expect</h3>
+
+  <p>
+    A typical Reiki session takes place in a calm, quiet space where you remain fully clothed and comfortable, either lying down or seated.
+  </p>
+
+  <p>
+    The practitioner gently places their hands either lightly on or just above the body, allowing energy to flow where it is needed most. Depending on the session, supportive cleansing tools such as palo santo, sage, or agua de Florida may be used to help create a clear, grounded and intentional energetic space.
+  </p>
+
+  <p>
+    Experiences vary from person to person. You may feel deeply relaxed and drift into sleep, or notice subtle sensations such as warmth, coolness, tingling, or waves of energy through the body. Some people also report inner visuals, colours, or a shift in perception during the session.
+  </p>
+
+  <p>
+    Each experience is unique and unfolds in its own way. You remain in full control throughout, and sessions can be paused or stopped at any time if you feel uncomfortable or overwhelmed.
+  </p>
 
 </div>
 
@@ -180,6 +211,7 @@ sessions are designed to restore balance, ease tension, and support your natural
 
 <footer>
   <a href="privacy.html">Privacy Policy</a>
+  <span>•</span>
   <a href="terms.html">Terms & Conditions</a>
 </footer>
 

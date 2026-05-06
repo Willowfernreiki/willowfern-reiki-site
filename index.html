@@ -15,8 +15,6 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-
-/* HERO */
 .hero {
   height: 50vh;
   background-image: url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop&q=60');
@@ -27,16 +25,15 @@
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(221, 233, 225, 0.12);
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(221,233,225,0.12);
 }
 
-/* IMAGE ROW */
 .image-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 28px;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -44,10 +41,7 @@
 
 .image-card {
   flex: 1;
-  min-width: 280px;
-  max-width: 520px;
-  display: flex;
-  flex-direction: column;
+  min-width: 260px;
 }
 
 .image-card img {
@@ -58,43 +52,13 @@
 }
 
 .image-text {
-  font-size: 14.5px;
+  font-size: 14px;
   margin-top: 10px;
   line-height: 1.6;
   text-align: center;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }
-
-/* TESTIMONIALS */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  margin-top: 10px;
-}
-
-.testimonial-card {
-  background: rgba(255,255,255,0.9);
-  padding: 20px 18px;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 120px;
-}
-
-.testimonial-text {
-  font-style: normal;
-  font-size: 14.5px;
-  line-height: 1.7;
-  text-align: center;
-  color: #26352D;
-}
-
 </style>
+
 </head>
 
 <body>
@@ -122,50 +86,30 @@
 
   <a href="about.html" class="button">Learn More</a>
 
-  <h2>Inspiration</h2>
+  <h2>Our Inspiration</h2>
 
   <div class="image-row">
 
     <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60">
-      <p class="image-text">The willow reflects emotional balance, flexibility, and gentle restoration.</p>
+      <img src="https://images.unsplash.com/photo-1597572376022-df1b82a39c1d?w=600&auto=format&fit=crop&q=60"
+           alt="Willow tree">
+      <p class="image-text">The willow reflects emotional balance and flexibility.</p>
     </div>
 
     <div class="image-card">
-      <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg">
-      <p class="image-text">The fern represents steady growth, quiet resilience, and natural renewal.</p>
-    </div>
-
-  </div>
-
-  <h2>What Clients Say</h2>
-
-  <div class="testimonials-grid">
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">“It gave me a real sense of calm I hadn’t felt in a while.”</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">“I felt noticeably more grounded and clear afterwards.”</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">“A gentle reset that stayed with me for the rest of the day.”</p>
+      <img src="https://images.pexels.com/photos/8975689/pexels-photo-8975689.jpeg"
+           alt="Fern plant">
+      <p class="image-text">The fern symbolises growth, renewal, and resilience.</p>
     </div>
 
   </div>
 
 </div>
 
-<!-- STANDARD FOOTER -->
-<footer class="site-footer">
-  <div>© 2026 Willow & Fern Reiki</div>
-  <div class="footer-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <span>•</span>
-    <a href="terms.html">Terms & Conditions</a>
-  </div>
+<footer>
+  © 2026 Willow & Fern Reiki •
+  <a href="privacy.html">Privacy Policy</a> •
+  <a href="terms.html">Terms & Conditions</a>
 </footer>
 
 </body>

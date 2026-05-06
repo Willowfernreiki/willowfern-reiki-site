@@ -67,7 +67,7 @@ h2 {
   font-weight: 600;
 }
 
-/* START HERE */
+/* START HERE CAROUSEL */
 .scroll-container {
   display: flex;
   gap: 14px;
@@ -85,6 +85,11 @@ h2 {
   text-align: center;
   scroll-snap-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+  /* FIX: remove blue link styling */
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .scroll-card img {
@@ -214,8 +219,6 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 </div>
 
 <div class="book-list">
-
-<!-- ALL FULL LIBRARY LINKS UNCHANGED -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg">The Power of Now</div></a>
 

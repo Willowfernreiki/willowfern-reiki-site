@@ -12,46 +12,50 @@
 
 <style>
 
-/* TYPOGRAPHY CONSISTENCY */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
 h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-h2 {
-  margin-top: 40px;
-  font-size: 22px;
-}
-
-p, li {
+p {
   line-height: 1.8;
   font-size: 16px;
-  max-width: 850px;
+  margin-bottom: 14px;
 }
 
-/* CONTENT BOX */
-.terms-box {
-  background: rgba(255,255,255,0.9);
-  padding: 26px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+section {
+  margin-bottom: 28px;
 }
 
-/* FOOTER */
+/* sticky footer */
 footer {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 13px;
-  color: rgba(38,53,45,0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 12px;
+  font-size: 12px;
 }
 
 footer a {
-  color: inherit;
   text-decoration: none;
+  color: #26352D;
+  opacity: 0.8;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
 
 </style>
@@ -59,82 +63,41 @@ footer a:hover {
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="growth-library.html">The Growth Library</a>
-  <a href="testimonials.html">Testimonials</a>
-  <a href="contact.html">Contact Us</a>
-</nav>
-
 <div class="container">
 
-  <h1>Terms & Conditions</h1>
+<h1>Terms & Conditions</h1>
+<p><strong>Last updated:</strong> 06/05/2026</p>
 
-  <div class="terms-box">
+<section>
+<h2>About Us</h2>
+<p>Willow & Fern Reiki provides Reiki healing services for wellbeing and relaxation.</p>
+<p>Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK</p>
+</section>
 
-    <p><strong>Last updated:</strong> 06/05/2026</p>
+<section>
+<h2>Services</h2>
+<p>Reiki is a complementary therapy and does not replace medical treatment.</p>
+</section>
 
-    <h2>1. About Us</h2>
-    <p>
-      Willow & Fern Reiki provides Reiki healing services intended for relaxation and emotional wellbeing.
-    </p>
-    <p>
-      Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK<br>
-      Email: willowfernreiki@gmail.com
-    </p>
+<section>
+<h2>Bookings & Payments</h2>
+<p>Sessions must be paid in advance to confirm booking.</p>
+</section>
 
-    <h2>2. Nature of Services</h2>
-    <p>
-      Reiki is a complementary therapy and does not replace medical advice, diagnosis, or treatment.
-    </p>
+<section>
+<h2>Cancellation Policy</h2>
+<p>24–48 hours notice: 50% fee. Less than 24 hours: full fee.</p>
+</section>
 
-    <h2>3. Bookings & Payment</h2>
-    <p>
-      All sessions must be booked in advance. Payment is required to confirm bookings.
-    </p>
-
-    <h2>4. Cancellation Policy</h2>
-    <ul>
-      <li>48+ hours: no charge</li>
-      <li>24–48 hours: 50% fee</li>
-      <li>Less than 24 hours / no-show: 100% fee</li>
-    </ul>
-
-    <h2>5. Health Disclaimer</h2>
-    <p>
-      You are responsible for informing us of any relevant health conditions. Reiki is not a substitute for medical care.
-    </p>
-
-    <h2>6. Liability</h2>
-    <p>
-      We are not liable for outcomes beyond our control or for indirect losses. Nothing excludes liability where unlawful.
-    </p>
-
-    <h2>7. Cookies & Affiliate Disclosure</h2>
-    <p>
-      This website does not use tracking cookies for analytics or advertising.
-      However, it may contain affiliate links (e.g. Bookshop.org). These third-party sites may use cookies in accordance with their own policies.
-    </p>
-
-    <h2>8. Intellectual Property</h2>
-    <p>
-      All content on this website belongs to Willow & Fern Reiki unless otherwise stated.
-    </p>
-
-    <h2>9. Governing Law</h2>
-    <p>
-      These terms are governed by the laws of England and Wales.
-    </p>
-
-  </div>
+<section>
+<h2>Liability</h2>
+<p>We do not guarantee outcomes and Reiki is not a medical treatment.</p>
+</section>
 
 </div>
 
 <footer>
-  <span>© 2026 Willow & Fern Reiki</span> •
-  <a href="privacy.html">Privacy Policy</a> •
+  <a href="privacy.html">Privacy Policy</a>
   <a href="terms.html">Terms & Conditions</a>
 </footer>
 

@@ -3,167 +3,71 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Book Reiki Session UK | Willow & Fern Reiki</title>
+<title>Contact | Willow & Fern Reiki</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Book a Reiki healing session in the UK with Willow Fern Reiki. In-person, distance, corporate and open-air Reiki available.">
-<meta name="keywords" content="Book Reiki UK, Reiki contact, Reiki healing appointment, Reiki London, holistic therapy UK">
-<meta name="author" content="Willow Fern Reiki">
 
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <style>
 
-/* =========================
-   DUAL HERO
-========================= */
-
-.dual-hero {
-  display: flex;
-  width: 100%;
-  height: 40vh;
-  overflow: hidden;
-  margin-bottom: 32px;
-}
-
-.hero-image {
-  flex: 1;
+/* HERO */
+.hero {
+  height: 35vh;
+  background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   position: relative;
-  transform: scale(1.02);
+  margin-bottom: 40px;
 }
 
-.hero-image::after {
+.hero::before {
   content:"";
   position:absolute;
   inset:0;
   background: rgba(221,233,225,0.12);
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-  padding-top: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+/* FORM WRAPPER */
+.form-wrapper {
+  max-width: 700px;
+  margin: auto;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-h1 {
-  font-size: 42px;
-  margin: 0 0 12px 0;
+/* SMALL NOTE */
+.note {
+  font-size: 13px;
+  opacity: 0.75;
+  margin-bottom: 20px;
 }
 
-h2 {
-  margin-top: 36px;
-  margin-bottom: 10px;
-}
-
-p {
-  max-width: 750px;
-  line-height: 1.8;
-  margin: 0 0 16px 0;
-  font-size: 16px;
-}
-
-/* =========================
-   FORM
-========================= */
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 650px;
-  margin-top: 16px;
-}
-
-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(38,53,45,0.9);
-}
-
-input,
-select,
-textarea {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.08);
-  font-family: inherit;
-  font-size: 15px;
-  background: rgba(255,255,255,0.9);
-  outline: none;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #AEBFA9;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.button,
-button.button {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #AEBFA9;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.25s ease;
-  font-family: inherit;
-  margin-top: 10px;
-}
-
-.button:hover {
-  background: #9FB19A;
-  transform: translateY(-2px);
-}
-
-/* =========================
-   FOOTER BAR
-========================= */
-
-.site-footer {
-  margin-top: 60px;
-  padding: 14px 20px;
-  background: rgba(255,255,255,0.85);
+/* FOOTER (CONSISTENT GLOBAL STYLE) */
+footer {
+  position: sticky;
+  bottom: 0;
+  background: rgba(247,246,243,0.95);
+  backdrop-filter: blur(8px);
   border-top: 1px solid rgba(0,0,0,0.06);
-  font-size: 12.5px;
-  color: rgba(38,53,45,0.75);
+  padding: 14px 20px;
+  font-size: 12px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.site-footer a {
+  justify-content: center;
+  gap: 18px;
   color: rgba(38,53,45,0.75);
-  text-decoration: none;
-  margin-left: 10px;
 }
 
-.site-footer a:hover {
-  text-decoration: underline;
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #6F9E7F;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -177,84 +81,56 @@ button.button {
   <a href="contact.html" class="active">Contact Us</a>
 </nav>
 
-<!-- HERO -->
-<div class="dual-hero">
-
-  <div class="hero-image"
-       style="background-image:url('https://images.pexels.com/photos/16654882/pexels-photo-16654882.jpeg');">
-  </div>
-
-  <div class="hero-image"
-       style="background-image:url('https://images.unsplash.com/photo-1722554086475-f11257a9eb6d?w=1200&auto=format&fit=crop');">
-  </div>
-
-</div>
+<div class="hero"></div>
 
 <div class="container">
 
-  <h1>Book a Reiki Session</h1>
+<h1>Contact</h1>
 
-  <p>
-    If you would like to book a Reiki session or ask a question, please use the form below.
-    I will respond within 24–48 hours.
-  </p>
+<p>
+If you’d like to book a session, ask a question, or suggest a book for the Growth Library, you’re welcome to reach out below.
+</p>
 
-  <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+<div class="form-wrapper">
 
-    <label>Your Name</label>
-    <input type="text" name="name" required>
+<form id="contact-form">
 
-    <label>Your Email</label>
-    <input type="email" name="email" required>
+<label>Name</label>
+<input type="text" name="name" required>
 
-    <label>Phone Number (optional)</label>
-    <input type="text" name="phone">
+<label>Email</label>
+<input type="email" name="email" required>
 
-    <label>Type of Session</label>
-    <select name="service">
-      <option>1:1 Energy & Emotional Balance</option>
-      <option>Distance Reiki</option>
-      <option>Nature-based Reiki</option>
-      <option>Corporate Reiki</option>
-      <option>Other</option>
-    </select>
+<label>Reason for enquiry</label>
+<select name="reason" required>
 
-    <label>Preferred Date / Time</label>
-    <input type="text" name="time">
+  <option value="">Select an option</option>
+  <option value="booking">Booking a Reiki Session</option>
+  <option value="question">General Question</option>
+  <option value="suggest-book">Suggest a Book (Growth Library)</option>
+  <option value="other">Other</option>
 
-    <label>Message</label>
-    <textarea name="message" rows="6"></textarea>
+</select>
 
-    <button type="submit" class="button">
-      Submit Booking Request
-    </button>
+<label>Message</label>
+<textarea name="message" rows="6" required></textarea>
 
-  </form>
+<button class="button" type="submit">Send Message</button>
 
-  <h2>What Happens Next?</h2>
+</form>
 
-  <p>
-    I will review your message and respond with availability and next steps.
-    If you're unsure which session is right for you, I will guide you.
-  </p>
-
-  <h2>Location</h2>
-
-  <p>
-    Based in the UK, offering both in-person and remote Reiki sessions.
-    <br>
-    Willow & Fern Reiki, 3 Schwartz Wharf, Unit 204, E9 5GW London, UK
-  </p>
+<p class="note">
+I aim to respond within 24–48 hours.
+</p>
 
 </div>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div>© 2026 Willow & Fern Reiki • Contact</div>
-  <div>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms & Conditions</a>
-  </div>
+</div>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a>
+  <span>•</span>
+  <a href="terms.html">Terms & Conditions</a>
 </footer>
 
 </body>

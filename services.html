@@ -12,12 +12,12 @@
 
 <style>
 
+/* HERO */
 .dual-hero {
   display: flex;
   width: 100%;
   height: 55vh;
   overflow: hidden;
-  margin-bottom: 20px;
 }
 
 .hero-image {
@@ -34,12 +34,25 @@
   background: rgba(221, 233, 225, 0.12);
 }
 
+/* LAYOUT */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 24px;
+  max-width: 750px;
+}
+
+/* SERVICE CARDS */
 .service-card {
   background: rgba(255,255,255,0.92);
   border-radius: 18px;
@@ -69,8 +82,10 @@
 .service-text {
   font-size: 14.5px;
   line-height: 1.7;
+  color: #26352D;
 }
 
+/* BUTTON */
 .button {
   display: inline-block;
   padding: 10px 18px;
@@ -80,11 +95,42 @@
   text-decoration: none;
   font-weight: 600;
   margin-top: 24px;
+  transition: 0.25s ease;
 }
 
 .button:hover {
   background: #9FB19A;
   transform: translateY(-2px);
+}
+
+/* =========================
+   STICKY FOOTER BAR
+========================= */
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: rgba(38,53,45,0.75);
+  z-index: 999;
+}
+
+.sticky-footer a {
+  text-decoration: none;
+  color: rgba(38,53,45,0.85);
+}
+
+.sticky-footer a:hover {
+  color: #6F9E7F;
 }
 
 </style>
@@ -93,20 +139,17 @@
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html" class="active">Services</a>
-  <a href="growth-library.html">The Growth Library</a>
-  <a href="testimonials.html">Testimonials</a>
-  <a href="contact.html">Contact Us</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html" class="active">Services</a>
+<a href="growth-library.html">The Growth Library</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="contact.html">Contact Us</a>
 </nav>
 
 <div class="dual-hero">
-
   <div class="hero-image" style="background-image:url('https://images.unsplash.com/photo-1597717503010-ee19fef2db91?q=80&w=1170&auto=format&fit=crop');"></div>
-
   <div class="hero-image" style="background-image:url('https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=600&auto=format&fit=crop');"></div>
-
 </div>
 
 <div class="container">
@@ -114,22 +157,22 @@
 <h1>Services</h1>
 
 <p>
-Reiki healing sessions designed to restore balance, release emotional tension, and support wellbeing.
+Reiki healing sessions designed to restore balance, release emotional tension, and support your natural wellbeing.
 </p>
 
 <div class="service-card">
   <div class="service-title">1:1 Energy & Emotional Balance Session</div>
   <div class="service-price">£65 · 60 minutes</div>
   <div class="service-text">
-    A personalised Reiki session designed to restore balance and calm the nervous system.
+    A deeply personalised Reiki session designed to restore balance and support emotional wellbeing.
   </div>
 </div>
 
 <div class="service-card">
   <div class="service-title">Nature-Based Reiki Session</div>
-  <div class="service-price">£75 · 60 minutes</div>
+  <div class="service-price">£75 · 60 minutes (open-air)</div>
   <div class="service-text">
-    An outdoor session combining Reiki with grounding natural environments.
+    A grounding Reiki session held outdoors, combining nature and energy healing for deeper relaxation.
   </div>
 </div>
 
@@ -137,7 +180,7 @@ Reiki healing sessions designed to restore balance, release emotional tension, a
   <div class="service-title">Distance Reiki</div>
   <div class="service-price">£45 · 45 minutes</div>
   <div class="service-text">
-    Remote Reiki session for emotional balance and relaxation.
+    Receive Reiki remotely to support balance, clarity, and emotional calm wherever you are.
   </div>
 </div>
 
@@ -145,7 +188,7 @@ Reiki healing sessions designed to restore balance, release emotional tension, a
   <div class="service-title">Corporate Reiki</div>
   <div class="service-price">Price on request</div>
   <div class="service-text">
-    Workplace wellbeing sessions tailored for individuals or groups.
+    Available for individuals or groups. Tailored sessions to support workplace wellbeing.
   </div>
 </div>
 
@@ -153,11 +196,12 @@ Reiki healing sessions designed to restore balance, release emotional tension, a
 
 </div>
 
-<footer>
-  © 2026 Willow & Fern Reiki •
-  <a href="privacy.html">Privacy Policy</a> •
-  <a href="terms.html">Terms & Conditions</a>
-</footer>
+<!-- STICKY FOOTER -->
+<div class="sticky-footer">
+  <span>© 2026 Willow & Fern Reiki</span>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-conditions.html">Terms & Conditions</a>
+</div>
 
 </body>
 </html>

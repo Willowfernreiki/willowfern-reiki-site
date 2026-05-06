@@ -14,6 +14,7 @@
 
   <style>
 
+    /* HERO */
     .hero-dual {
       display: flex;
       width: 100%;
@@ -36,6 +37,7 @@
       background: rgba(221, 233, 225, 0.12);
     }
 
+    /* CONTENT BOX */
     .content-box {
       background: rgba(255,255,255,0.85);
       padding: 22px;
@@ -50,6 +52,13 @@
       margin-bottom: 14px;
     }
 
+    .note {
+      font-size: 14px;
+      color: rgba(38,53,45,0.75);
+      margin-top: 10px;
+    }
+
+    /* PRACTITIONER */
     .practitioner-section {
       display: flex;
       gap: 28px;
@@ -83,27 +92,55 @@
       margin-bottom: 14px;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero-dual { flex-direction: column; height: auto; }
-      .hero-img { height: 220px; }
-      .practitioner-section { flex-direction: column; }
-      .practitioner-image { min-height: 240px; }
+      .hero-dual {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .hero-img {
+        height: 220px;
+      }
+
+      .practitioner-section {
+        flex-direction: column;
+      }
+
+      .practitioner-image {
+        width: 100%;
+        min-height: 240px;
+      }
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 13px;
-      color: rgba(38,53,45,0.7);
+    /* =========================
+       STICKY FOOTER BAR
+    ========================= */
+
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      padding: 10px 16px;
+      font-size: 12.5px;
+      color: rgba(38,53,45,0.75);
+      z-index: 999;
     }
 
-    footer a {
-      color: inherit;
+    .sticky-footer a {
       text-decoration: none;
+      color: rgba(38,53,45,0.85);
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .sticky-footer a:hover {
+      color: #6F9E7F;
     }
 
   </style>
@@ -120,11 +157,16 @@
   <a href="contact.html">Contact Us</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero-dual">
 
-  <div class="hero-img" style="background-image:url('https://images.pexels.com/photos/9898597/pexels-photo-9898597.jpeg');"></div>
+  <div class="hero-img"
+       style="background-image:url('https://images.pexels.com/photos/9898597/pexels-photo-9898597.jpeg');">
+  </div>
 
-  <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1757066033634-bbbf874ce525?q=80&w=735&auto=format&fit=crop');"></div>
+  <div class="hero-img"
+       style="background-image:url('https://images.unsplash.com/photo-1757066033634-bbbf874ce525?q=80&w=735&auto=format&fit=crop');">
+  </div>
 
 </div>
 
@@ -135,15 +177,16 @@
   <div class="content-box">
 
     <p>
-      Reiki is a gentle, non-invasive energy healing practice developed in Japan by Dr Mikao Usui.
+      Reiki is a gentle, non-invasive energy healing practice that originated in Japan in the early 20th century.
+      It was developed by Dr Mikao Usui and is now practiced worldwide in both Eastern and Western traditions.
     </p>
 
     <p>
-      It supports relaxation, emotional balance, and nervous system regulation. It is not a substitute for medical care.
+      Reiki supports the body’s natural ability to restore balance and promote relaxation. It is used alongside conventional approaches to wellbeing and does not replace medical care.
     </p>
 
     <p>
-      Sessions are always consent-led and adapted to your comfort.
+      Sessions are always guided by consent and comfort, and may be offered hands-on or hands-off depending on your preference.
     </p>
 
   </div>
@@ -152,20 +195,27 @@
 
   <div class="practitioner-section">
 
-    <div class="practitioner-image" style="background-image:url('https://images.unsplash.com/photos/lighted-incense-_12PwFpWZZ0');"></div>
+    <div class="practitioner-image"
+         style="background-image:url('https://images.unsplash.com/photos/lighted-incense-_12PwFpWZZ0');">
+    </div>
 
     <div class="practitioner-text">
 
       <p>
-        I am trained in both Eastern and Western Reiki lineages with professional practice training in London.
+        I am trained in both Eastern and Western Reiki lineages, allowing me to offer a grounded and intuitive approach to energy healing.
+        I completed my training at the Reiki Science Academy in London with a focus on professional practice.
       </p>
 
       <p>
-        My approach is grounded, calm, and supportive of nervous system regulation.
+        I approach each session with care and sensitivity, supporting a calm environment where the nervous system can settle naturally.
       </p>
 
       <p>
-        Each session is held in a safe, non-judgemental space.
+        The space will always be held for you in a peaceful, wholesome and non-judgemental way.
+      </p>
+
+      <p class="note">
+        To understand how a session unfolds, you can view <a href="index.html#what-to-expect">What to Expect</a> on the homepage.
       </p>
 
     </div>
@@ -174,11 +224,12 @@
 
 </div>
 
-<footer>
-  <span>© 2026 Willow & Fern Reiki</span> •
-  <a href="privacy.html">Privacy Policy</a> •
-  <a href="terms.html">Terms & Conditions</a>
-</footer>
+<!-- STICKY FOOTER -->
+<div class="sticky-footer">
+  <span>© 2026 Willow & Fern Reiki</span>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-conditions.html">Terms & Conditions</a>
+</div>
 
 </body>
 </html>

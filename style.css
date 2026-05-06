@@ -10,8 +10,6 @@
   --space-5: 40px;
   --space-6: 48px;
   --space-7: 56px;
-
-  --footer-height: 44px;
 }
 
 * {
@@ -30,8 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* space for sticky footer */
-  padding-bottom: var(--footer-height);
+  padding-bottom: 70px; /* space for sticky footer */
 }
 
 @keyframes pageFade {
@@ -47,15 +44,12 @@ h1 {
   font-size: 44px;
   margin-bottom: var(--space-2);
   line-height: 1.2;
-  letter-spacing: -0.2px;
 }
 
 h2 {
   margin-top: var(--space-7);
   margin-bottom: var(--space-2);
   font-size: 26px;
-  line-height: 1.3;
-  letter-spacing: -0.1px;
 }
 
 p {
@@ -84,7 +78,7 @@ nav {
   gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
   justify-content: center;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -95,7 +89,6 @@ nav a {
   text-decoration: none;
   color: #26352D;
   font-size: 14px;
-  padding-bottom: 4px;
 }
 
 nav a:hover {
@@ -141,78 +134,16 @@ button.button {
   background-position: center;
   position: relative;
   margin-bottom: var(--space-5);
-  animation: heroZoom 18s ease-in-out infinite alternate;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(221,233,225,0.12);
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
 }
 
 /* =========================
-   CARDS / IMAGES
+   LIBRARY FIX (FULL COVER)
 ========================= */
 
-.image-row {
-  display: flex;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-  margin-top: var(--space-3);
-}
-
-.image-card {
-  flex: 1;
-  min-width: 250px;
-  transition: transform 0.4s ease;
-}
-
-.image-card img {
-  width: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.image-card:hover {
-  transform: translateY(-6px);
-}
-
-/* =========================
-   LIBRARY
-========================= */
-
-.library-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-3);
-}
-
-.book-card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 16px;
-  padding: var(--space-2);
-  min-height: 360px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.book-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain; /* important fix requested */
-  border-radius: 12px;
+.book-card img,
+.scroll-card img {
+  object-fit: contain;
   background: rgba(255,255,255,0.6);
-}
-
-/* remove ugly link styling globally inside library */
-#growth-library-page a {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* =========================
@@ -226,50 +157,12 @@ button.button {
 .scroll-container {
   display: flex;
   overflow-x: auto;
-  gap: var(--space-2);
   scroll-behavior: smooth;
-}
-
-.scroll-card {
-  min-width: 260px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 16px;
-  padding: var(--space-2);
-}
-
-.scroll-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  background: rgba(255,255,255,0.6);
-  border-radius: 12px;
-}
-
-/* =========================
-   TESTIMONIALS
-========================= */
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-3);
-}
-
-.testimonial-card {
-  background: rgba(255,255,255,0.9);
-  padding: 22px;
-  border-radius: 16px;
-}
-
-/* =========================
-   FORM
-========================= */
-
-form {
-  display: flex;
-  flex-direction: column;
   gap: var(--space-2);
-  max-width: 650px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* =========================
@@ -281,18 +174,27 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: var(--footer-height);
+  height: 60px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
 
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(10px);
 
   font-size: 12.5px;
-  color: rgba(38,53,45,0.7);
+  color: rgba(38,53,45,0.75);
 
-  border-top: 1px solid rgba(0,0,0,0.06);
-  z-index: 999;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }

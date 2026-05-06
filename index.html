@@ -81,7 +81,7 @@
   margin-bottom: 12px;
 }
 
-/* TESTIMONIALS GRID */
+/* TESTIMONIALS GRID + HOVER */
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -94,10 +94,18 @@
   padding: 20px 18px;
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 120px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .testimonial-text {
@@ -160,7 +168,7 @@ natural wellbeing.
 
 </div>
 
-<!-- WHAT TO EXPECT (STAYS ABOVE TESTIMONIALS) -->
+<!-- ✅ RESTORED WHAT TO EXPECT -->
 <div class="expect-box" id="what-to-expect">
 
   <h3>What to Expect</h3>
@@ -213,6 +221,9 @@ natural wellbeing.
   <a href="privacy.html">Privacy Policy</a>
   <span>•</span>
   <a href="terms.html">Terms & Conditions</a>
+  <div style="margin-top:6px;">
+    © 2026 Willow & Fern Reiki • About Reiki
+  </div>
 </footer>
 
 </body>

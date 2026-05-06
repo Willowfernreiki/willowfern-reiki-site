@@ -70,7 +70,7 @@ h2 {
 }
 
 /* =========================
-   TRUE INFINITE CAROUSEL
+   CAROUSEL (MOMENTUM)
 ========================= */
 
 .carousel-wrapper {
@@ -83,8 +83,16 @@ h2 {
   gap: 14px;
   overflow-x: auto;
   padding: 14px 40px;
-  scroll-behavior: smooth;
+
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
+
+  cursor: grab;
+  user-select: none;
+}
+
+.scroll-container:active {
+  cursor: grabbing;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -134,13 +142,8 @@ h2 {
   color: rgba(38,53,45,0.8);
 }
 
-.carousel-btn.left {
-  left: 6px;
-}
-
-.carousel-btn.right {
-  right: 6px;
-}
+.carousel-btn.left { left: 6px; }
+.carousel-btn.right { right: 6px; }
 
 /* FULL LIBRARY */
 .book-list {
@@ -148,11 +151,6 @@ h2 {
   flex-direction: column;
   gap: 12px;
   margin-top: 20px;
-}
-
-.book-list a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .book-row {
@@ -215,7 +213,7 @@ footer {
 <p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
 <p style="font-size:13px; opacity:0.75;">
-Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org, whose fees support independent bookshops.
+Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org.
 </p>
 
 <h2>Start Here</h2>
@@ -263,9 +261,9 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 <a class="button" href="contact.html?subject=Book%20Recommendation">Suggest a Book</a>
 </div>
 
-<div class="book-list">
+<!-- ✔ FULL 18 BOOK LIST RESTORED -->
 
-<!-- 18 BOOKS RESTORED EXACTLY -->
+<div class="book-list">
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg">The Power of Now</div></a>
 
@@ -317,21 +315,69 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 <script>
 const carousel = document.getElementById("carousel");
-
-// infinite clone
 carousel.innerHTML += carousel.innerHTML;
 
-let step = 220;
+/* momentum */
+let isDown = false;
+let startX;
+let scrollLeft;
+let velocity = 0;
+let lastX;
+let frame;
 
-function scrollRightCarousel() {
-  carousel.scrollBy({ left: step, behavior: "smooth" });
+carousel.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startX = e.pageX;
+  scrollLeft = carousel.scrollLeft;
+  lastX = e.pageX;
+  cancelAnimationFrame(frame);
+});
+
+carousel.addEventListener("mouseup", () => {
+  isDown = false;
+  momentum();
+});
+
+carousel.addEventListener("mouseleave", () => isDown = false);
+
+carousel.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  const x = e.pageX;
+  carousel.scrollLeft = scrollLeft - (x - startX);
+  velocity = x - lastX;
+  lastX = x;
+});
+
+/* touch */
+carousel.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].pageX;
+  scrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener("touchmove", (e) => {
+  const x = e.touches[0].pageX;
+  carousel.scrollLeft = scrollLeft - (x - startX);
+});
+
+carousel.addEventListener("touchend", momentum);
+
+/* inertia */
+function momentum() {
+  let decay = 0.92;
+
+  function step() {
+    carousel.scrollLeft -= velocity * 1.4;
+    velocity *= decay;
+
+    if (Math.abs(velocity) > 0.5) {
+      frame = requestAnimationFrame(step);
+    }
+  }
+
+  step();
 }
 
-function scrollLeftCarousel() {
-  carousel.scrollBy({ left: -step, behavior: "smooth" });
-}
-
-// seamless loop correction (no visible jump)
+/* seamless loop */
 carousel.addEventListener("scroll", () => {
   const half = carousel.scrollWidth / 2;
   if (carousel.scrollLeft >= half) {

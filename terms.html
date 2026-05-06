@@ -12,93 +12,143 @@
 
 <style>
 
+/* BASIC LAYOUT */
 .container {
   max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
+/* TYPOGRAPHY */
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 p {
   line-height: 1.8;
   font-size: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
-section {
-  margin-bottom: 28px;
-}
-
-/* sticky footer */
+/* FOOTER (CONSISTENT GLOBAL STYLE) */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0,0,0,0.08);
+  height: 60px;
+
   display: flex;
   justify-content: center;
-  gap: 18px;
-  padding: 10px 12px;
-  font-size: 12px;
+  align-items: center;
+  gap: 20px;
+
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+
+  font-size: 12.5px;
+  color: rgba(38,53,45,0.75);
+
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 footer a {
+  color: inherit;
   text-decoration: none;
-  color: #26352D;
-  opacity: 0.8;
 }
 
 footer a:hover {
-  opacity: 1;
+  text-decoration: underline;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="growth-library.html">The Growth Library</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
 <div class="container">
 
 <h1>Terms & Conditions</h1>
+
 <p><strong>Last updated:</strong> 06/05/2026</p>
 
-<section>
-<h2>About Us</h2>
-<p>Willow & Fern Reiki provides Reiki healing services for wellbeing and relaxation.</p>
-<p>Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK</p>
-</section>
+<h2>1. About Us</h2>
+<p>
+Willow & Fern Reiki (“we”, “us”, “our”) provides Reiki therapy services.
+</p>
+<p>
+Contact details:<br>
+Email: [your email address]<br>
+Address: 3 Schwartz Wharf, Unit 204, E9 5GW London, UK
+</p>
 
-<section>
-<h2>Services</h2>
-<p>Reiki is a complementary therapy and does not replace medical treatment.</p>
-</section>
+<h2>2. Services</h2>
+<p>
+We provide Reiki treatments intended to promote relaxation and wellbeing. Reiki is a complementary therapy and is not a substitute for professional medical advice, diagnosis, or treatment.
+</p>
+<p>
+We reserve the right to refuse or discontinue treatment where we believe it is not appropriate or safe to proceed.
+</p>
 
-<section>
-<h2>Bookings & Payments</h2>
-<p>Sessions must be paid in advance to confirm booking.</p>
-</section>
+<h2>3. Booking and Appointments</h2>
+<p>
+Appointments must be booked in advance via our website, email, or other agreed method. You are responsible for providing accurate and complete information when booking. A booking is confirmed only once payment has been received.
+</p>
 
-<section>
-<h2>Cancellation Policy</h2>
-<p>24–48 hours notice: 50% fee. Less than 24 hours: full fee.</p>
-</section>
+<h2>4. Fees and Payment</h2>
+<p>
+Full payment is required at the time of booking in order to secure your appointment. If payment is not received, the appointment will not be confirmed.
+</p>
 
-<section>
-<h2>Liability</h2>
-<p>We do not guarantee outcomes and Reiki is not a medical treatment.</p>
-</section>
+<h2>5. Cancellation and Rescheduling</h2>
+<p>
+Cancellation terms apply depending on timing before your appointment, ranging from no fee (48+ hours) to 100% charge (less than 24 hours or no-show).
+</p>
+
+<h2>6. Liability</h2>
+<p>
+We do not guarantee specific outcomes from Reiki treatments and are not liable for indirect or consequential loss.
+</p>
+
+<h2>7. Personal Data</h2>
+<p>
+We process personal data in accordance with our Privacy Policy.
+Please refer to our Privacy Policy here: <a href="privacy.html">Privacy Policy</a>
+</p>
+
+<h2>8. Website Use</h2>
+<p>
+You agree not to misuse this website or use it for unlawful purposes.
+</p>
+
+<h2>9. Third-Party Links</h2>
+<p>
+We are not responsible for third-party websites linked from this site.
+</p>
+
+<h2>10. Governing Law</h2>
+<p>
+These Terms are governed by the laws of England and Wales.
+</p>
 
 </div>
 
 <footer>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms & Conditions</a>
+  <div>© 2026 Willow & Fern Reiki • Terms & Conditions</div>
+  <div class="footer-right">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+  </div>
 </footer>
 
 </body>

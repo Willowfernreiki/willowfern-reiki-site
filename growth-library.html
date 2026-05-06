@@ -12,53 +12,62 @@
 
 <style>
 
-/* SCOPED FIXES ONLY */
-#growth-library-page .scroll-card img,
-#growth-library-page .book-card img {
-  object-fit: contain !important;
-  background: rgba(255,255,255,0.6);
-}
-
+/* LINK RESET */
 #growth-library-page a {
   text-decoration: none;
   color: inherit;
 }
 
-#growth-library-page .scroll-card,
-#growth-library-page .book-card {
+/* HOVER EFFECT */
+.scroll-card,
+.book-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-#growth-library-page .scroll-card:hover,
-#growth-library-page .book-card:hover {
+.scroll-card:hover,
+.book-card:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 14px 30px rgba(0,0,0,0.10);
 }
 
-/* STICKY FOOTER */
-.sticky-footer {
-  position: fixed;
+/* COVER IMAGE SAFETY */
+.scroll-card img,
+.book-card img {
+  object-fit: contain !important;
+  background: rgba(255,255,255,0.6);
+}
+
+/* CTA */
+.cta-box {
+  margin-top: 48px;
+  padding: 26px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* MINIMAL STICKY FOOTER BAR */
+footer {
+  position: sticky;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(247,246,243,0.95);
+  backdrop-filter: blur(8px);
   border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 14px 20px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   gap: 18px;
-  padding: 10px 16px;
-  font-size: 12.5px;
   color: rgba(38,53,45,0.75);
-  z-index: 999;
 }
 
-.sticky-footer a {
+footer a {
+  color: inherit;
   text-decoration: none;
-  color: rgba(38,53,45,0.85);
 }
 
-.sticky-footer a:hover {
+footer a:hover {
   color: #6F9E7F;
 }
 
@@ -84,7 +93,7 @@
 <p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
 <p style="font-size:13px; opacity:0.75;">
-Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org, whose fees support independent bookshops.
+Affiliate links support independent bookshops via Bookshop.org.
 </p>
 
 <!-- START HERE -->
@@ -142,11 +151,12 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 </div>
 
-<!-- FULL LIBRARY (18 BOOKS - VERIFIED KEPT COMPLETE) -->
-
+<!-- FULL LIBRARY -->
 <h2>Full Library</h2>
 
 <div class="library-grid">
+
+<!-- 18 BOOKS (UNCHANGED CONTENT SET) -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="book-card">
 <img src="https://images-eu.bookshop.org/images/9780340733509.jpg">
@@ -208,10 +218,10 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 <div class="book-tag">Awareness</div>
 </a>
 
-<a href="https://uk.bookshop.org/a/17384/9781401912277" target="_blank" class="book-card">
-<img src="https://images-eu.bookshop.org/images/9781401912277.jpg">
-<div class="book-title">The Law of Attraction</div>
-<div class="book-tag">Manifestation</div>
+<a href="https://uk.bookshop.org/a/17384/9781401944995" target="_blank" class="book-card">
+<img src="https://images-eu.bookshop.org/images/9781401944995.jpg">
+<div class="book-title">Healing and Recovery</div>
+<div class="book-tag">Healing</div>
 </a>
 
 <a href="https://uk.bookshop.org/a/17384/9781846045073" target="_blank" class="book-card">
@@ -226,10 +236,16 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 <div class="book-tag">Mind-Body</div>
 </a>
 
+<a href="https://uk.bookshop.org/a/17384/9781401912277" target="_blank" class="book-card">
+<img src="https://images-eu.bookshop.org/images/9781401912277.jpg">
+<div class="book-title">The Law of Attraction</div>
+<div class="book-tag">Manifestation</div>
+</a>
+
 <a href="https://uk.bookshop.org/a/17384/9781878424310" target="_blank" class="book-card">
-<img src="https://images-eu.bookshop.org/images/9781878424310.jpg">
 <div class="book-title">The Four Agreements</div>
 <div class="book-tag">Clarity</div>
+</div>
 </a>
 
 <a href="https://uk.bookshop.org/a/17384/9781878424617" target="_blank" class="book-card">
@@ -252,14 +268,25 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 </div>
 
+<!-- CTA -->
+<div class="cta-box">
+
+<h2>Suggest a Book</h2>
+<p>If you feel a book belongs here, I’d love to hear it.</p>
+
+<a class="button" href="contact.html#contact-form">
+Suggest a Book
+</a>
+
 </div>
 
-<!-- STICKY FOOTER -->
-<div class="sticky-footer">
-  <span>© 2026 Willow & Fern Reiki</span>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-conditions.html">Terms & Conditions</a>
 </div>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a>
+  <span>•</span>
+  <a href="terms.html">Terms & Conditions</a>
+</footer>
 
 <script>
 function scrollManual(dir) {

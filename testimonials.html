@@ -105,31 +105,28 @@ p {
 }
 
 /* =========================
-   FOOTER BAR
+   FOOTER (UNIFIED FIX)
 ========================= */
 
-.site-footer {
-  margin-top: 60px;
-  padding: 14px 20px;
-  background: rgba(255,255,255,0.85);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  font-size: 12.5px;
-  color: rgba(38,53,45,0.75);
+footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  padding: 18px 24px;
+  font-size: 13px;
+  color: rgba(38,53,45,0.7);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin-top: 60px;
 }
 
-.site-footer a {
-  color: rgba(38,53,45,0.75);
+.footer-right a {
   text-decoration: none;
-  margin-left: 10px;
+  color: inherit;
+  margin-left: 12px;
 }
 
-.site-footer a:hover {
-  text-decoration: underline;
+.footer-right a:hover {
+  color: #6F9E7F;
 }
 
 </style>
@@ -183,12 +180,11 @@ p {
 
 </div>
 
-<!-- FOOTER -->
-<footer class="site-footer">
+<footer>
   <div>© 2026 Willow & Fern Reiki • Testimonials</div>
-  <div>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms & Conditions</a>
+  <div class="footer-right">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
   </div>
 </footer>
 

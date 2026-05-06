@@ -69,7 +69,10 @@ h2 {
   font-weight: 600;
 }
 
-/* START HERE CAROUSEL */
+/* =========================
+   TRUE INFINITE CAROUSEL
+========================= */
+
 .carousel-wrapper {
   position: relative;
   margin-top: 10px;
@@ -80,9 +83,8 @@ h2 {
   gap: 14px;
   overflow-x: auto;
   padding: 14px 40px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -95,7 +97,6 @@ h2 {
   border-radius: 14px;
   padding: 14px;
   text-align: center;
-  scroll-snap-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 
   text-decoration: none;
@@ -221,38 +222,38 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 <div class="carousel-wrapper">
 
-<button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
+<button class="carousel-btn left" onclick="scrollLeftCarousel()">‹</button>
 
-<div class="scroll-container" id="startCarousel">
+<div class="scroll-container" id="carousel">
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="scroll-card">
-<img src="https://images-eu.bookshop.org/images/9780340733509.jpg?v=919d8fb8f2037e45ee354c3725b7f38a">
+<img src="https://images-eu.bookshop.org/images/9780340733509.jpg">
 <div class="title">The Power of Now</div>
 </a>
 
 <a href="https://uk.bookshop.org/a/17384/9781572245372" target="_blank" class="scroll-card">
-<img src="https://images-eu.bookshop.org/images/9781572245372.jpg?v=325c90f4e6ab1e13b3fadb9d11a8322b">
+<img src="https://images-eu.bookshop.org/images/9781572245372.jpg">
 <div class="title">The Untethered Soul</div>
 </a>
 
 <a href="https://uk.bookshop.org/a/17384/9781401945015" target="_blank" class="scroll-card">
-<img src="https://images-eu.bookshop.org/images/9781401945015.jpg?v=3015d23ea7cac5a595e17225d87325be">
+<img src="https://images-eu.bookshop.org/images/9781401945015.jpg">
 <div class="title">Letting Go</div>
 </a>
 
 <a href="https://uk.bookshop.org/a/17384/9781878424310" target="_blank" class="scroll-card">
-<img src="https://images-eu.bookshop.org/images/9781878424310.jpg?v=12de16f49968d2eb53c6dbfd145814e7">
+<img src="https://images-eu.bookshop.org/images/9781878424310.jpg">
 <div class="title">The Four Agreements</div>
 </a>
 
 <a href="https://uk.bookshop.org/a/17384/9781785042225" target="_blank" class="scroll-card">
-<img src="https://images-eu.bookshop.org/images/9781785042225.jpg?v=enc-v1">
+<img src="https://images-eu.bookshop.org/images/9781785042225.jpg">
 <div class="title">When the Body Says No</div>
 </a>
 
 </div>
 
-<button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
+<button class="carousel-btn right" onclick="scrollRightCarousel()">›</button>
 
 </div>
 
@@ -263,6 +264,8 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 </div>
 
 <div class="book-list">
+
+<!-- 18 BOOKS RESTORED EXACTLY -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank"><div class="book-row"><img class="book-cover" src="https://images-eu.bookshop.org/images/9780340733509.jpg">The Power of Now</div></a>
 
@@ -313,21 +316,28 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 </footer>
 
 <script>
-function scrollCarousel(direction) {
-  const container = document.getElementById('startCarousel');
-  const scrollAmount = 220;
+const carousel = document.getElementById("carousel");
 
-  container.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
+// infinite clone
+carousel.innerHTML += carousel.innerHTML;
 
-  setTimeout(() => {
-    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-      container.scrollTo({ left: 0, behavior: 'smooth' });
-    }
-  }, 600);
+let step = 220;
+
+function scrollRightCarousel() {
+  carousel.scrollBy({ left: step, behavior: "smooth" });
 }
+
+function scrollLeftCarousel() {
+  carousel.scrollBy({ left: -step, behavior: "smooth" });
+}
+
+// seamless loop correction (no visible jump)
+carousel.addEventListener("scroll", () => {
+  const half = carousel.scrollWidth / 2;
+  if (carousel.scrollLeft >= half) {
+    carousel.scrollLeft -= half;
+  }
+});
 </script>
 
 </body>

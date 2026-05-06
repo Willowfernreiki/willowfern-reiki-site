@@ -22,13 +22,13 @@ body {
   color: #26352D;
   background: #F7F6F3;
 
-  /* page load animation */
   opacity: 0;
   animation: pageFade 0.6s ease forwards;
 
-  /* ✨ subtle smoothing upgrade */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding-bottom: 70px; /* prevents overlap with sticky footer */
 }
 
 @keyframes pageFade {
@@ -37,7 +37,7 @@ body {
 }
 
 /* =========================
-   TYPOGRAPHY (REFINED HIERARCHY)
+   TYPOGRAPHY
 ========================= */
 
 h1 {
@@ -63,7 +63,19 @@ p {
 }
 
 /* =========================
-   CONTAINER (8pt SYSTEM)
+   GLOBAL LINKS (CLEAN UI FIX)
+========================= */
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* =========================
+   CONTAINER
 ========================= */
 
 .container {
@@ -92,7 +104,6 @@ nav a {
   text-decoration: none;
   color: #26352D;
   font-size: 14px;
-  position: relative;
   padding-bottom: 4px;
 }
 
@@ -106,7 +117,7 @@ nav a.active {
 }
 
 /* =========================
-   BUTTONS (GLOBAL)
+   BUTTONS
 ========================= */
 
 .button,
@@ -130,7 +141,7 @@ button.button {
 }
 
 /* =========================
-   HERO (DEFAULT)
+   HERO
 ========================= */
 
 .hero {
@@ -140,10 +151,7 @@ button.button {
   position: relative;
   margin-bottom: var(--space-5);
 
-  /* 🌿 slow zoom effect */
   animation: heroZoom 18s ease-in-out infinite alternate;
-  transform-origin: center;
-  will-change: transform;
 }
 
 .hero::before {
@@ -159,7 +167,7 @@ button.button {
 }
 
 /* =========================
-   IMAGE ROW (HOME)
+   IMAGE ROW
 ========================= */
 
 .image-row {
@@ -173,9 +181,7 @@ button.button {
 .image-card {
   flex: 1;
   min-width: 250px;
-
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  will-change: transform;
 }
 
 .image-card img {
@@ -191,11 +197,10 @@ button.button {
 .image-text {
   font-size: 14px;
   margin-top: var(--space-2);
-  line-height: 1.6;
 }
 
 /* =========================
-   GROWTH LIBRARY CARDS
+   GROWTH LIBRARY
 ========================= */
 
 .library-grid {
@@ -208,11 +213,6 @@ button.button {
   background: rgba(255,255,255,0.9);
   border-radius: 16px;
   padding: var(--space-2);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   min-height: 360px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -226,7 +226,9 @@ button.button {
 .book-card img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(255,255,255,0.6);
+  padding: 6px;
   border-radius: 12px;
   margin-bottom: var(--space-2);
 }
@@ -238,12 +240,6 @@ button.button {
 .book-tag {
   font-size: 12px;
   color: #6F9E7F;
-  margin-bottom: 10px;
-}
-
-.book-card .button {
-  margin-top: auto;
-  text-align: center;
 }
 
 /* =========================
@@ -259,7 +255,6 @@ button.button {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: var(--space-2);
-  padding: var(--space-1) 0;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -278,36 +273,20 @@ button.button {
 .scroll-card img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(255,255,255,0.6);
+  padding: 6px;
   border-radius: 12px;
-  margin-bottom: 10px;
 }
-
-.arrow {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.95);
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.arrow.left { left: -10px; }
-.arrow.right { right: -10px; }
 
 /* =========================
-   TESTIMONIALS GRID
+   TESTIMONIALS
 ========================= */
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-3);
-  align-items: stretch;
 }
 
 .testimonial-card {
@@ -315,34 +294,10 @@ button.button {
   padding: 22px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 240px;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
-}
-
-.testimonial-text {
-  font-style: italic;
-  line-height: 1.7;
-  flex-grow: 1;
-}
-
-.testimonial-client {
-  font-size: 13px;
-  color: rgba(38,53,45,0.7);
-  margin-top: auto;
 }
 
 /* =========================
-   FORM STYLING
+   FORM
 ========================= */
 
 form {
@@ -350,54 +305,41 @@ form {
   flex-direction: column;
   gap: var(--space-2);
   max-width: 650px;
-  margin-top: var(--space-3);
-}
-
-label {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-input,
-select,
-textarea {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.08);
-  font-family: inherit;
-  font-size: 15px;
-  background: rgba(255,255,255,0.9);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #AEBFA9;
-  outline: none;
 }
 
 /* =========================
-   SCROLL REVEAL
-========================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: all 0.7s ease;
-}
-
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   FOOTER
+   FOOTER (STICKY MINIMAL BAR)
 ========================= */
 
 footer {
-  text-align: center;
-  padding: var(--space-5) var(--space-2);
-  font-size: 13px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 16px;
+  font-size: 12.5px;
   color: rgba(38,53,45,0.7);
+
+  border-top: 1px solid rgba(0,0,0,0.06);
+  z-index: 999;
+}
+
+footer a {
+  color: rgba(38,53,45,0.7);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+footer a:hover {
+  color: #6F9E7F;
+  border-bottom: 1px solid #AEBFA9;
 }

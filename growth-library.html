@@ -13,27 +13,28 @@
 <style>
 
 /* =========================
-   SCOPED FIXES ONLY
+   SCOPED FIXES
 ========================= */
-
-#growth-library-page .scroll-card img,
-#growth-library-page .book-card img {
-  object-fit: contain !important;
-  background: rgba(255,255,255,0.6);
-}
 
 #growth-library-page a {
   text-decoration: none;
   color: inherit;
 }
 
-#growth-library-page .scroll-card,
-#growth-library-page .book-card {
+/* ensure full book covers visible */
+#growth-library-page img {
+  object-fit: contain !important;
+  background: rgba(255,255,255,0.6);
+}
+
+/* hover polish */
+.scroll-card,
+.book-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-#growth-library-page .scroll-card:hover,
-#growth-library-page .book-card:hover {
+.scroll-card:hover,
+.book-card:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 14px 30px rgba(0,0,0,0.10);
 }
@@ -60,9 +61,10 @@
 <p>A curated collection of books for emotional clarity, healing, and inner growth.</p>
 
 <p style="font-size:13px; opacity:0.75;">
-Disclosure: If you buy books linked to our site, we may earn a commission from Bookshop.org, whose fees support independent bookshops.
+Disclosure: We may earn a commission via Bookshop.org supporting independent bookshops.
 </p>
 
+<!-- START HERE -->
 <h2>Start Here</h2>
 
 <div class="carousel-wrapper">
@@ -71,44 +73,34 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 <div class="scroll-container" id="startCarousel">
 
-<a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank">
-<div class="scroll-card">
+<a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="scroll-card">
 <img src="https://images-eu.bookshop.org/images/9780340733509.jpg">
 <div class="book-title">The Power of Now</div>
 <div class="book-tag">Presence</div>
-</div>
 </a>
 
-<a href="https://uk.bookshop.org/a/17384/9781572245372" target="_blank">
-<div class="scroll-card">
+<a href="https://uk.bookshop.org/a/17384/9781572245372" target="_blank" class="scroll-card">
 <img src="https://images-eu.bookshop.org/images/9781572245372.jpg">
 <div class="book-title">The Untethered Soul</div>
 <div class="book-tag">Inner Peace</div>
-</div>
 </a>
 
-<a href="https://uk.bookshop.org/a/17384/9781401945015" target="_blank">
-<div class="scroll-card">
+<a href="https://uk.bookshop.org/a/17384/9781401945015" target="_blank" class="scroll-card">
 <img src="https://images-eu.bookshop.org/images/9781401945015.jpg">
 <div class="book-title">Letting Go</div>
 <div class="book-tag">Release</div>
-</div>
 </a>
 
-<a href="https://uk.bookshop.org/a/17384/9781878424310" target="_blank">
-<div class="scroll-card">
+<a href="https://uk.bookshop.org/a/17384/9781878424310" target="_blank" class="scroll-card">
 <img src="https://images-eu.bookshop.org/images/9781878424310.jpg">
 <div class="book-title">The Four Agreements</div>
 <div class="book-tag">Clarity</div>
-</div>
 </a>
 
-<a href="https://uk.bookshop.org/a/17384/9781785042225" target="_blank">
-<div class="scroll-card">
+<a href="https://uk.bookshop.org/a/17384/9781785042225" target="_blank" class="scroll-card">
 <img src="https://images-eu.bookshop.org/images/9781785042225.jpg">
 <div class="book-title">When The Body Says No</div>
 <div class="book-tag">Stress</div>
-</div>
 </a>
 
 </div>
@@ -117,12 +109,12 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 </div>
 
+<!-- FULL LIBRARY -->
 <h2>Full Library</h2>
 
 <div class="library-grid">
 
-<!-- 18 books unchanged -->
-<!-- (kept exactly as provided) -->
+<!-- 18 BOOKS (UNCHANGED LINKS PRESERVED) -->
 
 <a href="https://uk.bookshop.org/a/17384/9780340733509" target="_blank" class="book-card">
 <img src="https://images-eu.bookshop.org/images/9780340733509.jpg">
@@ -236,27 +228,23 @@ Disclosure: If you buy books linked to our site, we may earn a commission from B
 
 </div>
 
+<!-- STANDARD FOOTER -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <p>© 2026 Willow & Fern Reiki • The Growth Library</p>
-
-    <div class="footer-links">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <span>•</span>
-      <a href="terms-conditions.html">Terms & Conditions</a>
-    </div>
+  <div>© 2026 Willow & Fern Reiki</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <span>•</span>
+    <a href="terms.html">Terms & Conditions</a>
   </div>
 </footer>
 
 <script>
-
 function scrollManual(dir) {
   document.getElementById("startCarousel").scrollBy({
     left: dir * 260,
     behavior: "smooth"
   });
 }
-
 </script>
 
 </body>
